@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase /
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^index\.php$ - [L]
+
+RewriteRule ^intro$ /intro.php [L]
+
+#Prevent directory structure being peeped.
+#@link: https://stackoverflow.com/questions/5437375/apache-mod-rewrite-for-everything-except-root
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule (.*) /403 [L]
+
+#All routes to the index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /index.php?uri=$1 [L]
+
+</IfModule>
+

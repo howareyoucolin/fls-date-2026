@@ -1,0 +1,4023 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>纽约同城婚介交友 - 会员列表</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="纽约同城婚介交友的会员列表，在这儿，希望你能找到一个你喜欢的男朋友或女朋友，这儿的人大多数都在纽约，特别是在法拉盛。 祝你好运。">
+<meta name="keywords" content="纽约婚介交友, 法拉盛婚介找友, 纽约找男朋友">
+<meta name="author" content="Colin Zhao">
+<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+<meta name="format-detection" content="telephone=no">
+<meta name="google-site-verification" content="rA4kzdLnrqIZt9dQUioJXNJcSwFcvdNOzwEpIRumI8s">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301361047314396"
+     crossorigin="anonymous"></script>
+<style>
+.center{
+	text-align:center;
+}
+.btn {
+	box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border:1px solid #36472d;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff !important;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+	background-color:#68a54b;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+.panel-error{
+	border-top:1px solid #f5c6cb; border-bottom:1px solid #f5c6cb;
+	padding:15px;
+	color:#721c24; background-color:#f8d7da;
+}
+.panel-success{
+	border-top:1px solid #c3e6cb; border-bottom:1px solid #c3e6cb;
+	padding:15px;
+	color:#155724; background-color:#d4edda;
+}
+body{padding:0;margin:0;background:#FAFAFA;color:#474747;font-size:16px;line-height:28px;font-family:"Microsoft Yahei","微软雅黑",sans-serif;}
+ul{margin:0;padding:0;}
+li{list-style:none;}
+h1{padding:0;margin:0;font-size:18px;font-weight:bold;}
+h2{padding:0;margin:0;font-size:18px;font-weight:bold;color:#000;}
+h3{padding:0;margin:15px 0;font-size:18px;font-weight:bold;color:#000;}
+h3 a{color:#000;}
+p{margin:0 0 10px;}
+img{width:100%;}
+b.focus{color:#D72171;}
+.wp-block-gallery figure{margin-left:0;margin-right:0;}
+.clear{clear:both;}
+.container{width:860px;max-width:100%;margin:0 auto;padding:0 15px;box-sizing:border-box;}
+.header{height:60px;line-height:60px;background:#D72171;color:#FFF;}
+.header a{color:#FFF;text-decoration:none;}
+.header h1 a{float:left;font-weight:normal;}
+.header .signin{float:right;line-height:60px;color:#FFF;padding:0 10px;margin-right:10px;}
+.header .normal{float:right;line-height:60px;color:#FFF;padding:0 10px;margin-right:10px;}
+.header .signup{float:right;line-height:60px;background:#474747;color:#FFF;padding:0 10px;}
+.sub-header{height:48px;line-height:48px;background:#474747;text-align:right;}
+.sub-header a{color:#FFF;padding:0 10px;text-decoration:none;}
+.main{margin:30px 0;min-height:65vh;}
+.breadcrum{margin-bottom:25px;font-size:14px;}
+.breadcrum a{text-decoration:none;color:#474747;}
+.highlight{margin:15px 0 25px;background:#FFF;}
+.highlight .profile{width:300px;float:left;margin:0 25px 0 0;}
+.highlight .contacts p{border-bottom:1px dashed #DDD;line-height:37px;margin:0;}
+.highlight .contacts p span.sub{color:#DDD;}
+.highlight a{color:#D72171;text-decoration:none;}
+.content p{/*text-align:justify;*/}
+.content a{color:#D72171;text-decoration:none;}
+.content a.read-more{color:#D72171;}
+.footer{margin-top:50px;color:#FFF;background:#474747;padding:30px 0;}
+.member{margin-bottom:30px;}
+.member h2{margin-bottom:10px;}
+.member h2 a{color:#000;}
+.member img{width:100px;float:left;margin:0 15px 0 0;}
+.member p {margin: 0;}
+.member p.intro{font-size: 14px;}
+.hot-member{margin: 0 -12px;}
+.hot-member p{text-align: center; font-size: 13px; line-height: 6px;color: #888;}
+.suggest .unit{float:left;margin-right:15px;max-width:175px;text-align:center;background:#FFF;}
+.suggest .unit.last{margin-right:0;}
+.suggest .unit a{font-size:80%;color:#474747;}
+.suggest .unit a:hover{color:#D72171;}
+.suggest .unit a img{max-width:175px;}
+.footer ul{margin-bottom:30px;}
+.footer h3{color:#FFF;}
+.footer a{color:#DDD;text-decoration:none;}
+.col-6-fix{
+	width: 49.9999%;
+	float: left;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.col-6{
+	width: 49.9999%;
+	float: left;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.mobile-only{display: none;}
+@media only screen and (max-width: 680px) {
+	.header .last{margin-right:-5px;}
+/*	.header .signup span{display:none;}
+	.header .normal span{display:none;}*/
+	.header .signup, .header .normal{
+		line-height: 22px;
+		padding: 8px 8px;
+	}
+	.highlight .profile{max-width:100%;width:100%;float:none;margin:0;}
+	.highlight{padding:15px;font-size:15px;border:1px solid #F3F3F3;}
+	.member img{width:80px;float:left;margin:0 10px 10px 0;}
+	.member p.intro{clear:both;}
+	.suggest .unit{width:30%;margin-right:4.9999%;}
+	.suggest .unit a span{display:none;}
+	.col-6{
+		width: 100%;
+	}
+	.mobile-only{display: block;}
+}
+</style>
+<script src="https://ad.369usa.com/ad.js"></script></head>
+<body>
+	<div class="header">
+	<div class="container">
+		<h1><a href="https://www.flushingdating.com">纽约同城交友</a></h1>
+		
+					<a class="normal last" href="https://www.flushingdating.com/members"><span>所有</span><br class="mobile-only" />会员</a>
+			<a class="signup" href="https://www.flushingdating.com/signup"><span>免费</span><br class="mobile-only" />注册</a>
+			<!-- <a class="signin" href="https://www.flushingdating.com/login">登陆</a> -->
+				
+	</div>
+</div>
+
+
+	<div class="main">
+			<div class="container">
+				<div class="content">
+
+				<div class="breadcrum">
+					<a href="https://www.flushingdating.com"><u>首页</u></a> >> 所有会员
+				</div>
+
+					<div class="row">
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4706">
+										<img class="profile" src="https://www.flushingdating.com/uploads/985c40f31f437299402b138625093a77.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										林文雄  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">13322855640</b><br/>
+																				我出生于1980年的台湾，目前定居在纽约曼哈顿，来美国生活已有九年多，现为永久居民。
+身高181公分，体重68公斤。平时喜欢滑雪、旅游，也喜欢在闲暇时散步、阅读，让生活保持节奏与平衡。
+
+我相信生活需要仪式感，也需要真诚的陪伴。三观方面，我重视诚信、 ...
+										<a href="https://www.flushingdating.com/member/4706">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4698">
+										<img class="profile" src="https://www.flushingdating.com/uploads/36816f4b488b4c8a8208bf04c7e93168.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										li li  
+										<br class="mobile-only" />
+										39, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">9295888166</b><br/>
+																				本人来自江苏苏州一个美丽的城市，来美已经有几年时间了，希望在这个平台能找到一个好的男朋友，相依为命的，空闲时间一起旅游，一起逛街，不要给对方负能量的 ...
+										<a href="https://www.flushingdating.com/member/4698">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4688">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e8b5bce72cd6377f2c08b0a61bb26fe9.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										鄭秀妍  
+										<br class="mobile-only" />
+										44, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">iQ99188</b><br/>
+																				我是一名服務業，喜歡運動跟看書偶而出遊，剛來一周，初中學歷，離婚，基督教，160高50公斤，三觀正 ...
+										<a href="https://www.flushingdating.com/member/4688">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4685">
+										<img class="profile" src="https://www.flushingdating.com/uploads/9c5966f9ecd23ae2858b3795ee52f877.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										赵贞吉  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6074838201</b><br/>
+																				178cm，65KG，兴趣爱好比较广泛,稳定的我,也该为自己考虑一下未来的方向了,希望能有幸和您架起友谊桥梁扬帆起航,踏踏实实地走进我们的未来之旅。 ...
+										<a href="https://www.flushingdating.com/member/4685">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4674">
+										<img class="profile" src="https://www.flushingdating.com/uploads/16215f709534d3ea5fd292d0f458dfec.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										冼晴  
+										<br class="mobile-only" />
+										21, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">19297397422</b><br/>
+																				住纽约法拉盛、在网络通讯公司上班、美国出生、本科学历、没有结过婚、无宗教信仰、身高150cm、身材匀称、平时喜欢游戏艺术 ...
+										<a href="https://www.flushingdating.com/member/4674">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4670">
+										<img class="profile" src="https://www.flushingdating.com/uploads/23fa7fa7a3ac1f7ad3412411ccfdc301.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										蒋梦婷  
+										<br class="mobile-only" />
+										20, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">2136628966</b><br/>
+																				目前在纽约法拉盛，来自四川，职业嘿嘿先保密，兴趣爱好是打游戏听歌，还有唱歌来美国年左右了，学历不高，婚姻状况还是单身，162cm，140左右 ...
+										<a href="https://www.flushingdating.com/member/4670">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3779">
+										<img class="profile" src="https://www.flushingdating.com/uploads/695bb5f599f52c50c8f1d051747bc51d.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										李小艳  
+										<br class="mobile-only" />
+										55, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Qtzxdl890619</b><br/>
+																				本人李女士，实际生于1964年3月.高1.6m，体重58公斤，医疗类专业，私企业主，出生书香门第，家住纽约长岛大颈镇。本人开朗乐观，能吃苦耐劳，爱好文学艺术音乐舞蹈时装鉴赏之类。经济独立脾气温和通情达理善厨艺。（一女已成家为金融企业老板娘。） ...
+										<a href="https://www.flushingdating.com/member/3779">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3463">
+										<img class="profile" src="https://www.flushingdating.com/uploads/b3652135a2724138aadf1d8776ba478e.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jace Moon  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: jacemoon69520@gmail.com<br/>
+																				35 岁，韩裔美国人。6 位数收入，请有照片，住在纽约市！
+你要么想做一个有趣的女朋友，要么想做一个居家妻子 ...
+										<a href="https://www.flushingdating.com/member/3463">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3441">
+										<img class="profile" src="https://www.flushingdating.com/uploads/624793bfc3a634274eeb5ed2d5467591.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Julie  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9297205083</b><br/>
+																				本人身高161cm 匀称体型 来美十多年了 居住于纽约史顿岛
+在日本料理店做服务员 爱好舞蹈 平时休息间听听音乐 喜欢去海边走走散步
+空余有时会跟朋友一起喝茶畅怀 只要能聊得来性格好稳重大方 我会
+抓机遇与另一半的他相处些日子 感觉好再进一步发展谈婚 ...
+										<a href="https://www.flushingdating.com/member/3441">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3432">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c173be81a45e3a5b9814bf41105b2832.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Tommy  
+										<br class="mobile-only" />
+										28, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Tommy76278</b><br/>
+																				来自加州，现居纽约上州（波基普西），建筑行业，身高172，170lb
+喜欢健身，攀岩，旅游，尝试新餐馆 ...
+										<a href="https://www.flushingdating.com/member/3432">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1075">
+										<img class="profile" src="https://www.flushingdating.com/uploads/5dffe5bc01a4bab2669b1083b5a56e1b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										emily  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">zhang 769014405</b><br/>
+																				来美13年 绿卡身份 现居住纽约法拉盛  身高166 107斤 有正当职业 
+有过一次婚姻 没有生过小孩 有正当职业 
+性格开朗 爱音乐爱画画 爱旅行  
+真诚寻找一结婚为目的的男生 ...
+										<a href="https://www.flushingdating.com/member/1075">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1065">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 123.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/47a331369bf778b366e333c31c2ff8a7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										GAvin  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">xyupengy</b><br/>
+																				本人男，目前居住在加州 兴趣爱好，运动，看书，新闻等等，离异，身高：180cm  体重：80KG ...
+										<a href="https://www.flushingdating.com/member/1065">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1060">
+										<img class="profile" src="https://www.flushingdating.com/uploads/fbd9cca341806eaac232844c8a0ae0e6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Malak  
+										<br class="mobile-only" />
+										36, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">18395574093</b><br/>
+																				爱、关心、温柔，我有这些品质，我细心、敏感，我尊重别人的想法和信念，
+我想遇到一个知道自己想要什么的男人，我的伴侣应该不仅仅是朋友，还要关心和理解 ...
+										<a href="https://www.flushingdating.com/member/1060">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1055">
+										<img class="profile" src="https://www.flushingdating.com/uploads/d622fe22bece29bad25ec865358005c4.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Vincent  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Vincent chow</b><br/>
+																				居住在纽约市，喜欢逛街，保龄球????，钓鱼????，枱球，看电影，到处尋找美食&hellip;&hellip;175高，135P，高中 ...
+										<a href="https://www.flushingdating.com/member/1055">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1031">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c7bef3f38aa4825f0bcfbb6a8610c1f7.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										王启春  
+										<br class="mobile-only" />
+										48, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">13922765640</b><br/>
+																				居住长岛大颈，加拿大公民，自营公司，来北美10年，大学本科，离异，身高165，体重62kg。寻志同道合。 ...
+										<a href="https://www.flushingdating.com/member/1031">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/983">
+										<img class="profile" src="https://www.flushingdating.com/uploads/839ad1232f0295d2ba53bf3a53f11b4b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Tim Lu  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">timlu888</b><br/>
+																				现居住费城，美国公民，来自中国广州。离婚五年，巴士司机。身高165，体重76公斤，有房产。信仰佛教。 ...
+										<a href="https://www.flushingdating.com/member/983">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/957">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e7fe6f5b6554ebb7b7bb9bf6062a8134.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										rex  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Unclezhang1990@yahoo.com<br/>
+																				根据地纽约
+事业在外州
+来美二十余载 
+身高173
+体重70kg
+希望能找到有缘人 共度余生 ...
+										<a href="https://www.flushingdating.com/member/957">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/941">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 3.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/8bb5753d6af6ce87f89e8b5f4ff804e3.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Yan  
+										<br class="mobile-only" />
+										48, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Lillianlee1210</b><br/>
+																				居住纽约法拉盛，来美12年，本科，离婚，1.65米，92斤。钢琴老师。性格不太外向比较宅。 ...
+										<a href="https://www.flushingdating.com/member/941">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/940">
+										<img class="profile" src="https://www.flushingdating.com/uploads/39ab716f4e03e485654ad88fecc83fca.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Andy  
+										<br class="mobile-only" />
+										53, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">hisuwhswq526</b><br/>
+																				出生浙江，在这边10多年，身体各项功能都健康完好，已经在这边生活了多年。我如今拥有车和房。此刻，我正在寻找一个陪伴我走过人生的女性伴侣。我明白，一万年太长，我所追求的只是能够与她携手走到白头之年。我希望找到一个与我志同道合的人，能够在共同的理想和目标下建立 ...
+										<a href="https://www.flushingdating.com/member/940">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/937">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 16.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>54</b><br />
+https://www.flushingdating.com/uploads/5c9f43832e4769705a20f91ea3bff750.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										pan  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">WB88-88WB</b><br/>
+																				我姓洪，是山东人，我有住房。平时都是我一个人生活，我有一家装修设计公司，这几年比较稳定，自己各方面也准备好了，所以想找个知心人，互相搀扶共度余生。喜欢养花，爱好整洁干净的环境，朋友们都说我脾气好，好相处。 ...
+										<a href="https://www.flushingdating.com/member/937">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/933">
+										<img class="profile" src="https://www.flushingdating.com/uploads/ba166123ca0567a5edc3530d8d4a1229.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Lisa  
+										<br class="mobile-only" />
+										49, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wxid_0b0jaxe9h70k12</b><br/>
+																				本人在纽约上州，家庭管理，喜欢运动、旅游，读书，烹饪，大专，来美国两年，学生签证，分居，160厘米，体重50公斤。乐观积极向上，勤奋好学，一性格开朗大方，善良直爽，勤俭持家，无不良嗜好。个女儿已经在澳洲毕业工作，无负担 ...
+										<a href="https://www.flushingdating.com/member/933">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/921">
+										<img class="profile" src="https://www.flushingdating.com/uploads/6035dd63e254e37675498214798756f5.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Kira Huang  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Kira_HQH</b><br/>
+																				居住纽约，在家工作，政府工，帮人申请政府医保。
+不烟不酒，室内派，基本都在家里。周末固定去一次健身房。
+会和朋友外出和旅行，但比较少。
+身高165，体重170lb。未婚。 ...
+										<a href="https://www.flushingdating.com/member/921">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/912">
+										<img class="profile" src="https://www.flushingdating.com/uploads/8aba5d603b51b90e614059062c735901.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										蓝色  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: mvpusa@yahoo.com<br/>
+																				法拉盛。请尽量填详细的信息：现居地(精确到区，例如纽约法拉盛), 来自哪个城市，职业，兴趣爱好，来美多久，学历，婚姻状况，信仰，身高，体重，三观等等... ...
+										<a href="https://www.flushingdating.com/member/912">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/910">
+										<img class="profile" src="https://www.flushingdating.com/uploads/d18aac70a1b1fc1a376dee9a53aeabf8.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										沈思雨  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">17163298643</b><br/>
+																				我是沈思雨，我来自中国深圳，现在在西雅图一家科技公司工作，喜欢旅行，打高尔夫，来没6年 毕业于华盛顿UW。离异 ...
+										<a href="https://www.flushingdating.com/member/910">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/909">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 188.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/25eac2258c4dcaf096576cf8d3ec49cc.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Zoey  
+										<br class="mobile-only" />
+										31, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">BB52093</b><br/>
+																				喜欢瑜伽 跑步 
+喜欢吃火锅、寿司、麻辣烫
+居住法拉盛 
+现做美甲师 
+身高164- ...
+										<a href="https://www.flushingdating.com/member/909">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/908">
+										<img class="profile" src="https://www.flushingdating.com/uploads/b98f713f2d1b187d2d94b5e964983cd4.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										杨半球  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Garbagebags</b><br/>
+																				名字：杨半球
+年纪： 1988
+出生:河南
+身高:170cm
+体重:65kg
+工作： MTA BUS 司机
+学历: 2 年社区大学
+居住城市:纽约
+婚姻状况:单身
+孩子年龄:0️⃣
+英语水平:普通交流
+宗教信仰:????️
+择偶要求 ...
+										<a href="https://www.flushingdating.com/member/908">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/906">
+										<img class="profile" src="https://www.flushingdating.com/uploads/99b0773876eac6ff8428bb8f86e692d5.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										李家豪  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">JH8888LEE</b><br/>
+																				男 纽约 大学本科以上 未婚 身高182 体重75kg 佛教 兴趣滑雪???? 高尔夫 看电影 唱歌 ...
+										<a href="https://www.flushingdating.com/member/906">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/904">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 165.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/00dd415917f54feba501a8a36d08bd6f.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sofia  
+										<br class="mobile-only" />
+										48, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Sofia18512496962</b><br/>
+																				女，47岁，离婚未孕。绿卡、身高1:70。性格好，聪明美丽、善解人意、寻一位好男人相伴终生。非诚勿扰！联系电话9294104845微信sofia18512496962 ...
+										<a href="https://www.flushingdating.com/member/904">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/903">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3a268d4206449d2ea7a213e98f3c2891.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jackie zhang  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">54737960</b><br/>
+																				本人福建长乐人，来美20多年，美国公民，有一个女儿跟她妈。本人没有什么不良嗜好，不抽烟，喝酒，赌博。一心只为家庭和事业打拼。希望找个志同道合者一起过生活，创业。 ...
+										<a href="https://www.flushingdating.com/member/903">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/897">
+										<img class="profile" src="https://www.flushingdating.com/uploads/81923127b93e791b0a044ba74cf07a0c.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										陈斌  
+										<br class="mobile-only" />
+										40, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9174858755</b><br/>
+																				137-07 boothmemorial Ave  
+喜欢开放随便的女人三观无所谓 ...
+										<a href="https://www.flushingdating.com/member/897">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/892">
+										<img class="profile" src="https://www.flushingdating.com/uploads/91d5ef25fbb1207bdef9916644124dea.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jack Wang  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">lota710</b><br/>
+																				Name:WangXiang  Jack Wang
+region:New York Flushing
+height:183cm
+occupation:medical treatment
+Time to come to USA:15years
+Ma ...
+										<a href="https://www.flushingdating.com/member/892">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/882">
+										<img class="profile" src="https://www.flushingdating.com/uploads/5dfd2ad7ee513dbd9f5b5603a024e408.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										王胜军  
+										<br class="mobile-only" />
+										44, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">qingyouworkroom</b><br/>
+																				1. 居住地：纽约法拉盛
+2.职业：uber 送餐
+3. 来美：1年
+4. 学历：985大学（中国大陆）
+5. 未婚
+6. 信仰：基督教
+7. 身高：170cm 
+8. 体重：80Kg ...
+										<a href="https://www.flushingdating.com/member/882">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/879">
+										<img class="profile" src="https://www.flushingdating.com/uploads/1caf15f62a2b3e9b6f191cae6f1f7595.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jackei  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6462063440</b><br/>
+																				本人福州人离异孩子跟对方，目前在芝加哥创业，有房有车有意思女性，联系我，我来美国二十多年了，找一个过日子女性，要人品好， ...
+										<a href="https://www.flushingdating.com/member/879">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/866">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e845021a9e067060a6f8bc58b3478f07.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										大棋  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Wxid_ybtvpe5d sbhf12</b><br/>
+																				我生活在纽约，绿卡，有房有车，丧偶，车场管理员工作，在这里希望能遇见温柔善良的女士，要有绿卡，能一起去旅游，听听音乐，相互尊重和信任！ ...
+										<a href="https://www.flushingdating.com/member/866">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/859">
+										<img class="profile" src="https://www.flushingdating.com/uploads/5844a835b303862e86a9870010ad9401.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										章鱼  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">jfishu</b><br/>
+																				福州人，2010年来美国纽约，无不良嗜好，身体健康，身高175，未婚。有房，纽约市立大学本科，纽约建筑工程师PE执照，不抽烟不喝酒, 挺宅的，带幽默细胞，工作稳定。有驾照没有车也不开车，因为目前工作生活还不需要车，然后为了省钱再买房。 ...
+										<a href="https://www.flushingdating.com/member/859">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/854">
+										<img class="profile" src="https://www.flushingdating.com/uploads/08cc38ea9c1cda47b70987cd0018b902.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										一叶知秋  
+										<br class="mobile-only" />
+										44, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">3478096188</b><br/>
+																				常驻纽约法拉盛，职业专业科班川菜厨师，擅长川湘，淮扬系，东北菜，面食小吃，喜欢健身，看书和思考！对待工作生活充满热情！无信仰，身高175，体重72公斤，国内大专学历！收入50～75k，关于三观&hellip;对待感情忠诚专一，奉行爱情之中双方心心相印！无法 ...
+										<a href="https://www.flushingdating.com/member/854">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/844">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 3.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/18dd95676828155603abf73681b1e8a4.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jefferson Xiao  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Jefferson-Xiao</b><br/>
+																				本人研究生学位。1989 年出生。政府部门工作。身高177。 在纽约住Bronx。家人都在纽约。本人样貌端正，品行好。诚心希望交到合适的女生。希望女方性格好。女方身高162 或者以上，89 或者90后的女生（年龄在25到34之间）。最好有四年大学文凭。希望 ...
+										<a href="https://www.flushingdating.com/member/844">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/839">
+										<img class="profile" src="https://www.flushingdating.com/uploads/0d400bbf7f6caba7f9e06d6ee0c21ff9.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										李辉  
+										<br class="mobile-only" />
+										29, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">747497805</b><br/>
+																				纽约法拉盛。 喜欢运动美食。喜欢接触新鲜事物。冒险。陪伴是最长久的告白。谢谢。 喜欢我的可以联系我。 随缘 ...
+										<a href="https://www.flushingdating.com/member/839">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/835">
+										<img class="profile" src="https://www.flushingdating.com/uploads/91d79eebcc3edeace7792963869c383a.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Vincent  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: zhenghun84@gmail.com<br/>
+																				80后生男诚征伴侣，尽快结婚生小孩（妈妈想升级成奶奶催得急。。。）。我的情况：
+
+来美多年，从未回过中国。目前住在纽约Queens，曼哈顿美国公司从事咨询工作，刚绿卡，一到时间就申请公民。
+买了彩票但没有一夜暴富，买了房子但还在等待过户（有贷款）。 ...
+										<a href="https://www.flushingdating.com/member/835">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/832">
+										<img class="profile" src="https://www.flushingdating.com/uploads/dbeb5134b899bc9ffd963bea96828dc6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										one  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">515196708</b><br/>
+																				现住法拉盛 身高1.64 从事美甲行业，喜欢健身、 画画 来美国10年、离异想找一位性格温和三观正有上进心修养好的男士 ...
+										<a href="https://www.flushingdating.com/member/832">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/824">
+										<img class="profile" src="https://www.flushingdating.com/uploads/fe0cfefb16c248a3a85745796094ec6d.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										赵信  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6269882588</b><br/>
+																				本人目前居住美国纽约法拉盛，来自中国浙江温州，自己在美国打拼事业，自己喜欢打篮球，旅游跑步， ...
+										<a href="https://www.flushingdating.com/member/824">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/823">
+										<img class="profile" src="https://www.flushingdating.com/uploads/84f8f426df51ff8d902acd7f113dee75.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Wille  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">We830122ill</b><br/>
+																				我居住在洛杉矶，金融民工，喜欢爬山，海钓，健身房撸铁，音乐，来美国十年，现在是单身，想找一个温柔体贴的女生共度一生 ...
+										<a href="https://www.flushingdating.com/member/823">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/822">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 436.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/568ac5aa2dfdd39c755d6cd0217d987e.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										minpengcheng  
+										<br class="mobile-only" />
+										47, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">cheng4075295112</b><br/>
+																				佛罗里达州，坦帕市，来美18年离异一个儿子已当兵，本人1米74体重150，开家庭旅馆， ...
+										<a href="https://www.flushingdating.com/member/822">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/811">
+										<img class="profile" src="https://www.flushingdating.com/uploads/54c521193c19002b3c88d0edc0783ad6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Tony  
+										<br class="mobile-only" />
+										38, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">luowend</b><br/>
+																				纽约皇后区 做贸易生意，来美国2年多。 看书，听音乐，旅游。 纽约皇后区 做贸易生意，来美国2年多。 看书，听音乐，旅游。 纽约皇后区 做贸易生意，来美国2年多。 看书，听音乐，旅游。 ...
+										<a href="https://www.flushingdating.com/member/811">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/810">
+										<img class="profile" src="https://www.flushingdating.com/uploads/6e1753e7b1df51eaf53fcadf0c6e5b14.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										jack chen  
+										<br class="mobile-only" />
+										28, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">qq503280957</b><br/>
+																				180身高 体重190磅 纽约法拉盛 爱打篮球乒乓爬山 上班族来美8年 有点直男但是喜欢真心换真心的人 ...
+										<a href="https://www.flushingdating.com/member/810">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/806">
+										<img class="profile" src="https://www.flushingdating.com/uploads/ca5bdcbd93b1c9cda8d246c140ca65cb.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sophia Newtom  
+										<br class="mobile-only" />
+										45, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">9177052606</b><br/>
+																				南方美女49160自己有公司 端正大方觅投缘人. 喜欢唱歌 跳舞 做饭 文艺  离异 －儿已大 ...
+										<a href="https://www.flushingdating.com/member/806">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/804">
+										<img class="profile" src="https://www.flushingdating.com/uploads/501841faa89343e8f93b8e36a7207e9b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										李粒  
+										<br class="mobile-only" />
+										32, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">KDKDKANDAN</b><br/>
+																				啦啦啦啦啊啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦 ...
+										<a href="https://www.flushingdating.com/member/804">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/796">
+										<img class="profile" src="https://www.flushingdating.com/uploads/fc3509407073614b90d714e3c5a4e5a1.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jackei  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6462063440</b><br/>
+																				本人福州人离异孩子跟对方，现在在芝加哥自己创业，希望借这个平台能遇到合适的人，在人海茫茫遇到是一种缘分，现在天气开始降温了，给不了你外套，给不了你拥抱，那你要照顾好自己用缘人， ...
+										<a href="https://www.flushingdating.com/member/796">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/788">
+										<img class="profile" src="https://www.flushingdating.com/uploads/ba29ba374c12b9df0ddbe7262563df97.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										蔡长瑶  
+										<br class="mobile-only" />
+										46, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Car7938</b><br/>
+																				44岁来自韩国首尔身高155体重52磅现住法拉盛在餐厅做厨师，爱好游泳，做美食，，热爱生活阳光开朗的离异现自己生活 ...
+										<a href="https://www.flushingdating.com/member/788">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/780">
+										<img class="profile" src="https://www.flushingdating.com/uploads/039aac4a1dce22fbd9477160b9da6fe8.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										xie  
+										<br class="mobile-only" />
+										47, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">5162051706</b><br/>
+																				现居法拉盛，纹身师，爱好绘画、雕塑、健身。本科学历，婚姻离异。身高168 体重140，信仰基督，心地善良三观很正。 ...
+										<a href="https://www.flushingdating.com/member/780">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/776">
+										<img class="profile" src="https://www.flushingdating.com/uploads/db08893d4902b9bd937b28bda1aff231.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										lily Newtom  
+										<br class="mobile-only" />
+										52, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9177052606</b><br/>
+																				Lily 50 /162. 浙江人 端正大方 善良贤慧找伴侶. 世界單身聯誼會 婚戀交友  征婚擇偶平台 聯絡：7323316189/9177052606.地點：3370 prince street .Flushing NY11354 ...
+										<a href="https://www.flushingdating.com/member/776">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/535">
+										<img class="profile" src="https://www.flushingdating.com/uploads/cc39b2711817f8f43414f303d441a937.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Candy  
+										<br class="mobile-only" />
+										36, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">503127490</b><br/>
+																				常住纽约，偶尔旅居其他州。
+来美三年，哥伦比亚大学留学生，
+对外汉语教师/新媒体编辑。
+爱好旅游摄影。性格开朗容易相处。 ...
+										<a href="https://www.flushingdating.com/member/535">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/773">
+										<img class="profile" src="https://www.flushingdating.com/uploads/9b6b6388fe2fc9c726632c12d083429b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										JasonJ  
+										<br class="mobile-only" />
+										27, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: xj49339n@gmail.com<br/>
+																				我住在纽约长岛大颈， 职业财务代表和销售代表。兴趣爱好玩游戏， 看电
+影， 来到美国十年。学历本科。 未婚， 信仰偏向儒释道。身高170 cm , 体重不稳定80-100 kg 不等， 三观温柔善良， 乐于助人。
+A good partner need ...
+										<a href="https://www.flushingdating.com/member/773">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/771">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3323004842d1adcefc6321e6aa555126.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Arno  
+										<br class="mobile-only" />
+										27, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">NapoleonsBox</b><br/>
+																				I&#039;m from the United States, born and raised in the lively city of New York. Currently, I&#039;m staying in NYC. I completed ...
+										<a href="https://www.flushingdating.com/member/771">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/766">
+										<img class="profile" src="https://www.flushingdating.com/uploads/169f5825938146d559013fa6ba7127bc.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Steven  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9296063338</b><br/>
+																				来美差不多20年。有屋有车。 真诚找女朋友
+有意者请电或发消息到 929-606-3338 ...
+										<a href="https://www.flushingdating.com/member/766">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/764">
+										<img class="profile" src="https://www.flushingdating.com/uploads/535870370068f30bfb6bab7340ab3a0a.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Enigma  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6505946030</b><br/>
+																				我喜欢善良、正直，有职业梦想和进取心和忠诚的男人。我希望我们之间有更多相似的话题，相似的爱好，相似的环境，相似的想法和相同的灵魂。这样我们以后的生活才会有更多乐趣，有跟多说不完的话，有更多讨论的话题。我知道这种男士并不容易找到，所以这几年我一直单身 ...
+										<a href="https://www.flushingdating.com/member/764">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/753">
+										<img class="profile" src="<br />
+<b>Deprecated</b>:  Implicit conversion from float 0.5 to int loses precision in <b>/home/mildy/flushingdating.com/includes/images.php</b> on line <b>69</b><br />
+https://www.flushingdating.com/uploads/8b6d653447affa7e2bd88e7cbbe08013.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jeffrey  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Jchou0308</b><br/>
+																				現居長島，175，未婚。在一家創意公司做UX設計師，戒菸中，不太喝酒。本人算是個性比較隨和不容易有負面情緒的。靜態的興趣包括畫畫，做模型，研究美食。動態的興趣喜歡去露營，騎車，攝影，旅遊等等。在這裏想要尋找一位有結婚意願的女朋友，希望她能夠是一位有趣，可以 ...
+										<a href="https://www.flushingdating.com/member/753">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/751">
+										<img class="profile" src="https://www.flushingdating.com/uploads/ea80e70ad6150f3340d7103574b764a9.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jackei  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6462063440</b><br/>
+																				本人76是福州人目前在芝加哥公司上班，离异有个女儿跟对方，希望借这个平台能找到有缘的人， ...
+										<a href="https://www.flushingdating.com/member/751">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/736">
+										<img class="profile" src="https://www.flushingdating.com/uploads/a7f4f89331af9d26d13f411d1f3057a1.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Wanna  
+										<br class="mobile-only" />
+										52, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wanxaowaay</b><br/>
+																				在美国经营自己生意，175cm 未婚大学，有房有车，喜欢运动，音乐，之前做技术工作，来美国9年 ...
+										<a href="https://www.flushingdating.com/member/736">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/735">
+										<img class="profile" src="https://www.flushingdating.com/uploads/93cd5f81b816d159a449384a7ca8edf7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										刘希  
+										<br class="mobile-only" />
+										28, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Kayla1314502</b><br/>
+																				来自广东 有7-8年了 现在住 Pennsylvania 最好离我近一些 工作稳定 希望能找个年龄和我差不多的女朋友 我兴趣是打网球、画画 听听音乐 、未婚 身高169 ...
+										<a href="https://www.flushingdating.com/member/735">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/734">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c3ce6ad0155cdec72b3c14f3fcea9605.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Xiaohui jia  
+										<br class="mobile-only" />
+										27, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">jasonjia 辉</b><br/>
+																				关于我自己的几句话
+大家好，我是Jason，我出生于中国江苏省南京市。来美国9年了 我在美国读高中和大学。我身高170 cm，体重80 kg。我是水瓶座，风象星座，A型或O型血（未测试），属虎，木相。我就读纽约市佩斯大学金融专业和通识商业研究。未婚， 我 ...
+										<a href="https://www.flushingdating.com/member/734">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/730">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e0a9c5457a966df7f8a4d0e1504b3367.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Bingxie Zhang 张并勰  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9173271812</b><br/>
+																				纽约贝塞区，来自上海，47岁来美32年。  大学本科，冷暖气工程师，有车房。兴趣爱好就是旅游，拍视频。之前有过一段婚姻，已离异。身高175，无不良嗜好。 ...
+										<a href="https://www.flushingdating.com/member/730">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/727">
+										<img class="profile" src="https://www.flushingdating.com/uploads/16dfee80c3e815ba253cac78d8c80470.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										李伟  
+										<br class="mobile-only" />
+										48, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">4153405955</b><br/>
+																				我也来碰碰运气，我属于乐观阳光型，性格平和，情绪稳定，厨艺尚佳，喜欢干净整洁，希望你跟我一样，想认真组建一个家庭。
+生活对我来说永远充满了希望，永远相信没有过不去的坎。因为我有一颗鲜活的心，无论身处高位还是低谷，都可以用平常心去面对，享过福吃过苦，宠辱不 ...
+										<a href="https://www.flushingdating.com/member/727">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/720">
+										<img class="profile" src="https://www.flushingdating.com/uploads/262a40f07ff8f94f098d081a931b0a50.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										陈玥  
+										<br class="mobile-only" />
+										43, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: chenyue820828@gmail.com<br/>
+																				我出生在北京来美国五年多了，我有过一段失败的婚姻，现在有一个女儿在国内我的父母照顾 ...
+										<a href="https://www.flushingdating.com/member/720">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/719">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3ef3ab19c91042149f0d40a465d144d7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										晓欣  
+										<br class="mobile-only" />
+										47, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Chenxiaoxin875</b><br/>
+																				洛杉矶服装设计一名，兴趣爱好很多，羽毛球，网球，高尔夫，滑雪等等....来美四年多了 ...
+										<a href="https://www.flushingdating.com/member/719">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/717">
+										<img class="profile" src="https://www.flushingdating.com/uploads/6344200f20630466691a3c5a2d05e64f.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Baone  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: baol2147@yahoo.com<br/>
+																				现住布鲁克林 兴趣爱好看电视宅在家 来美10年多 婚烟状况 无宗主信仰 未婚体重偏胖 身高158 性格好 三观正 ...
+										<a href="https://www.flushingdating.com/member/717">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/716">
+										<img class="profile" src="https://www.flushingdating.com/uploads/413ce0af27539af31d7f2787cc6fb129.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Helen  
+										<br class="mobile-only" />
+										39, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: freedomsheep2022@outlook.com<br/>
+																				住在法拉盛，教师，摄影-亲近大自然，健身、音乐。 来美5年，本科，单身，基督教，身高178cm. ...
+										<a href="https://www.flushingdating.com/member/716">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/703">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e8d83f9dce6baab5e57a1af0eb597fe4.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										天宇  
+										<br class="mobile-only" />
+										29, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">TianY266</b><br/>
+																				大家好 现在在纽约法拉盛 希望可以有女生留意到 加我聊天 真诚交友 我的微信TianY266。 95年的 ...
+										<a href="https://www.flushingdating.com/member/703">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/699">
+										<img class="profile" src="https://www.flushingdating.com/uploads/de8484720c7242529531f71930ab64aa.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Daniel  
+										<br class="mobile-only" />
+										39, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Jayne_8898</b><br/>
+																				我个人的情况大致是：182cm,78kg，80后，硕士，有自己的小事业，有房车无贷，大家庭关系非常融洽，过年二三十个人一家吃一天那种。择偶标准的话大概是：165cm以上，希望对方的性情大概是温和，和我有一些重叠的爱好，这样更利于婚恋的稳定。 ...
+										<a href="https://www.flushingdating.com/member/699">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/698">
+										<img class="profile" src="https://www.flushingdating.com/uploads/95f1af6d2bbf483489ce33ecb4638bfe.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jacki  
+										<br class="mobile-only" />
+										50, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6462063440</b><br/>
+																				本人福建福州人居在美国工作，离异孩子跟对方，.一个美丽的邂逅，一次偶然的点击，一个永远的词&ldquo;国富民强&rdquo;把我们紧紧的连在一起注定永远不能分开。我会永远的珍惜这份让人羡慕的感情。好好的经营它不让它有一点污点。希望你也一样有你开心省心，对 ...
+										<a href="https://www.flushingdating.com/member/698">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/691">
+										<img class="profile" src="https://www.flushingdating.com/uploads/8168981ac435907efdf7a247e92ad22e.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Billy  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Ki9161988</b><br/>
+																				NYC from Hong Kong work at usps been at is over 20 years ...
+										<a href="https://www.flushingdating.com/member/691">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/688">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e53e02dd42c27d7624eaa5231deecefe.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										瘋瘋jie  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Jie09070</b><br/>
+																				有興趣的女孩！做的朋友&hellip;來來來來來吧。 就就就妳了，還還不過來有興趣的女孩！做的朋友&hellip;來來來來來吧。 就就就妳了，還還不過來 ...
+										<a href="https://www.flushingdating.com/member/688">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/682">
+										<img class="profile" src="https://www.flushingdating.com/uploads/2121e73c85bba00719cb7bb5d9225ca2.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										olive  
+										<br class="mobile-only" />
+										41, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9296661983</b><br/>
+																				青岛生人 15年来美至今 绿卡身份 一直居住在flushing 未婚 无子 时代车行销售一名 收于5千 性格沙雕但在陌生人前还是会装一装的  玩的时候很闹 宅的时候很静 可能就是传说中的上得厅堂 下得厨房 居家旅行必备 ...
+										<a href="https://www.flushingdating.com/member/682">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/673">
+										<img class="profile" src="https://www.flushingdating.com/uploads/f44ce5663d01b0e0ac8c80c3924b21e1.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Zhong Wei Zheng  
+										<br class="mobile-only" />
+										39, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">3478227005</b><br/>
+																				美国公民，36,军人，大学，住saint Albans, 爱健身，单身，来美20+年，christian, 178lbs, 有车，有房 ...
+										<a href="https://www.flushingdating.com/member/673">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/669">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3c57815a78ea159e700042066545f943.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Enze  
+										<br class="mobile-only" />
+										41, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">angel-king83</b><br/>
+																				本人男38，公民，4大CPA，175，140磅，品貌端正，住纽约法拉盛，离异不带孩子。
+VX：angel-king83
+Cell：9146487752 （先发信息，不接未知来电）
+Coffee date for details.
+我们可以在vx里有 ...
+										<a href="https://www.flushingdating.com/member/669">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/661">
+										<img class="profile" src="https://www.flushingdating.com/uploads/bbf8678cd5bdcf0a3807a554cd5309a7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										林宇晨  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">SH880516_</b><br/>
+																				居住在LA，轻度健身爱好者，不抽烟，偶尔和朋友朋友喝点小酒，有上进心，还有责任心。 ...
+										<a href="https://www.flushingdating.com/member/661">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/655">
+										<img class="profile" src="https://www.flushingdating.com/uploads/be4f3585a50994cdcced08b327abafe9.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Kz  
+										<br class="mobile-only" />
+										32, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Kz3020@yahoo.com<br/>
+																				住长岛，工作稳定，180。 希望另一半可以性格温顺开朗，聊的来，两个人可以一起努力奋斗，过两个人想要的生活。 ...
+										<a href="https://www.flushingdating.com/member/655">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/647">
+										<img class="profile" src="https://www.flushingdating.com/uploads/05d7c6c44628fc152684c92928e4893a.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Ben  
+										<br class="mobile-only" />
+										44, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Ben70234</b><br/>
+																				本人住纽约皇后区，来自上海，美公民，在MTA下的一家提供医疗保险的transportation 公司任职，平时喜欢旅游，运动，美食，来美多年，目前单身，在美完成本科学历，身高181，不胖不瘦，是个乐观靠谱的人 ...
+										<a href="https://www.flushingdating.com/member/647">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/646">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3d835327c99b6edc84f237639ad5bbe5.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jian Liu  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">3154016582</b><br/>
+																				本人83年， 未婚， 美籍， 在纽约上州， 但是在家上班可以relocate, 工程师
+有意者者联系 315-401-6582, 非诚勿扰，希望女方有学识有阅历，未婚， 年龄相仿。 ...
+										<a href="https://www.flushingdating.com/member/646">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/641">
+										<img class="profile" src="https://www.flushingdating.com/uploads/305b74910b93ba8051e4e206bdfc88ab.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sherry  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: longhuren2@gmail.com<br/>
+																				本人现居住在纽约，我是做指甲的，希望以后能与我相知相守的人一起环游世界，本人身高是155厘米，来美国10年了，学历大专，离异，有两个小孩 ...
+										<a href="https://www.flushingdating.com/member/641">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/636">
+										<img class="profile" src="https://www.flushingdating.com/uploads/63f24e78d92f80e081bc9f3f36e78890.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										sunny  
+										<br class="mobile-only" />
+										36, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Yjl0826_</b><br/>
+																				学历本科，来美国八年，从未结婚，谈过两段感情，目前单身4年多，无信仰，身高166，体重53公斤，喜欢做做饭， 看书，看财经新闻，下雨天喜欢睡觉。 ...
+										<a href="https://www.flushingdating.com/member/636">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/634">
+										<img class="profile" src="https://www.flushingdating.com/uploads/afea7a87bf1c9d51c97376d0d95766aa.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										stone.w  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">ddcctt928</b><br/>
+																				来纽约12年，现在居住在Queens，有属于自己的初创公司，喜欢高尔夫，跑步，离异无孩，身高181，体重167磅 ...
+										<a href="https://www.flushingdating.com/member/634">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/628">
+										<img class="profile" src="https://www.flushingdating.com/uploads/21e7ef17f11c81a25f4f17169ca10098.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Leo lin  
+										<br class="mobile-only" />
+										43, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Leon26815</b><br/>
+																				你好！茫茫人海停下匆忙的脚步相遇也许就是缘份！希望找一个相互珍惜的人！一起生活一起努力让未来更美好！ ...
+										<a href="https://www.flushingdating.com/member/628">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/619">
+										<img class="profile" src="https://www.flushingdating.com/uploads/de723dce7d6e83b1b207edcb5136343b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										rendy  
+										<br class="mobile-only" />
+										39, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">qqq252725</b><br/>
+																				住在纽约bk 厨师职业 看书 打王者 健身 来了12年  高中 未婚  好像什么都信一点 182 cm 190磅 ...
+										<a href="https://www.flushingdating.com/member/619">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/617">
+										<img class="profile" src="https://www.flushingdating.com/uploads/52278b657368441ee6f5c578bd8d459b.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										许念  
+										<br class="mobile-only" />
+										41, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">cutelitte518</b><br/>
+																				给人的第一印象热情，大方，豪爽，勇敢的性格相比长相更值得大家称道。白羊座女生内心都非常善良，美丽，并且长得可爱， ...
+										<a href="https://www.flushingdating.com/member/617">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/616">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e4699887b6bde85b169187b2c7c46474.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Chloe  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">star_bless_u</b><br/>
+																				紐約，香港出生，父母福州，來美20年多，政府部門IT工作。內內外外家務事，愛吃，愛旅遊，愛逛超市... ...
+										<a href="https://www.flushingdating.com/member/616">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/614">
+										<img class="profile" src="https://www.flushingdating.com/uploads/08c7707fa7e8db5310882c3c067d7002.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Li zhang  
+										<br class="mobile-only" />
+										46, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Realtyisgood123</b><br/>
+																				大家好， 我叫张力， 43 岁， 来自中国河南，离异。身高170公分， 体重160 磅。   来美19年，大专学历。  现住college point . 开Uber 和Lyft.  自律， 勤劳， 家庭观念强。 喜欢运动。 ...
+										<a href="https://www.flushingdating.com/member/614">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/603">
+										<img class="profile" src="https://www.flushingdating.com/uploads/b26ea284b3e68205db451d57b00c3f02.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										安娜  
+										<br class="mobile-only" />
+										49, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">AnnaThcy520</b><br/>
+																				本人来自纽约，自由职业，美国公民，中等学历，有婚史，女儿11岁跟父亲一起生活，身高162，体重还可以。 ...
+										<a href="https://www.flushingdating.com/member/603">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/601">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3b93c7f015c679b2c7fece71d23c9a2f.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										gongwang  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">G890309w</b><br/>
+																				本人三十有三，男，美国公民，现居纽约，身有顽疾（语言表达能力很差，平衡力也不是很好，理解力也不行）但行动自如且记忆力过人，思维很跳跃，佛系且感性，亦能上得了厅堂，下得了厨房。谈得了诗词，讲的了历史，说得了江湖，论得了时事，聊得了文学。求一在纽约的红颜知己( ...
+										<a href="https://www.flushingdating.com/member/601">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/600">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c0dcaf869053f43cf75485fa5f0a82e8.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										hui Lin  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">2134585765</b><br/>
+																				从一个浪子到一个想有幸福家的人
+从富有到穷困潦倒再到衣食无忧要什么有什么
+起落中有感悟，平凡中有梦想
+习惯孤独又渴望被人懂 ...
+										<a href="https://www.flushingdating.com/member/600">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/596">
+										<img class="profile" src="https://www.flushingdating.com/uploads/7b098441b1fb9ce3f3dc313cde45af90.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										skyy  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">q732698739</b><br/>
+																				从事开车行业结交新的朋友&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hel ...
+										<a href="https://www.flushingdating.com/member/596">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/592">
+										<img class="profile" src="https://www.flushingdating.com/uploads/b1cdfbaeb23a35f29e8c7f2815141cf6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										kevin xin  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">410117514</b><br/>
+																				现暂住于布鲁克林  从事餐饮业   爱好跑步打球 看书 也会和朋友打打英雄联盟 
+学历不高 所以我的英语很差 不过买个东西应该是没问题  聊天就没办法了  来美国已经七年多了  一直都在外州生活没有机会遇到中国女孩 单身多年????  
+刚刚接触基督教 ...
+										<a href="https://www.flushingdating.com/member/592">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/586">
+										<img class="profile" src="https://www.flushingdating.com/uploads/b171c3277247673bc0242a3201872f60.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Amy  
+										<br class="mobile-only" />
+										34, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Amyyou5566</b><br/>
+																				找比自己年轻的，我来美国18年，大学读了一年，高中学历. 性格开朗，喜欢出门. 住 brooklyn，希望成熟稳重的男孩子. ...
+										<a href="https://www.flushingdating.com/member/586">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/585">
+										<img class="profile" src="https://www.flushingdating.com/uploads/d0d851a4b68619c5c3a2ab01d9821269.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Harry  
+										<br class="mobile-only" />
+										44, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">harrygu001</b><br/>
+																				181 / 69 / 6&rsquo;0&rdquo; / NY 纽约，三观正，不烟不酒，烟酒不沾，无不良嗜好，不是高富帅，也不是小鲜肉，我是肥肚男，未婚傻大叔，爱睡觉，看电视，电影，音乐，上网，阅读，健身运动 ...
+										<a href="https://www.flushingdating.com/member/585">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/583">
+										<img class="profile" src="https://www.flushingdating.com/uploads/32abb24a7f8f0721a46e8767043ebbdc.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Apple Lu  
+										<br class="mobile-only" />
+										38, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">applelu2019</b><br/>
+																				本人广东女35岁，未婚，对方最好也是广东人（北方福建，东北人勿扰）先友后婚，（骗子和杀猪盘勿扰）请VV我: applelu2019(加我请自我介绍一下） ...
+										<a href="https://www.flushingdating.com/member/583">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/581">
+										<img class="profile" src="https://www.flushingdating.com/uploads/50567cc5d6ce242475de04b33a5e3cc7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										jack ei  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">6462063440</b><br/>
+																				本人76年出生福建福州人现在纽约工作，之前在南卡开饭店，疫情原因，所以饭店转让了 ...
+										<a href="https://www.flushingdating.com/member/581">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/576">
+										<img class="profile" src="https://www.flushingdating.com/uploads/36cb84af8bc65b66aa9265d015fd2113.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jay  
+										<br class="mobile-only" />
+										51, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">jay01041944</b><br/>
+																				我是杭州人，男48岁，身高1.75米，体重155磅，高中厨艺学校毕业,不赌、不抽烟，绿卡，2001年来美囯，我没婚史，我在这里做餐馆工作，做日本餐（Sushi）还会做装修，动手能力比较强点，我在法拉盛买了一套一房一厅的公寓楼900尺用【现金支付】，母亲来美 ...
+										<a href="https://www.flushingdating.com/member/576">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/573">
+										<img class="profile" src="https://www.flushingdating.com/uploads/efc8668d771d24799007b4cbbfdebdb4.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Shoyo  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">shoyo77</b><br/>
+																				本科畢業，34歲，計算機專業，做廣告設計，希望對方也是大學畢業，有責任心會照顧人，身高172以上，太瘦的不接受，長相一般就行，覺得自己優秀適合我的可以聯繫我微信：shoyo77 ...
+										<a href="https://www.flushingdating.com/member/573">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/572">
+										<img class="profile" src="https://www.flushingdating.com/uploads/815a3153d32048b4741411eb3a355473.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Michaelle Song  
+										<br class="mobile-only" />
+										30, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">MichaelleSong</b><br/>
+																				91年，硕士，在投行工作，外形可爱漂亮，有闪婚意向（半年内），但拒绝婚前同居或婚前性行为（本人是基督徒），很乖，每天就是早上上班，晚上下班就回家跟荷兰猪玩或者追剧上coursera，有点宅。由于家里人都在国内，社交圈窄，没遇到合适的人。如果你自己或者您的亲 ...
+										<a href="https://www.flushingdating.com/member/572">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/571">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e4e65878b4ecbab262c6572088937dd6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										diah  
+										<br class="mobile-only" />
+										40, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: diaharren@gmail.com<br/>
+																				i am honest kind and fun with good looking i am very loyal and have a good heart and happy always ...
+										<a href="https://www.flushingdating.com/member/571">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/94">
+										<img class="profile" src="https://api.369usa.com/wp-content/uploads/2019/12/katherine.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Katherine  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">k279518740qinlan88</b><br/>
+																				身高165厘米, 纤瘦体形,  19岁与家人一起移民来美国, 在纽约法拉盛住了差不多十多年,  在Queens College读Media Marketing的专业, 在一家华人律师事务所做助理的工作. 有过一段失败的婚姻, 现在带着一个3岁的女孩 ...
+										<a href="https://www.flushingdating.com/member/94">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/567">
+										<img class="profile" src="https://www.flushingdating.com/uploads/fef5634fbf6e5427ff3ce957f066b2ac.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										威廉  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">williamlu430</b><br/>
+																				现居纽约法拉盛，职业电商，来美国十几年，美国公民，全家移民美国，大学，身高174 ...
+										<a href="https://www.flushingdating.com/member/567">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/565">
+										<img class="profile" src="https://www.flushingdating.com/uploads/61ca8ad3df12ec76032adfe1e9919bd1.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Feng  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">fengcse1</b><br/>
+																				80后，在New Jersey有房。我人差不多到中年，有房。喜欢电脑。想找个女人结婚。我的微信是 fengcse1 ...
+										<a href="https://www.flushingdating.com/member/565">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/564">
+										<img class="profile" src="https://www.flushingdating.com/uploads/033cc7fe69814cb4bf015f8e1b136906.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sophia  
+										<br class="mobile-only" />
+										39, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Sophia09n</b><br/>
+																				居住在华盛顿特区，来自湖南长沙，从事珠宝设计行业，喜欢养花，打golf，做瑜伽，滑雪，旅游，逛街，看书，听音乐&hellip;已经到美国12之久，硕士，单身，无信仰者，166cm，54kg&hellip; ...
+										<a href="https://www.flushingdating.com/member/564">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/563">
+										<img class="profile" src="https://www.flushingdating.com/uploads/63deb912f0241db273e291f5f2f6b783.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										hong mei zhu  
+										<br class="mobile-only" />
+										47, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">9176678109</b><br/>
+																				美国纽约现在居住法拉盛，餐馆 喜欢旅游 ，来美国4年，离婚，身高158体重120磅，善良 孝顺 保守 ...
+										<a href="https://www.flushingdating.com/member/563">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/562">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e0059e78b72eacafb14a14086e8c2a6c.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Fei  
+										<br class="mobile-only" />
+										36, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">AliceQu1989</b><br/>
+																				我叫Fei，坐标纽约法拉盛，出生中国青岛，身高168 ，身材均匀，工作稳定，有房，性格好，无不良嗜好。现需征一枚阳光有上进心的男公民，英文必须要好，内心成熟稳重，有责任与担当，对待感情专一，脾气好，不赌不嫖，身高175以上，不需要太帅，怕Hold不住，开玩 ...
+										<a href="https://www.flushingdating.com/member/562">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/541">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c1484d2c724a7ef899844197155a9cd5.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										马馨研  
+										<br class="mobile-only" />
+										34, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: xinm17077@gmail.com<br/>
+																				纽约征婚 ！本人90年，性别女，来自台湾，现寻男友一名，有意者请加LINE：mxinyan948
+我是做化妆品的，收入稳定。 
+择偶要求：年龄不能超过50岁，有正经工作，你可以没车，但一定要有房，一定要会疼人，非常勿扰，杀猪盘勿扰。 
+LINE：mx ...
+										<a href="https://www.flushingdating.com/member/541">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/538">
+										<img class="profile" src="https://www.flushingdating.com/uploads/ec8032ef85e71d55c0680326868df57c.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										小宝  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Bewithme918</b><br/>
+																				1.年龄40
+3.来自广州老爸上海人, 公民
+2身高：172
+3工作：自主营业
+4居住：已购房,有车
+5婚姻状况: 未婚也没有小孩
+6嗜好：旅游，音乐，足疗
+7寻找三观一致 有共同兴趣懂得换位思考的你，你在哪我等你[爱心]
+8.收入：年收入 ...
+										<a href="https://www.flushingdating.com/member/538">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/537">
+										<img class="profile" src="https://www.flushingdating.com/uploads/bd7dbbad97cec5a3335ce1f17ee8d8cd.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										allan  
+										<br class="mobile-only" />
+										33, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">941410173</b><br/>
+																				现居住法拉盛，来自福建福州，来美5年左右，高中学历，未婚，身高165 体重110磅. ...
+										<a href="https://www.flushingdating.com/member/537">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/536">
+										<img class="profile" src="https://www.flushingdating.com/uploads/3e9122dd2093785b0d2ebe8c365c8de1.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										林维鑫  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">linweixin2524</b><br/>
+																				我来美国快六年了，浙江温州人，91年出生，净身高170，体重75，性格比较内向，不善言辞，朋友很少，平时喜欢宅在家里看书看电视。因为大学毕业前半年得了躁郁症，这八九年来这个病痛一直没好，所以工作经历不丰富，经常是上一段时间班病情加重就要离职回家修养，现在这 ...
+										<a href="https://www.flushingdating.com/member/536">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/532">
+										<img class="profile" src="https://www.flushingdating.com/uploads/d934f99dad220cc64260de367fbe4960.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Ada Liu  
+										<br class="mobile-only" />
+										30, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">7187102384</b><br/>
+																				代女征婚：Ada Liu, 95后, 身高1米75，美国公民，祖籍广州市，老外护理公司做经理，兼职做人寿保险。喜欢看书，看电影，听音乐和旅行。希望找一个三观一至的男生。联系人（父母）手机7187102384 ...
+										<a href="https://www.flushingdating.com/member/532">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/528">
+										<img class="profile" src="https://www.flushingdating.com/uploads/e69ac973fe1074a58e9165b034cd0ad6.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jackson  
+										<br class="mobile-only" />
+										48, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6463422071</b><br/>
+																				Jackson liu ,美国公民，身高181，年龄45岁，经营牙科产品，离异来自广东，热爱运动和旅行，寻找一位先友后婚，有共同语言的女孩 ...
+										<a href="https://www.flushingdating.com/member/528">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/527">
+										<img class="profile" src="https://www.flushingdating.com/uploads/d530f7809afe00a8f0016847d8110bcd.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										ANNIE YONG  
+										<br class="mobile-only" />
+										45, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: anniechinchin@yahoo.com<br/>
+																				开朗，真诚，喜欢旅游。可以文静也可以活泼。职业-销售。离异， 住在唐人街。希望往后余生可以找到另一半真诚的走在一起。 ...
+										<a href="https://www.flushingdating.com/member/527">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/518">
+										<img class="profile" src="https://www.flushingdating.com/uploads/de901d18910c343ba9cbc972b4c42cab.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										蔡秋华  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">cqh597597</b><br/>
+																				爱好看书，旅游，听音乐，看新闻，双鱼座的我有时候会比较喜欢百变的人生，目前工作居住都在曼哈顿，迫切需要寻找有缘人组成美满家庭！ ...
+										<a href="https://www.flushingdating.com/member/518">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/499">
+										<img class="profile" src="https://www.flushingdating.com/uploads/f85bb6f7cd814ee33f081e2188321414.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Bob  
+										<br class="mobile-only" />
+										40, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">bzh11220</b><br/>
+																				代儿征婚：85年男，未婚单身，美籍华人，纽约教师，纽约长大，说英粤语和一点点國语，阳光健康，经济小康，温和耐心，诚恳征婚：寻觅现居纽约市的英语流利34岁以下未婚美丽女士，有意者请发照片及介绍一下自己和择偶要求。联系人（父母）手机347-634-4336 微 ...
+										<a href="https://www.flushingdating.com/member/499">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/491">
+										<img class="profile" src="https://www.flushingdating.com/uploads/1ed9e817d1da036744c8dc4ff944f966.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										an na  
+										<br class="mobile-only" />
+										55, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">yong945491127</b><br/>
+																				我51岁，身高172公分，60公斤，离婚有一男孩已长大成人，希望认识一位合得来的一起携手共度余生 ...
+										<a href="https://www.flushingdating.com/member/491">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/479">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c3272a91d92770d14e34420b7387f52b.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										TinaJ  
+										<br class="mobile-only" />
+										39, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">85251276542</b><br/>
+																				Looking for emotional single-minded, willing to take care of each other, kind-hearted, grateful him. Families are made of people ...
+										<a href="https://www.flushingdating.com/member/479">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/411">
+										<img class="profile" src="https://www.flushingdating.com/uploads/90930f4225524506a579118cc9115f88.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										刘曜宁  
+										<br class="mobile-only" />
+										29, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">long23689</b><br/>
+																				小兒有遠大的志向，从小自學成才，一直在做Proprietary trader自營貿易商. ...
+										<a href="https://www.flushingdating.com/member/411">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/409">
+										<img class="profile" src="https://www.flushingdating.com/uploads/099ca9499c7c1346342d7f46b2351638.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										andy  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">12672257286</b><br/>
+																				Hobbies (morning running, yoga, swimming, fitness, travel, golf, badminton, movies) The phone number is my whatsAPP you can add  ...
+										<a href="https://www.flushingdating.com/member/409">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/408">
+										<img class="profile" src="https://www.flushingdating.com/uploads/24b9b34ef93e9739cf77b919d89a86fb.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										刘蕊  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Lz19162</b><br/>
+																				云南昆明人，19岁来美国留学，现在波士顿一家网络科技公司上班，工作稳定。寻找真心、可靠、有责任感的另一半共度余生。 ...
+										<a href="https://www.flushingdating.com/member/408">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/407">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c2d58140da40424a6a29a525121d26b9.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										：Andy Ren  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">AR117-526-7686</b><br/>
+																				46岁 福州人来自纽约公民 我是离婚过中年大叔 也有小孩 但是都不跟我在一起生活独立了 想找一个能和我一起陪伴到老的伴侣 。 ...
+										<a href="https://www.flushingdating.com/member/407">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/406">
+										<img class="profile" src="https://www.flushingdating.com/uploads/c223dbef718cbac81be593b7d75aeb39.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										VINCENT  
+										<br class="mobile-only" />
+										41, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">3473481963</b><br/>
+																				我是一个年轻男人，正在寻找一个认真的女人我是一个年轻男人，正在寻找一个认真的女人我是一个年轻男人，正在寻找一个认真的女人 ...
+										<a href="https://www.flushingdating.com/member/406">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/405">
+										<img class="profile" src="https://www.flushingdating.com/uploads/50e44e0bf077246d2cd82a248ba8b1e7.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Danny Ying  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">yushuyingd</b><br/>
+																				network engineer
+From Taiwan and drivoce network engineer
+From Taiwan and divorce am living alone looking for someone can play ...
+										<a href="https://www.flushingdating.com/member/405">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/402">
+										<img class="profile" src="https://www.flushingdating.com/uploads/250b86a0adc4cce7173b89867b6d07a0.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										owen wu  
+										<br class="mobile-only" />
+										26, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wly450</b><br/>
+																				身高1米73 体重150本人22 来自福州13年移民来的 性格开朗 专一  目前工作是sushi 想找个合得来的女生，静下心来时候看着身边朋友 同学都找到另外一半，感觉挺羡慕的想好好牵挂一个人，被人牵挂的温暖，非结婚勿扰。 我不想太复杂你来我往的试探，我的 ...
+										<a href="https://www.flushingdating.com/member/402">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/401">
+										<img class="profile" src="https://www.flushingdating.com/uploads/64cd3ed3071b36ade3d2ef0f98218d9e.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										兮余年  
+										<br class="mobile-only" />
+										26, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">hunter1109201</b><br/>
+																				本人22岁  身高171   150LB
+来自福州 ，09年移民到美国
+本科毕业，喜欢打篮球，乒乓球，网球，性格开朗
+目前创业阶段 ...
+										<a href="https://www.flushingdating.com/member/401">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/192">
+										<img class="profile" src="https://www.flushingdating.com/uploads/5d49199c6d27b9b3c54efcd85d48eb4d.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Ken lu  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Bewithme91</b><br/>
+																				自我介绍一下吧，非诚勿扰
+卢琨，英文ken. 小名小宝
+常驻美国纽约。纽约理工大学毕业，80年，172身高
+在纽约有自己的驾驶学校，但不用怎么管理。还有是机场免税店的店长。副业是婚礼主持兼歌手。曾经主持梦之声，麦王争霸，各大社团的联欢会纽约区的，等， ...
+										<a href="https://www.flushingdating.com/member/192">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/194">
+										<img class="profile" src="https://www.flushingdating.com/uploads/1aabde95ffb4253e87825cb02a16eb7d.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Andy Zhu  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">andyzhu2017</b><br/>
+																				我来自上海今年37岁，身高一米八会计硕士毕业。在一家国际著名跨国公司上班。我平时爱好健身唱歌和美食。我希望我另外一半和我有同样的背景和文化。如果也热爱健身那最好哦。 ...
+										<a href="https://www.flushingdating.com/member/194">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/111">
+										<img class="profile" src="https://api.369usa.com/wp-content/uploads/2019/12/little-red-hat.jpg" />
+									</a>
+									<p style="word-wrap: break-word;">
+										小红帽(Su Ting)  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">suting59252</b><br/>
+																				158cm，广州人。来美国2年了, 现在在法拉盛一家餐馆里工作. 为人比较温柔知性, 成熟和比较懂得照顾别人, 希望找一个三观一致的男生. 喜欢的男孩至少要168CM以上, 三观正的有身份的男生 ...
+										<a href="https://www.flushingdating.com/member/111">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>
+														<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/4705">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Steven  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: freedomtreeny@gmail.com<br/>
+																				本人男80年，出生广东，高1米70, 1997年与父母移民到纽约市，美国公民,从未婚过，没孩子。金融本科生。有房，有车，做医疗保险工作。有爱心和理想，本人性格随和，想与有缘人建立家庭。 ...
+										<a href="https://www.flushingdating.com/member/4705">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3788">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										cici zhang  
+										<br class="mobile-only" />
+										39, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9175306748</b><br/>
+																				本人公民来美十余年，现居纽约布鲁克林，性格外向，喜欢旅游，美食，音乐，离异带娃。身高160，体重125，为人正直。希望找一个善良，经济稳定，不限身份。愿意携手面对生活。 ...
+										<a href="https://www.flushingdating.com/member/3788">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3460">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Howie  
+										<br class="mobile-only" />
+										38, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Wxzhrxyf</b><br/>
+																				纽约长岛，自己经营一家公司，大学本科，单身。你好我是一位性格温和、真诚细致的人，平时喜欢安静地读书、听音乐，也喜欢偶尔出发去旅行，看看不同的风景，感受不同的文化。
+读书让我不断思考和成长，音乐是我生活中不可缺少的陪伴，无论是轻音乐还是中文老歌都很喜欢。旅 ...
+										<a href="https://www.flushingdating.com/member/3460">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/3451">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										we song  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: veiguosong@gmail.com<br/>
+																				纽约小颈, 医学，来美20年，博士，丧偶，有一女儿独立，基督教，165cm,55kg.喜欢旅游，运动， ...
+										<a href="https://www.flushingdating.com/member/3451">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1073">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Aaron  
+										<br class="mobile-only" />
+										46, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">13922765640</b><br/>
+																				Great neck 自有公司 来美6年 大学本科 离异 165cm 60kg 想找一个公民恋爱 结婚 ...
+										<a href="https://www.flushingdating.com/member/1073">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1054">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										杰  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">2023753610</b><br/>
+																				本人现居加州LA，祖籍是重庆的，我来美国12年了，有稳定的工作有房有车，现处于单身，我是一个无神论者，但是我对宗教的文化很感兴趣，本人身高177，体重73公斤 ...
+										<a href="https://www.flushingdating.com/member/1054">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1042">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										爱文  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">getsunny2015</b><br/>
+																				纽约华人男士， 46, 帅气不减, 正职, 健康, 真诚待人, 无不良习惯, 平时爱做健康美食、户外旅行, 摄影, 园艺, 骑行, 游泳及养生。没有焦虑，没有病痛，没有抱怨. 来美挺久了, 您关心的身份，车，房，硬件等等。。。该有的都有的. 
+wx: g ...
+										<a href="https://www.flushingdating.com/member/1042">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1027">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Evan  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">l_284754892</b><br/>
+																				现居住纽约brooklyn,来自福建福州，婚姻状况：未婚
+职业：餐饮, 来美10+年, 信仰：基督教, 兴趣爱好： 看书、旅游&hellip; ...
+										<a href="https://www.flushingdating.com/member/1027">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1022">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										eddie  
+										<br class="mobile-only" />
+										27, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">huang_love_i</b><br/>
+																				纽约法拉盛刚来美国，喜欢交友出去旅游看海，身高177体重160希望找个三观合适的，年纪上下3岁 ...
+										<a href="https://www.flushingdating.com/member/1022">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/1005">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jordan  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Jordan8882008@icloud.vom<br/>
+																				49岁，男，公司经理。来美国多年，来自中国西南，美国硕士学位，178，70斤，长相75分，家庭出身好。我喜欢自由，爱好跑步，信仰基督教。 ...
+										<a href="https://www.flushingdating.com/member/1005">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/999">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Chris  
+										<br class="mobile-only" />
+										28, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wxid_ulx6j4u9yf9x12</b><br/>
+																				紐約，朋友介紹上來看看，認識一些新的朋友接觸新的事物.123455555555555555555555 ...
+										<a href="https://www.flushingdating.com/member/999">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/993">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Chloe Huang  
+										<br class="mobile-only" />
+										40, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">CholeChen2988</b><br/>
+																				126lb
+1.60米
+三观正
+大家好，我是一个善良可爱、活泼开朗的女生。我喜欢帮助他人和分享自己的快乐，也热衷于尝试新事物和挑战自我。一个笑点超低的女生，喜欢探索生活中的小美好，期待与有趣的你相遇。又是一个喜欢挑战、追求创新的女生。我喜欢尝试不同的 ...
+										<a href="https://www.flushingdating.com/member/993">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/985">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										PAUL CHEN  
+										<br class="mobile-only" />
+										52, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Chenwen02160722</b><br/>
+																				人品好，善良、孝顺、勤劳、仗义，；自己经营指甲店。大学文化、50岁多些、住纽约布鲁克林。 ...
+										<a href="https://www.flushingdating.com/member/985">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/962">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jane  
+										<br class="mobile-only" />
+										44, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">JCJ晴</b><br/>
+																				我是香港移民到紐西蘭已經十五年，本人是自顧人士經濟獨立、喜歡古典音樂、愛好旅遊、運動方面喜歡游泳 ...
+										<a href="https://www.flushingdating.com/member/962">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/949">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Yang C  
+										<br class="mobile-only" />
+										39, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Yangchen4386</b><br/>
+																				现住bayside.10岁左右移民来美。大学学历。性格温和，生活简单。闲时海边跑步，溜狗 ...
+										<a href="https://www.flushingdating.com/member/949">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/944">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										simon  
+										<br class="mobile-only" />
+										46, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">simon_y3k</b><br/>
+																				来美20年，离异，小孩以成人，身高1.73 体重180磅，职业老板。三观正常  不烟，少酒，样貌偏上，好看 ...
+										<a href="https://www.flushingdating.com/member/944">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/939">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Warren  
+										<br class="mobile-only" />
+										54, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">warrendong888</b><br/>
+																				美国公民，来美23年，离异多年，有一漂亮优秀的女儿在大公司工作！单身一人在美国生活，无负担，在金融行业工作多年。爱烧饭菜，爱旅游。性格外向，开朗，风趣幽默。 ...
+										<a href="https://www.flushingdating.com/member/939">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/938">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Brian  
+										<br class="mobile-only" />
+										31, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: brianchen081394@gmail.com<br/>
+																				纽约，工程师，兴趣爱好是学习和看电视，来美20多年，学历本科硕士都是工程专业，目前单身，信仰无，身高6ft,体重190lbs。 ...
+										<a href="https://www.flushingdating.com/member/938">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/935">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										LiSa  
+										<br class="mobile-only" />
+										49, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wxid_0b0jaxe9h70k12</b><br/>
+																				本人现在住Scarsdale 附近，家庭助理，来美国两年，喜欢烧饭，整理，学习，运动，旅游，大专，分居，身高160厘米体重：60公斤
+善良，真诚，大方健谈，经济实惠，不虚伪 ...
+										<a href="https://www.flushingdating.com/member/935">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/919">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										matthew  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">wenno123521</b><br/>
+																				现居法拉盛、单身、身高176 体重175磅、来美8年、公民身份、希望找一个北方女孩、165左右、 ...
+										<a href="https://www.flushingdating.com/member/919">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/914">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										lulu  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">louise0419</b><br/>
+																				我是上海人移民美国已经15年以上了，现在生活在法拉盛，本科毕业，未婚，没有孩子，现在律所工作，高162/106磅。 ...
+										<a href="https://www.flushingdating.com/member/914">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/901">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										GQ  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">gud4001</b><br/>
+																				住SI 廣東廣州 高170 未婚 興趣小説 畫畫 無神論者 三觀正常 無不良嗜好 ...
+										<a href="https://www.flushingdating.com/member/901">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/893">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										旺角  
+										<br class="mobile-only" />
+										36, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">taibao401</b><br/>
+																				Hi, my name is Samuel,  Now I work in a pharmaceutical company as a chemist.  I&rsquo;m still single, hopefully my future girlfr ...
+										<a href="https://www.flushingdating.com/member/893">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/888">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										老林  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">7732807874</b><br/>
+																				大家好，我目前居住在洛杉矶中国城，我今年45岁了，希望能在这里找到一个灵魂伴侣，谢谢这是我的联系方式 batcheloronc@gmail.com ...
+										<a href="https://www.flushingdating.com/member/888">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/885">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										一心  
+										<br class="mobile-only" />
+										44, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">yuxin-0905</b><br/>
+																				现居纽约，爱下厨，旅游唱歌，身高1.64，体重70公斤，热爱生活，从事健康管理工作，性格开朗，阳光有爱心，顾家！ ...
+										<a href="https://www.flushingdating.com/member/885">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/877">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jeff  
+										<br class="mobile-only" />
+										29, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6462620435</b><br/>
+																				征婚
+1.性别：男
+2.出生年月：1996年2月
+3.身高：172cm
+4.学历：本科大学名字SUNY Buffalo研究生学校名字Georgia Teah
+5.专业：计算机
+6.职业：程序员
+7.现居城市：纽约皇后区
+8.性格及爱好：性格 ...
+										<a href="https://www.flushingdating.com/member/877">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/870">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										luca lan  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">lan52006</b><br/>
+																				我是福建省连江县 我现在居住在纽约布鲁克林 我是美甲师 身高179cm 来美国有六年多了 未婚 ...
+										<a href="https://www.flushingdating.com/member/870">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/869">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										樱桃  
+										<br class="mobile-only" />
+										33, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">16465750743</b><br/>
+																				现在居住纽约布鲁克林 我是福建省连江人我是美甲师 未婚，兴趣就是在家里做很多甜点 ...
+										<a href="https://www.flushingdating.com/member/869">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/865">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Kai  
+										<br class="mobile-only" />
+										25, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">7186752317</b><br/>
+																				現住法拉盛, 身高175cm體重61kg有健身, 99年香港人來美8年, 研究生半工讀. 單身24年 ...
+										<a href="https://www.flushingdating.com/member/865">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/855">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jeff  
+										<br class="mobile-only" />
+										38, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">3476090524</b><br/>
+																				地標紐約，碩士畢業，普通的打工仔。希望交到一個女友可以相互淡心交往。本人無不良嗜好。會話，英語，粵話，普通話。 ...
+										<a href="https://www.flushingdating.com/member/855">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/851">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										杰  
+										<br class="mobile-only" />
+										21, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6462405396</b><br/>
+																				纽约布鲁克林八大道附近，喜欢宅家不怎么花钱，来美5年，个人喜欢漂亮女生，而且个人比较专情 ...
+										<a href="https://www.flushingdating.com/member/851">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/850">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										未来  
+										<br class="mobile-only" />
+										45, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: lyishan962@gmail.com<br/>
+																				来自中国，自由职业，很多爱好，来美10年，学历硕士，婚姻状况离异，信仰无，身高180，体重78，三观超正等等... ...
+										<a href="https://www.flushingdating.com/member/850">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/848">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Frank  
+										<br class="mobile-only" />
+										54, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: cdshcn@gmail.com<br/>
+																				本人现居纽约皇后区，西人公司实验室主任，来美国20多年，博士学历，离过婚，没有小孩。身高1.75米，体重160磅，三观端正，真诚善良。 ...
+										<a href="https://www.flushingdating.com/member/848">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/842">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										顾玲  
+										<br class="mobile-only" />
+										34, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Sulammm</b><br/>
+																				现居香港，91年生，在SF有房子，纽约时常去出差，寻一个能陪伴我走完下半生的男人，有责任感第一，物质其次，本人做红酒进出口外贸，有自己的公司，喜欢旅游，健身，Golf，等一切能热爱生活的东西 ...
+										<a href="https://www.flushingdating.com/member/842">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/836">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Bella  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9292045747</b><br/>
+																				常住纽约，法拉盛有几处房产，也有自己店铺，特别独立，本科毕业，未婚 。 
+信佛教 ， 南方娇小型身材，体重98 斤左右 ，来美国十几年，公民身份 ，平时工作很忙，圈子很小，不接受纽约以外的人。 ...
+										<a href="https://www.flushingdating.com/member/836">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/831">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sara38  
+										<br class="mobile-only" />
+										50, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Sunnxin38@gmail.com<br/>
+																				我居住在纽约法拉盛附近，离异多年，来美12年绿卡，经济条件还算可以，爱干净整洁，整体形象中上，三观正 ...
+										<a href="https://www.flushingdating.com/member/831">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/793">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										午夜星河  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">henry3679</b><br/>
+																				我是henry.现居纽约.兴趣广泛!高:1.84cm.180bl.本科.未婚,正职,身体健康.形象气质良! ...
+										<a href="https://www.flushingdating.com/member/793">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/791">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										chen bin  
+										<br class="mobile-only" />
+										40, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9174858755</b><br/>
+																				爱钓鱼和户外运动，我在美国法拉盛。希望找到一个直接的女士。我身高184体重142 ...
+										<a href="https://www.flushingdating.com/member/791">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/790">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Gary  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Gary</b><br/>
+																				I live on Long Island in a town called Huntington.
+I was born in Brooklyn but grew up here. Retired from
+the clothing business ...
+										<a href="https://www.flushingdating.com/member/790">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/786">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										白富美  
+										<br class="mobile-only" />
+										43, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">13759977217</b><br/>
+																				纽约投行前台工作，高中毕业来美国，现居纽约下城。 擅长提供情绪价值，聊天不会冷场，平时喜欢调酒、探店、研究厨艺、纽约基本没有没去过的餐厅。 希望认识人品无瑕疵，三观正常、30岁以下的美国公民。 有兴趣可联系 ...
+										<a href="https://www.flushingdating.com/member/786">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/785">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										terrse  
+										<br class="mobile-only" />
+										55, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">black90129012</b><br/>
+																				來美15年，目前住法拉盛，喜歡旅遊，美食，音樂。。。。。。。。。。。。。。。。。。。。。。。 ...
+										<a href="https://www.flushingdating.com/member/785">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/759">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										杨颖  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: yingleiy@buffalo.edu<br/>
+																				你好 我来自江苏，现居住在法拉盛，本科毕业来美7年，单身，喜欢音乐与旅游，现在餐饮业工作。 ...
+										<a href="https://www.flushingdating.com/member/759">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/756">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Orange  
+										<br class="mobile-only" />
+										45, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Sandsland123@yahoo.com<br/>
+																				善良忠诚专一
+素食 
+喜欢大自然 road trips
+ 听音乐 painting
+唱歌 写写东西
+寻找能相伴相爱终老的婚姻伴侣 ...
+										<a href="https://www.flushingdating.com/member/756">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/755">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Aaron  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">ad52ka</b><br/>
+																				我是一个温柔、热情、大方的东方男性，一直注重自我修养，热爱旅游。音乐和健身是我的最爱。我有广泛的爱好，如打羽毛球，徒步旅行，骑自行车和登山。我有一个积极的人生观。我一直梦想着和我的爱人去任何地方享受彼此的生活，比如在沙滩上牵手的浪漫，或者周末我们躺在沙发上 ...
+										<a href="https://www.flushingdating.com/member/755">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/749">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										杰西  
+										<br class="mobile-only" />
+										43, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: brianrao20020918@gmail.com<br/>
+																				纽约布鲁克林，1982年，来美20年，离异7年，孩子已成年，身高161，体重125磅，喜欢旅行，听音乐 ...
+										<a href="https://www.flushingdating.com/member/749">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/743">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										su e  
+										<br class="mobile-only" />
+										55, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: liu196825@gmil.com<br/>
+																				纽约新海德公园，喜欢旅行、美食，来美半年多，大专学历、离异，无信仰63公斤163cm, ...
+										<a href="https://www.flushingdating.com/member/743">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/740">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										linda  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6462759256</b><br/>
+																				just test just test just test just test just test just test just test just test just test just test just test just test just tes ...
+										<a href="https://www.flushingdating.com/member/740">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/690">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Ula  
+										<br class="mobile-only" />
+										41, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: 1254590979@qq.com<br/>
+																				来自福建，84年，身高165，体重110磅，来美多年，从事服务行业，现居纽约，喜欢羽毛球，网球，逛街 ...
+										<a href="https://www.flushingdating.com/member/690">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/681">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Irene  
+										<br class="mobile-only" />
+										44, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Irene3333</b><br/>
+																				我是40+小姐姐 现居住在queens，美国公民，离异有小孩 身高168 体重偏胖 目前从事美容美发 ...
+										<a href="https://www.flushingdating.com/member/681">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/679">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										LIN  
+										<br class="mobile-only" />
+										42, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: xiaoma7165@gmail.com<br/>
+																				皇后区，来自广西，投资，旅游，阅读，听音乐，本科，离异，无信仰，身高177，体重69kg，阳光。 ...
+										<a href="https://www.flushingdating.com/member/679">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/671">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										大奇  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: Tyronemen28@gmail.com<br/>
+																				男，55岁，丧偶。住纽约法拉盛，本人健康、开朗，身高180，工作稳定，无负担，喜欢旅游。 ...
+										<a href="https://www.flushingdating.com/member/671">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/663">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Frank  
+										<br class="mobile-only" />
+										44, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: qinglin011591@gmail.com<br/>
+																				来至纽约皇后区， 国际贸易公司主管， 从事与餐饮供应链相关工作； 喜欢自驾游， 喜欢欣赏不同的风景； 喜欢美食， 希望能遇到心怡的那个妳一起品尝不同的美食。 ...
+										<a href="https://www.flushingdating.com/member/663">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/654">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jifff  
+										<br class="mobile-only" />
+										38, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: 3368@hotmail.com<br/>
+																				未婚 性格开朗 未婚性格开朗 是一種的感覺 我們也很開心的在這裡就是這樣吧 你性格開心呀  未婚性格开朗 ...
+										<a href="https://www.flushingdating.com/member/654">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/644">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										周雨思  
+										<br class="mobile-only" />
+										42, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">cfzl354479</b><br/>
+																				我是83年的，北京人，来纽约4年
+本人硕士毕业，诚实踏实，爱好广泛，听歌健身读书电影，为人善良，重家庭，讲礼貌。 ...
+										<a href="https://www.flushingdating.com/member/644">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/642">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Mia  
+										<br class="mobile-only" />
+										40, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: 1668950394@qq.com<br/>
+																				未婚，我于2001年来美国，本科毕业，办公室文员，身高1.62，体重100磅，性格内向，现住纽约曼哈顿...... ...
+										<a href="https://www.flushingdating.com/member/642">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/639">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										qiang  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">jackey128128</b><br/>
+																				本人五十出头，广东人广州，高中毕业，身高一米七三，体重一百五十镑左右。兴趣体育，听歌，旅游。五官端正，来纽约二十余年，现住纽约法拉盛，现在分居，有一个五岁女儿，职业餐饮行业.. ...
+										<a href="https://www.flushingdating.com/member/639">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/618">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Xiao  
+										<br class="mobile-only" />
+										40, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: xgz014@gmail.com<br/>
+																				纽约法拉盛, 城市福建，职业教育，学历本科，婚姻状况未婚，身高170，兴趣爱好看书 ...
+										<a href="https://www.flushingdating.com/member/618">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/608">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Deja  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9296663980</b><br/>
+																				现居纽约皇后区，身高180cm，体重190磅/85公斤，喜欢运动锻炼，特别是球类运动 ...
+										<a href="https://www.flushingdating.com/member/608">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/602">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jo Jo  
+										<br class="mobile-only" />
+										35, 女生<br/>
+									</p>
+									<p class="intro">
+																					电邮: jo.anq75@gmail.com<br/>
+																				五岁随父母留学来到美国纽约市。大学本科学历。
+现在在曼哈顿上市公司作市场设计管理工作。
+未婚。 ...
+										<a href="https://www.flushingdating.com/member/602">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/598">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										blair  
+										<br class="mobile-only" />
+										36, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">blairflaang</b><br/>
+																				现居住在纽约中城，计算机硕士，未婚，来美十年。希望找到一个可以组建家庭让我父亲放心。我会努力成为一个好妻子，在追求自己梦想的同时支持丈夫的梦想。 ...
+										<a href="https://www.flushingdating.com/member/598">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/594">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Rich  
+										<br class="mobile-only" />
+										49, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Nyc_interflow</b><br/>
+																				喜欢运动、美食，住在Queens.希望认识可以一起游玩、运动、美食，经常笑口常开的女性。 ...
+										<a href="https://www.flushingdating.com/member/594">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/582">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										名顺  
+										<br class="mobile-only" />
+										37, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">71268888</b><br/>
+																				旅游 健身男92年的，石家庄人，摩羯座，身高178，体重154。心地开朗阳光善良，三观正.，有车有独立婚房，工作稳定。喜欢看电影、听歌、美食（无辣不欢）、运动（打篮球），自认为样貌一般不帅也不丑，想找一个性格好点开朗温柔善良的姑娘。2019不想在单身了！期 ...
+										<a href="https://www.flushingdating.com/member/582">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/540">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										网名而已  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">Line：sxh9692632</b><br/>
+																				目前在檀香山生活，零售业，服务业，07年到美国的，离异，177cm，74kg，基本信息就这些，具体详细的在了解吧 ...
+										<a href="https://www.flushingdating.com/member/540">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/534">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										marc  
+										<br class="mobile-only" />
+										32, 男生<br/>
+									</p>
+									<p class="intro">
+																					电邮: kevin3020@yahoo.com<br/>
+																				180，本科毕业，在美国有身份，现在在NY货代物流公司上班，勤劳肯干，踏实本分，希望找一个年龄相仿的女孩子，先友后婚，希望双方都可以珍惜这一段缘分。 ...
+										<a href="https://www.flushingdating.com/member/534">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/515">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										danny lin  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">fujianchef</b><br/>
+																				差十几天90后，来美13年福建人 家人都在美国。都是做餐馆的。我英文不好。开了间日本餐。 身份是绿卡。希望找一个懂的过日子的女孩。其实生活很简单 只是人们不懂的满足。只喜欢南方姑娘。希望遇见那个她。 ...
+										<a href="https://www.flushingdating.com/member/515">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/475">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										小鹿  
+										<br class="mobile-only" />
+										37, 女生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">3479251942</b><br/>
+																				择一人而白首 ，择一城而终老 
+34岁 女 未婚  东北人 喜欢读书旅游和拼lego
+正在努力实现经济自由 ...
+										<a href="https://www.flushingdating.com/member/475">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/423">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										teng  
+										<br class="mobile-only" />
+										55, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">9177048783</b><br/>
+																				本人爱人已去世，想找一个能够伴随一生的女人，只要心灵善良别无要求。 ...
+										<a href="https://www.flushingdating.com/member/423">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/412">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jeff Tan  
+										<br class="mobile-only" />
+										35, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">6462588781</b><br/>
+																				男，31，码农，有房有车，美国公民，现居纽约，兴趣爱好十分广泛，包括但不限于钢琴，足球，乒乓球。诚心寻找同城另一半。希望另一半是一个有趣的人，大家有共同话题以及爱好。 ...
+										<a href="https://www.flushingdating.com/member/412">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/404">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Sun  
+										<br class="mobile-only" />
+										30, 男生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">5206744</b><br/>
+																				删除00000000000000000000000000000000000000000000000000 ...
+										<a href="https://www.flushingdating.com/member/404">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+													<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/403">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Jasmine Mai  
+										<br class="mobile-only" />
+										51, 女生<br/>
+									</p>
+									<p class="intro">
+																
+											微信: <b class="focus">jasmink34</b><br/>
+																				48岁， 江南女，身高160，五官端正， 四肢健全， 心理健康， 来美国20多年，离婚，经济独立，无负担，住纽约皇后区，公司正职，朝九晚五，休周末，爱整洁。骗子勿扰，非诚勿扰，请 E-mail 电邮联系 ...
+										<a href="https://www.flushingdating.com/member/403">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+						<div class="clear"></div>							<div class="col-6">
+								<div class="member">
+									<a href="https://www.flushingdating.com/member/399">
+										<img class="profile" src="//www.flushingdating.com/assets/images/nobody.png" />
+									</a>
+									<p style="word-wrap: break-word;">
+										Bean  
+										<br class="mobile-only" />
+										34, 男生<br/>
+									</p>
+									<p class="intro">
+																					电话: <b class="focus">2156176727</b><br/>
+																				来找一个三观与喜好相同的有缘人 在一起看书 刷剧 一起吃喝 旅游 聊天 有兴趣的人可以联系 ...
+										<a href="https://www.flushingdating.com/member/399">[更多]</a>
+									</p>
+									<div class="clear"></div>
+								</div>
+							</div>
+												<div class="clear"></div>
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="my-ad"></div>
+
+<div class="footer">
+	<div class="container">
+		<h3>婚恋博客文章</h3>
+		<ul>
+			<li><a href="https://www.flushingdating.com/blog/%e9%95%bf%e5%be%97%e6%bc%82%e4%ba%ae%ef%bc%8c%e5%9c%a8%e7%ba%bd%e7%ba%a6%e4%bd%86%e6%89%be%e4%b8%8d%e5%88%b0%e7%94%b7%e6%9c%8b%e5%8f%8b%e8%af%a5%e6%80%8e%e4%b9%88%e5%8a%9e%ef%bc%9f">长得漂亮，在纽约但找不到男朋友该怎么办？</a></li><li><a href="https://www.flushingdating.com/blog/%e5%9c%a8%e7%ba%bd%e7%ba%a630%e6%89%be%e4%b8%8d%e5%88%b0%e7%94%b7%e6%9c%8b%e5%8f%8b%e8%af%a5%e6%80%8e%e4%b9%88%e5%8a%9e">在纽约30+找不到男朋友该怎么办?</a></li><li><a href="https://www.flushingdating.com/blog/%e7%ba%bd%e7%ba%a6%e7%94%b7%e6%9c%8b%e5%8f%8b%e8%af%b4%e5%90%83%e6%b5%b7%e5%ba%95%e6%8d%9e%e5%a4%aa%e8%b4%b5%e4%ba%86">纽约男朋友说吃海底捞太贵了,该怎么办?</a></li><li><a href="https://www.flushingdating.com/blog/%e5%9c%a8%e7%ba%bd%e7%ba%a6%e6%89%be%e5%af%b9%e8%b1%a1%e8%84%b1%e5%8d%95%e7%9c%9f%e5%bf%83%e7%9a%84%e9%9a%be">在纽约找对象脱单真心的难!</a></li><li><a href="https://www.flushingdating.com/blog/%e7%ba%bd%e7%ba%a6%e5%a5%b3%e7%95%99%e5%ad%a6%e7%94%9f%e6%89%be%e7%94%b7%e6%9c%8b%e5%8f%8b%e7%9a%84%e8%a6%81%e6%b1%82%e5%88%b0%e5%ba%95%e6%9c%89%e5%a4%9a%e9%ab%98">纽约女留学生找男朋友的要求到底有多高?</a></li><li><a href="https://www.flushingdating.com/blog/%e5%83%8f%e7%ba%bd%e7%ba%a6%e8%bf%99%e6%a0%b7%e7%9a%84%e5%a4%a7%e9%83%bd%e5%b8%82%e5%a9%9a%e6%81%8b%e7%8e%87%e8%b6%8a%e6%9d%a5%e8%b6%8a%e4%bd%8e">像纽约这样的大都市婚恋率越来越低</a></li>			<li><a href="https://www.flushingdating.com/blog">查看所有文章</a></li>
+		</ul>
+		<div>
+			<!-- <a href="https://www.flushingdating.com/contact">联系我们</a> &nbsp;&nbsp; -->
+			<a href="https://www.flushingdating.com/sitemap">网站地图</a> &nbsp;&nbsp;
+			<a href="https://www.flushingdating.com/world-single-union">世界单身联谊会</a> &nbsp;&nbsp;
+		</div>
+	</div>
+</div>
+</body>

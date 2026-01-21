@@ -1,0 +1,49 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "9090:80"
+    volumes:
+      - ./web:/var/www/html
+    container_name: php-playground
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=playground
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-playground
+    ports:
+      - "3407:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=playground
+      - MYSQL_USER=playground_user
+      - MYSQL_PASSWORD=playground_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-playground
+    ports:
+      - "9091:80"
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=rootpassword
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
