@@ -7,32 +7,38 @@ services:
       - "9090:80"
     volumes:
       - ./web:/var/www/html
-    container_name: php-playground
+    container_name: flushing-dating-com
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     environment:
       - DB_HOST=mysql
-      - DB_NAME=playground
-      - DB_USER=root
+      - DB_NAME=fls-dating-com
+      - DB_USERNAME=root
       - DB_PASSWORD=rootpassword
 
   mysql:
     image: mysql:8.0
-    container_name: mysql-playground
+    container_name: mysql-fls-dating-com
     ports:
       - "3407:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=playground
-      - MYSQL_USER=playground_user
-      - MYSQL_PASSWORD=playground_password
+      - MYSQL_DATABASE=fls-dating-com
+      - MYSQL_USER=fls-dating-com-user
+      - MYSQL_PASSWORD=fls-dating-com-password
     volumes:
-      - mysql_data:/var/lib/mysql
+      - fls_dating_com_data:/var/lib/mysql
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-playground
+    container_name: phpmyadmin-fls-dating-com
     ports:
       - "9091:80"
     environment:
@@ -46,4 +52,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  mysql_data:
+  fls_dating_com_data:

@@ -6,7 +6,13 @@ class DB{
 	
 	public function __construct($host, $database, $username, $password){
 		
-		$this->connection = mysqli_connect( $host, $username, $password, $database ) or die( 'Error connecting to MySQL server.' );
+		$this->connection = @mysqli_connect( $host, $username, $password, $database );
+		
+		if( !$this->connection ){
+			$error = mysqli_connect_error();
+			die( 'Error connecting to MySQL server: ' . $error . ' (Host: ' . $host . ', Database: ' . $database . ')' );
+		}
+		
 		mysqli_set_charset( $this->connection, 'utf8' );
 		
 	}
