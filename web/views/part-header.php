@@ -1,6 +1,7 @@
 <?php
 
-$auth = new Authorizer();
+global $db;
+$auth = new Authorizer( $db );
 $auth_status = $auth->get_login_status();
 
 ?>

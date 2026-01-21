@@ -1,15 +1,15 @@
 <?php if( ! defined('ROOT_PATH') ) die( 'Curiosity kills cat!' );
 
-$auth = new Authorizer();
+global $db;
+$auth = new Authorizer( $db );
 $auth_status = $auth->get_login_status();
 
-//Double check login status.
-if( $auth_status == 0 ){
-	header( 'Location:' .SITE_URL . '/login/500' );
+// Double check login status
+if( $auth_status == Authorizer::LOGIN_STATUS_NOT_LOGGED_IN ){
+	header( 'Location: ' . SITE_URL . '/login/500' );
 	exit(0);
-}
-elseif( $auth_status == -1 ){
-	header( 'Location:' .SITE_URL . '/login/408' );
+} elseif( $auth_status == Authorizer::LOGIN_STATUS_EXPIRED ){
+	header( 'Location: ' . SITE_URL . '/login/408' );
 	exit(0);
 }
 

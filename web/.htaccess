@@ -3,8 +3,10 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteEngine On
+# Only redirect to HTTPS if not on localhost
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteRule ^index\.php$ - [L]
@@ -23,4 +25,3 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule (.*) /index.php?uri=$1 [L]
 
 </IfModule>
-

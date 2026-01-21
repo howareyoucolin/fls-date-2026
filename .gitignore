@@ -7,3 +7,10 @@ web/cache/
 
 # Uploads directory
 uploads/
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# DreamHost diagnostic files
+.dh-diag/

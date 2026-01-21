@@ -10,7 +10,7 @@ class DB{
 		
 		if( !$this->connection ){
 			$error = mysqli_connect_error();
-			die( 'Error connecting to MySQL server: ' . $error . ' (Host: ' . $host . ', Database: ' . $database . ')' );
+			throw new Exception( 'Error connecting to MySQL server: ' . $error . ' (Host: ' . $host . ', Database: ' . $database . ')' );
 		}
 		
 		mysqli_set_charset( $this->connection, 'utf8' );
@@ -19,7 +19,13 @@ class DB{
 	
 	public function query($sql){
 		
-		return mysqli_query( $this->connection, $sql );
+		$result = mysqli_query( $this->connection, $sql );
+		
+		if( !$result ){
+			throw new Exception( 'MySQL query error: ' . mysqli_error( $this->connection ) . ' (Query: ' . substr( $sql, 0, 100 ) . '...)' );
+		}
+		
+		return $result;
 		
 	}
 	
@@ -30,12 +36,13 @@ class DB{
 	public function get_results($sql){
 		
 		$results = array();
-		
 		$query_result = $this->query( $sql );
-		while( $object = $query_result->fetch_object() ){
-            $results[] = $object;
-        }
 		
+		while( $object = $query_result->fetch_object() ){
+			$results[] = $object;
+		}
+		
+		$query_result->free();
 		return $results;
 		
 	}
@@ -43,31 +50,30 @@ class DB{
 	public function get_row($sql){
 		
 		$query_result = $this->query( $sql );
-		while( $object = $query_result->fetch_object() ){
-            return $object;
-        }
+		$object = $query_result->fetch_object();
+		$query_result->free();
 		
-		return false;
+		return $object ?: false;
 		
 	}
 	
 	public function get_var($sql){
 		
 		$query_result = $this->query( $sql );
-		while( $object = $query_result->fetch_object() ){
-            foreach ($object as $key => $value) {
-			   return $value;
-		   }
-        }
+		$row = $query_result->fetch_row();
+		$query_result->free();
 		
-		return false;
+		return $row ? $row[0] : false;
 		
 	}
 	
 	public function get_count($sql){
 		
 		$query_result = $this->query( $sql );
-		return $query_result ? $query_result->num_rows : null;
+		$count = $query_result->num_rows;
+		$query_result->free();
+		
+		return $count;
 		
 	}
 	
@@ -86,6 +92,10 @@ class DB{
 		
 		return $sql;
 		
+	}
+	
+	public function get_connection(){
+		return $this->connection;
 	}
 	
 }

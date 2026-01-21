@@ -3,84 +3,87 @@
 $route = new Router();
 $uri = $route->get_uri();
 
-switch( $uri ){
-	
-	case '':
-		if(file_exists('./cache/home.cache')){
-			echo file_get_contents('./cache/home.cache');
+// Helper function to serve cached content or render controller
+function serve_cached_or_render( $cache_file, $controller, Router $route ){
+	if( file_exists( $cache_file ) ){
+		echo file_get_contents( $cache_file );
+	} else {
+		try {
+			$route->render( $controller );
+		} catch( Exception $e ) {
+			if( DEBUG ){
+				die( 'Error rendering controller: ' . $e->getMessage() );
+			}
+			$route->render( '500' );
 		}
-		else{
-			$route->render( 'home' );
-		}
-		break;
-	
-	case 'members':
-		if(file_exists('./cache/members.cache')){
-			echo file_get_contents('./cache/members.cache');
-		}
-		else{
-			$route->render( 'members' );
-		}
-		break;
+	}
+}
 
-	case preg_match('/^member\/\d+$/', $uri) ? $uri : !$uri :
+// Route definitions
+$routes = array(
+	'' => function() use ($route) {
+		serve_cached_or_render( './cache/home.cache', 'home', $route );
+	},
+	'members' => function() use ($route) {
+		serve_cached_or_render( './cache/members.cache', 'members', $route );
+	},
+);
+
+// Check exact matches first
+if( isset( $routes[$uri] ) ){
+	$routes[$uri]();
+	exit(0);
+}
+
+// Check pattern matches
+try {
+	if( $route->matches( '/^member\/\d+$/' ) ){
 		$route->render( 'member' );
-		break;
-	
-	case preg_match('/^blog$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^blog$/' ) ){
 		$route->render( 'blog' );
-		break;
-	
-	case preg_match('/^blog\/.+$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^blog\/.+$/' ) ){
 		$route->render( 'post' );
-		break;
-	
-	case preg_match('/^sitemap$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^sitemap$/' ) ){
 		$route->render( 'sitemap' );
-		break;
-	
-	case preg_match('/^sitemap.xml$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^sitemap\.xml$/' ) ){
 		$route->render( 'sitemap.xml' );
-		break;
-	
-	case preg_match('/^signup$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^signup$/' ) ){
 		$route->render( 'signup' );
-		break;
-	
-	case preg_match('/^signup\/thankyou$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^signup\/thankyou$/' ) ){
 		$route->render( 'signup-thankyou' );
-		break;
-	
-	case preg_match('/^world-single-union$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^world-single-union$/' ) ){
 		$route->render( 'page' );
-		break;
-
-	// case preg_match('/^contact$/', $uri) ? $uri : !$uri :
-	// 	$route->render( 'page' );
-	// 	break;
-	
-	case preg_match('/^profile\/update$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^profile\/update$/' ) ){
 		$route->render( 'profile-update' );
-		break;
-
-	case preg_match('/^login(\/\d+)?$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^login(\/\d+)?$/' ) ){
 		$route->render( 'login' );
-		break;
-		
-	case preg_match('/^logout$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^logout$/' ) ){
 		$route->render( 'logout' );
-		break;
-
-	case preg_match('/^account(\/saved)?$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^account(\/saved)?$/' ) ){
 		$route->render( 'account' );
-		break;
-
-	case preg_match('/^500$/', $uri) ? $uri : !$uri :
+		exit(0);
+	} elseif( $route->matches( '/^500$/' ) ){
 		$route->render( '500' );
-		break;
-
-	default:
+		exit(0);
+	} else {
 		$route->render( '404' );
-		break;
-	
+		exit(0);
+	}
+} catch( Exception $e ) {
+	if( DEBUG ){
+		die( 'Routing error: ' . $e->getMessage() . ' (URI: ' . $uri . ')' );
+	}
+	$route->render( '500' );
+	exit(0);
 }
