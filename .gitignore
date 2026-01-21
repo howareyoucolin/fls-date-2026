@@ -1,2 +1,6 @@
+# Database configuration with sensitive credentials
 config.php
+web/config.php
+
+# Uploads directory
 uploads/
