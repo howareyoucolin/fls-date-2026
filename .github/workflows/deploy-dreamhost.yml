@@ -19,15 +19,29 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          # Write SSH key using printf to preserve formatting
-          printf '%s\n' "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
+          # Write SSH key - preserve exact formatting including newlines
+          echo "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          # Verify key format (check first and last lines only)
+          # Verify key format and validity
           echo "Key format check:"
           head -1 ~/.ssh/deploy_key
           tail -1 ~/.ssh/deploy_key
+          echo "Key line count: $(wc -l < ~/.ssh/deploy_key)"
+          # Validate key can be read by ssh-keygen
+          ssh-keygen -l -f ~/.ssh/deploy_key || echo "Warning: Key validation failed"
           # Add host to known_hosts
           ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=no \
+            -o IdentitiesOnly=yes \
+            -o UserKnownHostsFile=~/.ssh/known_hosts \
+            -o BatchMode=yes \
+            -o ConnectTimeout=10 \
+            ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }} \
+            "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Dev)
         run: |
@@ -59,15 +73,29 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          # Write SSH key using printf to preserve formatting
-          printf '%s\n' "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
+          # Write SSH key - preserve exact formatting including newlines
+          echo "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          # Verify key format (check first and last lines only)
+          # Verify key format and validity
           echo "Key format check:"
           head -1 ~/.ssh/deploy_key
           tail -1 ~/.ssh/deploy_key
+          echo "Key line count: $(wc -l < ~/.ssh/deploy_key)"
+          # Validate key can be read by ssh-keygen
+          ssh-keygen -l -f ~/.ssh/deploy_key || echo "Warning: Key validation failed"
           # Add host to known_hosts
           ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=no \
+            -o IdentitiesOnly=yes \
+            -o UserKnownHostsFile=~/.ssh/known_hosts \
+            -o BatchMode=yes \
+            -o ConnectTimeout=10 \
+            ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }} \
+            "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Production)
         run: |
