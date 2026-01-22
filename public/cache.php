@@ -6,13 +6,23 @@ error_reporting(E_ALL);
 
 date_default_timezone_set("America/New_York");
 
+// Ensure cache directory exists
+$cacheDir = dirname(__FILE__) . '/cache';
+if (!is_dir($cacheDir)) {
+	mkdir($cacheDir, 0755, true);
+	echo '<br/>';
+	echo 'Created cache directory';
+}
+
 // Empty cache
-$files = glob(dirname(__FILE__).'/cache/*');
-foreach($files as $file){
-	if(is_file($file)) {
-		unlink($file);
-		echo '<br/>';
-		echo 'Deleted ' . $file;
+$files = glob($cacheDir . '/*');
+if ($files !== false) {
+	foreach($files as $file){
+		if(is_file($file)) {
+			unlink($file);
+			echo '<br/>';
+			echo 'Deleted ' . $file;
+		}
 	}
 }
 
@@ -20,7 +30,7 @@ echo '<br/>';
 
 // Create home cache
 $homeContent = file_get_contents("https://www.flushingdating.com/");
-$homeCache = fopen("cache/home.cache", "w") or die("Unable to open file!");
+$homeCache = fopen($cacheDir . "/home.cache", "w") or die("Unable to open file!");
 fwrite($homeCache, $homeContent);
 fclose($homeCache);
 echo '<br/>';
@@ -28,7 +38,7 @@ echo 'Created home.cache';
 
 // Create members cache
 $membersContent = file_get_contents("https://www.flushingdating.com/members");
-$membersCache = fopen("cache/members.cache", "w") or die("Unable to open file!");
+$membersCache = fopen($cacheDir . "/members.cache", "w") or die("Unable to open file!");
 fwrite($membersCache, $membersContent);
 fclose($membersCache);
 echo '<br/>';
