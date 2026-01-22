@@ -66,6 +66,17 @@ jobs:
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php
 
+      - name: Generate robots.txt
+        env:
+          SSH_USER: ${{ secrets.DH_DEV_USER }}
+          SSH_HOST: ${{ secrets.DH_DEV_HOST }}
+          REMOTE_PATH: ${{ secrets.DH_DEV_REMOTE_PATH }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${SSH_USER}@${SSH_HOST} "cat > ${REMOTE_PATH}robots.txt << 'EOF'
+          User-agent: *
+          Disallow: /
+          EOF"
+
       - name: Cleanup
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -128,6 +139,20 @@ jobs:
           EOF
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php
+
+      - name: Generate robots.txt
+        env:
+          SSH_USER: ${{ secrets.DH_PROD_USER }}
+          SSH_HOST: ${{ secrets.DH_PROD_HOST }}
+          REMOTE_PATH: ${{ secrets.DH_PROD_REMOTE_PATH }}
+          SITE_URL: ${{ secrets.DH_PROD_SITE_URL }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${SSH_USER}@${SSH_HOST} "cat > ${REMOTE_PATH}robots.txt << EOF
+          User-agent: *
+          Allow: /
+
+          Sitemap: ${SITE_URL}/sitemap.xml
+          EOF"
 
       - name: Cleanup
         if: always()
