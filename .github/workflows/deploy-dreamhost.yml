@@ -18,9 +18,16 @@ jobs:
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 700 ~/.ssh
+          # Write SSH key using printf to preserve formatting
+          printf '%s\n' "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts
+          # Verify key format (check first and last lines only)
+          echo "Key format check:"
+          head -1 ~/.ssh/deploy_key
+          tail -1 ~/.ssh/deploy_key
+          # Add host to known_hosts
+          ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Deploy to DreamHost (Dev)
         run: |
@@ -31,7 +38,7 @@ jobs:
             --exclude='.git/' \
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
             web/ \
             ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }}:${{ secrets.DH_DEV_REMOTE_PATH }}
 
@@ -51,9 +58,16 @@ jobs:
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 700 ~/.ssh
+          # Write SSH key using printf to preserve formatting
+          printf '%s\n' "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts
+          # Verify key format (check first and last lines only)
+          echo "Key format check:"
+          head -1 ~/.ssh/deploy_key
+          tail -1 ~/.ssh/deploy_key
+          # Add host to known_hosts
+          ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Deploy to DreamHost (Production)
         run: |
@@ -64,7 +78,7 @@ jobs:
             --exclude='.git/' \
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
             web/ \
             ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }}:${{ secrets.DH_PROD_REMOTE_PATH }}
 
