@@ -15,31 +15,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
+      - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          # Write SSH key - preserve exact formatting including newlines
           echo "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          # Verify key format and validity
-          echo "Key format check:"
-          head -1 ~/.ssh/deploy_key
-          tail -1 ~/.ssh/deploy_key
-          echo "Key line count: $(wc -l < ~/.ssh/deploy_key)"
-          # Validate key can be read by ssh-keygen
-          ssh-keygen -l -f ~/.ssh/deploy_key || echo "Warning: Key validation failed"
-          # Add host to known_hosts
-          ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+          ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Test SSH connection
-        env:
-          SSH_USER: ${{ secrets.DH_DEV_USER }}
-          SSH_HOST: ${{ secrets.DH_DEV_HOST }}
-        run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${SSH_USER}@${SSH_HOST} "echo 'SSH connection successful'"
-
-      - name: Deploy to DreamHost (Dev)
+      - name: Deploy to DreamHost
         run: |
           rsync -avz --delete \
             --exclude='config.php' \
@@ -50,14 +34,13 @@ jobs:
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
             --exclude='*.log' \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes" \
             web/ \
             ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }}:${{ secrets.DH_DEV_REMOTE_PATH }}
 
-      - name: Cleanup SSH key
+      - name: Cleanup
         if: always()
-        run: |
-          rm -f ~/.ssh/deploy_key
+        run: rm -f ~/.ssh/deploy_key
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
@@ -67,31 +50,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
+      - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          # Write SSH key - preserve exact formatting including newlines
           echo "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          # Verify key format and validity
-          echo "Key format check:"
-          head -1 ~/.ssh/deploy_key
-          tail -1 ~/.ssh/deploy_key
-          echo "Key line count: $(wc -l < ~/.ssh/deploy_key)"
-          # Validate key can be read by ssh-keygen
-          ssh-keygen -l -f ~/.ssh/deploy_key || echo "Warning: Key validation failed"
-          # Add host to known_hosts
-          ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+          ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Test SSH connection
-        env:
-          SSH_USER: ${{ secrets.DH_PROD_USER }}
-          SSH_HOST: ${{ secrets.DH_PROD_HOST }}
-        run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${SSH_USER}@${SSH_HOST} "echo 'SSH connection successful'"
-
-      - name: Deploy to DreamHost (Production)
+      - name: Deploy to DreamHost
         run: |
           rsync -avz --delete \
             --exclude='config.php' \
@@ -102,11 +69,10 @@ jobs:
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
             --exclude='*.log' \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes" \
             web/ \
             ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }}:${{ secrets.DH_PROD_REMOTE_PATH }}
 
-      - name: Cleanup SSH key
+      - name: Cleanup
         if: always()
-        run: |
-          rm -f ~/.ssh/deploy_key
+        run: rm -f ~/.ssh/deploy_key
