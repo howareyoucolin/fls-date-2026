@@ -33,8 +33,11 @@ jobs:
           ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Test SSH connection
+        env:
+          SSH_USER: ${{ secrets.DH_DEV_USER }}
+          SSH_HOST: ${{ secrets.DH_DEV_HOST }}
         run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }} "echo 'SSH connection successful'"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${SSH_USER}@${SSH_HOST} "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Dev)
         run: |
@@ -80,8 +83,11 @@ jobs:
           ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Test SSH connection
+        env:
+          SSH_USER: ${{ secrets.DH_PROD_USER }}
+          SSH_HOST: ${{ secrets.DH_PROD_HOST }}
         run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }} "echo 'SSH connection successful'"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${SSH_USER}@${SSH_HOST} "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Production)
         run: |
