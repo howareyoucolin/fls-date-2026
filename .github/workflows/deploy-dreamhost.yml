@@ -1,0 +1,74 @@
+name: Deploy to DreamHost
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DH_DEV_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.DH_DEV_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy to DreamHost (Dev)
+        run: |
+          rsync -avz --delete \
+            --exclude='config.php' \
+            --exclude='cache/' \
+            --exclude='uploads/' \
+            --exclude='.git/' \
+            --exclude='.DS_Store' \
+            --exclude='.dh-diag/' \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            web/ \
+            ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }}:${{ secrets.DH_DEV_REMOTE_PATH }}
+
+      - name: Cleanup SSH key
+        if: always()
+        run: |
+          rm -f ~/.ssh/deploy_key
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DH_PROD_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.DH_PROD_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy to DreamHost (Production)
+        run: |
+          rsync -avz --delete \
+            --exclude='config.php' \
+            --exclude='cache/' \
+            --exclude='uploads/' \
+            --exclude='.git/' \
+            --exclude='.DS_Store' \
+            --exclude='.dh-diag/' \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            web/ \
+            ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }}:${{ secrets.DH_PROD_REMOTE_PATH }}
+
+      - name: Cleanup SSH key
+        if: always()
+        run: |
+          rm -f ~/.ssh/deploy_key
