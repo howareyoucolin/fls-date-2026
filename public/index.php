@@ -12,8 +12,9 @@ if( session_status() == PHP_SESSION_NONE ){
 require_once( ROOT_PATH . '/config.php' );
 require_once( ROOT_PATH . '/constants.php' );
 
-// Set error reporting based on debug mode
-if( DEBUG ){
+// Set error reporting based on ERROR_REPORTING constant (or DEBUG as fallback)
+$error_reporting = defined('ERROR_REPORTING') ? ERROR_REPORTING : DEBUG;
+if( $error_reporting ){
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);

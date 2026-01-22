@@ -3,6 +3,10 @@
 //Debug mode.
 define( 'DEBUG', true );
 
+//Error reporting - set to true to display PHP errors on screen
+//Warning: Only enable in development/staging, never in production!
+define( 'ERROR_REPORTING', true );
+
 //Define DB variables.
 define( 'DB_HOST', 'your-database-host' );
 define( 'DB_NAME', 'your-database-name' );
