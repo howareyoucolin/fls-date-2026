@@ -45,9 +45,11 @@ jobs:
             --exclude='config.php' \
             --exclude='cache/' \
             --exclude='uploads/' \
+            --exclude='logs/' \
             --exclude='.git/' \
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
+            --exclude='*.log' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
             web/ \
             ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }}:${{ secrets.DH_DEV_REMOTE_PATH }}
@@ -95,9 +97,11 @@ jobs:
             --exclude='config.php' \
             --exclude='cache/' \
             --exclude='uploads/' \
+            --exclude='logs/' \
             --exclude='.git/' \
             --exclude='.DS_Store' \
             --exclude='.dh-diag/' \
+            --exclude='*.log' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts" \
             web/ \
             ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }}:${{ secrets.DH_PROD_REMOTE_PATH }}
