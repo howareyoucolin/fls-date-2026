@@ -34,14 +34,7 @@ jobs:
 
       - name: Test SSH connection
         run: |
-          ssh -i ~/.ssh/deploy_key \
-            -o StrictHostKeyChecking=no \
-            -o IdentitiesOnly=yes \
-            -o UserKnownHostsFile=~/.ssh/known_hosts \
-            -o BatchMode=yes \
-            -o ConnectTimeout=10 \
-            ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }} \
-            "echo 'SSH connection successful'"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }} "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Dev)
         run: |
@@ -88,14 +81,7 @@ jobs:
 
       - name: Test SSH connection
         run: |
-          ssh -i ~/.ssh/deploy_key \
-            -o StrictHostKeyChecking=no \
-            -o IdentitiesOnly=yes \
-            -o UserKnownHostsFile=~/.ssh/known_hosts \
-            -o BatchMode=yes \
-            -o ConnectTimeout=10 \
-            ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }} \
-            "echo 'SSH connection successful'"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o BatchMode=yes -o ConnectTimeout=10 ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }} "echo 'SSH connection successful'"
 
       - name: Deploy to DreamHost (Production)
         run: |
