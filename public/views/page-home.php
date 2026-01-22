@@ -12,7 +12,7 @@
 
 				<div class="row">
 
-					<div class="col-6">
+					<div class="col-12">
 						<div>
 							<a style="float:right;" href="/members">查看所有会员</a>
 							<h2 style="font-size:24px;">最新会员</h2>
@@ -49,33 +49,6 @@
 								<div class="clear"></div>
 							</div>
 						<?php endforeach;?>
-					</div>
-
-					<div class="col-6">
-
-						<?php //include( ROOT_PATH . '/views/part-ad-rose.php' );?>
-
-						<h2 style="font-size:24px;">高人气会员</h2>
-						<hr />
-						<div class="row" style="margin-bottom:30px;">
-							<?php
-							$count = 0; 
-							foreach($featured_members as $member):
-								if(++$count > 8) break;
-								?>
-								<div class="col-6-fix">
-									<div class="hot-member clear">
-										<a href="<?php echo $member->get_url();?>">
-											<img class="profile" src="<?php echo $member->get_profile_image_url();?>" />
-										</a>
-										<p><?php echo $member->get_title();?> <?php echo $member->get_age();?> </p>
-									</div>
-								</div>
-							<?php endforeach;?>
-							<div class="clear"></div>
-							
-						</div>
-						<?php include( ROOT_PATH . '/views/part-ad-mary-2.php' );?>
 					</div>
 
 					<div class="clear"></div>

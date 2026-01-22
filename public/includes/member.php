@@ -17,9 +17,9 @@ class Member{
 		
 		$result = $db->get_var(
 			$db->prepare("
-				SELECT ID 
-				FROM wp_posts 
-				WHERE ID = '%s0' AND post_type = 'member'
+				SELECT id 
+				FROM cz_members 
+				WHERE id = '%s0'
 			", $this->id )
 		);
 		
@@ -29,50 +29,54 @@ class Member{
 	
 	public function is_active(){
 		
-		global $db;
-		
-		$result = $db->get_var(
-			$db->prepare("
-				SELECT post_status 
-				FROM wp_posts 
-				WHERE ID = '%s0'
-			", $this->id )
-		);
-		
-		return $result == 'publish';
+		// All members in cz_members are considered active
+		return $this->exists();
 		
 	}
 	
 	public function get_data(){
 		
-		$results = new stdClass();
-		
 		global $db;
 
-		$meta_data = $db->get_results(
-			$db->prepare("
-				SELECT meta_key, meta_value 
-				FROM wp_postmeta
-				WHERE post_id = '%s0' AND meta_key NOT LIKE '\_%'
-				", $this->id
-			)
-		);
-		
-		foreach( $meta_data as $meta ){
-			$results->{$meta->meta_key} = $meta->meta_value;
-		}
-		
-		$post_data = $db->get_row(
+		$member_data = $db->get_row(
 			$db->prepare("
 				SELECT * 
-				FROM wp_posts
-				WHERE ID = '%s0'
+				FROM cz_members
+				WHERE id = '%s0'
 				", $this->id
 			)
 		);
 		
-		foreach( $post_data as $key => $value ){
-			$results->{$key} = $value;
+		if( !$member_data ){
+			return $this->data = new stdClass();
+		}
+		
+		// Map new table structure to old structure for compatibility
+		$results = new stdClass();
+		
+		// Direct mappings
+		$results->id = $member_data->id;
+		$results->title = $member_data->title;
+		$results->gender = $member_data->gender;
+		$results->wechat = $member_data->wechat;
+		$results->profile_image = $member_data->profile_image;
+		$results->description = $member_data->description;
+		$results->birthday = $member_data->birthday;
+		$results->created_at = $member_data->created_at;
+		$results->updated_at = $member_data->updated_at;
+		
+		// Legacy mappings for compatibility
+		$results->post_title = $member_data->title;
+		$results->post_content = $member_data->description;
+		
+		// Split description back into about_me and preference for methods that need them
+		if( $member_data->description ){
+			$parts = explode("\n", $member_data->description, 2);
+			$results->about_me = $parts[0] ?? '';
+			$results->preference = $parts[1] ?? '';
+		} else {
+			$results->about_me = '';
+			$results->preference = '';
 		}
 		
 		return $this->data = $results;
@@ -88,8 +92,8 @@ class Member{
 		
 		if( isset($this->data->{$key}) ){
 			
-			//Post_content is the exception with no htmlentities excaping.
-			if( $key == 'post_content' ){
+			//Post_content and description are exceptions with no htmlentities escaping.
+			if( $key == 'post_content' || $key == 'description' ){
 				return trim($this->data->{$key});
 			}
 			
@@ -102,32 +106,23 @@ class Member{
 
 	public function get_age(){
 		
-		$dob = $this->get_var('dob');
+		$birthday = $this->get_var('birthday');
 		
-		$current_year = date( 'Y' );
-		$current_month = date( 'm' );
-		$current_day = date( 'd' );
-		
-		$birth_year = substr( $dob, 0, 4 );
-		$birth_month = substr( $dob, 4, 2 );
-		$birth_day = substr( $dob, 6, 2 );
-		
-		if( !is_numeric($birth_year) || !is_numeric($birth_month) || !is_numeric($birth_day) ){
+		if( !$birthday ){
 			return 'N/A';
 		}
 		
-		if( $birth_month < $current_month ){
-			return $current_year - $birth_year;
+		// birthday is in DATE format (YYYY-MM-DD)
+		$birth_timestamp = strtotime($birthday);
+		if( !$birth_timestamp ){
+			return 'N/A';
 		}
-		elseif( $birth_month > $current_month ){
-			return $current_year - $birth_year - 1;
-		}
-		elseif( $birth_day <= $current_day ){
-			return $current_year - $birth_year;
-		}
-		else{
-			return $current_year - $birth_year - 1;
-		}
+		
+		$birth_date = new DateTime($birthday);
+		$today = new DateTime();
+		$age = $today->diff($birth_date)->y;
+		
+		return $age;
 		
 	}
 
@@ -139,25 +134,29 @@ class Member{
 	
 	public function get_title(){
 		
-		return $this->get_var('post_title');
+		return $this->get_var('title');
 		
 	}
 
 	public function is_approved(){
 		
-		return $this->get_var('approved');
+		// All members in cz_members are considered approved
+		return true;
 		
 	}
 
 	public function is_featured(){
 		
-		return $this->get_var('featured');
+		// Consider featured if they have a profile image
+		return !empty($this->get_var('profile_image'));
 		
 	}
 
 	public function is_topped(){
 		
-		return $this->get_var('top');
+		// For now, all members can be considered "topped" (latest members)
+		// You can add a "topped" column to cz_members later if needed
+		return true;
 		
 	}
 	
@@ -193,10 +192,11 @@ class Member{
 	
 	public function get_intro(){
 
-		if( $this->get_var('intro') ){
-			$content = $this->get_var('intro');
-		}
-		else{
+		// Use description (which contains about_me + preference)
+		$content = $this->get_var('description');
+		
+		// If description is empty, try about_me (from split)
+		if( !$content ){
 			$content = $this->get_var('about_me');
 		}
 
@@ -205,12 +205,12 @@ class Member{
 		}
 		
 		return mb_substr( $content, 0, 128 );
-
+		
 	}
 	
 	public function get_content(){
 
-		return $this->get_var('post_content');
+		return $this->get_var('description');
 
 	}
 	
@@ -238,9 +238,21 @@ class Member{
 		
 	}
 	
+	public function get_description(){
+		
+		$content = $this->get_var('description');
+		
+		if( ! $content ){
+			return false;
+		}
+		
+		return nl2br( $content );
+		
+	}
+	
 	public function get_last_modified(){
 		
-		return $this->get_var('post_modified');
+		return $this->get_var('updated_at');
 		
 	}
 
@@ -252,32 +264,10 @@ class Member{
 	
 	public function get_profile_image_url(){
 		
-		global $db;
+		$profile_image = $this->get_var('profile_image');
 		
-		$result = $db->get_var(
-			$db->prepare("
-				SELECT p.guid
-				FROM wp_posts AS p
-				JOIN wp_postmeta AS pm
-				ON p.ID = pm.meta_value
-				WHERE pm.post_id = '%s0' AND pm.meta_key = '_thumbnail_id'
-			", $this->id )
-		);
-		
-		if( $result ){
-			return str_replace('http://', 'https://', $result);//Make sure image is loaded as HTTPS.
-		}
-		
-		$result = $db->get_var(
-			$db->prepare("
-				SELECT meta_value
-				FROM wp_postmeta
-				WHERE post_id = '%s0' AND meta_key = 'profile_image'
-			", $this->id )
-		);
-		
-		if( $result ){
-			return str_replace('http://', 'https://', $result);//Make sure image is loaded as HTTPS.
+		if( $profile_image ){
+			return str_replace('http://', 'https://', $profile_image);//Make sure image is loaded as HTTPS.
 		}
 		
 		return DEFAULT_SILHOUETTE;

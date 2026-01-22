@@ -27,7 +27,6 @@ if( $error_reporting ){
 // Load core classes
 require_once( ROOT_PATH . '/includes/router.php' );
 require_once( ROOT_PATH . '/includes/db.php' );
-require_once( ROOT_PATH . '/includes/authorizer.php' );
 require_once( ROOT_PATH . '/includes/members_factory.php' );
 require_once( ROOT_PATH . '/includes/member.php' );
 require_once( ROOT_PATH . '/includes/post.php' );

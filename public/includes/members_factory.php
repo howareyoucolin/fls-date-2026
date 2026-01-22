@@ -8,14 +8,13 @@ class Members_Factory{
 		
 		global $db;
 		$results = $db->get_results("
-			SELECT ID 
-			FROM wp_posts
-			WHERE post_type = 'member'
-			ORDER BY post_date DESC
+			SELECT id 
+			FROM cz_members
+			ORDER BY id DESC
 		");
 		
 		foreach( $results AS $result ){
-			$members[] = new Member( $result->ID );
+			$members[] = new Member( $result->id );
 		}
 		
 		return $members;
@@ -28,15 +27,13 @@ class Members_Factory{
 		
 		global $db;
 		$results = $db->get_results("
-			SELECT ID 
-			FROM wp_posts
-			WHERE post_type = 'member' AND post_status = 'publish'
-			ORDER BY post_date DESC
+			SELECT id 
+			FROM cz_members
+			ORDER BY id DESC
 		");
 		
 		foreach( $results AS $result ){
-			$memberObject = new Member( $result->ID );
-			if($memberObject->is_approved()) $members[] = $memberObject;
+			$members[] = new Member( $result->id );
 		}
 		
 		return $members;
@@ -45,19 +42,19 @@ class Members_Factory{
 
 	public function get_all_topped_members(){
 		
+		// Since we don't have a "topped" field in cz_members, return latest members
 		$members = array();
 		
 		global $db;
 		$results = $db->get_results("
-			SELECT ID 
-			FROM wp_posts
-			WHERE post_type = 'member' AND post_status = 'publish'
-			ORDER BY post_date DESC
+			SELECT id 
+			FROM cz_members
+			ORDER BY id DESC
+			LIMIT 20
 		");
 		
 		foreach( $results AS $result ){
-			$memberObject = new Member( $result->ID );
-			if($memberObject->is_topped()) $members[] = $memberObject;
+			$members[] = new Member( $result->id );
 		}
 		
 		return $members;
@@ -66,19 +63,20 @@ class Members_Factory{
 
 	public function get_all_featured_members(){
 		
+		// Since we don't have a "featured" field, return members with profile images
 		$members = array();
 		
 		global $db;
 		$results = $db->get_results("
-			SELECT ID 
-			FROM wp_posts
-			WHERE post_type = 'member' AND post_status = 'publish'
-			ORDER BY post_date DESC
+			SELECT id 
+			FROM cz_members
+			WHERE profile_image IS NOT NULL AND profile_image != ''
+			ORDER BY id DESC
+			LIMIT 20
 		");
 		
 		foreach( $results AS $result ){
-			$memberObject = new Member( $result->ID );
-			if($memberObject->is_featured()) $members[] = $memberObject;
+			$members[] = new Member( $result->id );
 		}
 		
 		return $members;

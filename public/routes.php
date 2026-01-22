@@ -22,7 +22,15 @@ function serve_cached_or_render( $cache_file, $controller, Router $route ){
 // Route definitions
 $routes = array(
 	'' => function() use ($route) {
-		serve_cached_or_render( './cache/home.cache', 'home', $route );
+		// Home page - render directly without cache
+		try {
+			$route->render( 'home' );
+		} catch( Exception $e ) {
+			if( DEBUG ){
+				die( 'Error rendering controller: ' . $e->getMessage() );
+			}
+			$route->render( '500' );
+		}
 	},
 	'members' => function() use ($route) {
 		serve_cached_or_render( './cache/members.cache', 'members', $route );

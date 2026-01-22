@@ -1,9 +1,5 @@
 <?php
 
-global $db;
-$auth = new Authorizer( $db );
-$auth_status = $auth->get_login_status();
-
 ?>
 <div class="header">
 	<div class="container">
