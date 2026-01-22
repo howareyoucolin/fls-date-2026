@@ -12,11 +12,11 @@ A simple Docker setup for testing PHP projects.
 2. **Or build and run manually:**
    ```bash
    docker build -t php-playground -f docker/Dockerfile .
-   docker run -p 8080:80 -v $(pwd)/web:/var/www/html php-playground
+   docker run -p 9090:80 -v $(pwd)/public:/var/www/html php-playground
    ```
 
 3. **Access your PHP app:**
-   Open your browser and go to: http://localhost:8080
+   Open your browser and go to: http://localhost:9090
 
 ## Features
 
@@ -36,7 +36,7 @@ A simple Docker setup for testing PHP projects.
 │   ├── Dockerfile      # PHP Apache container definition (DreamHost-matched)
 │   └── .dockerignore  # Files to ignore in Docker build
 ├── docker-compose.yml # Easy container management
-└── web/               # Your PHP files go here (git repo for deployment)
+└── public/            # Your PHP files go here (git repo for deployment)
     ├── .github/
     │   └── workflows/
     │       └── deploy-dreamhost.yml  # GitHub Actions deployment workflow
@@ -52,7 +52,7 @@ This Docker setup is configured to closely match DreamHost's shared hosting:
 - **PHP Version**: 8.2 (you can change this in the Dockerfile if DreamHost uses a different version)
 
 **To compare environments:**
-1. Visit `http://localhost:8080/phpinfo.php` in your Docker container
+1. Visit `http://localhost:9090/phpinfo.php` in your Docker container
 2. Upload `phpinfo.php` to your DreamHost server
 3. Compare the outputs to see any differences
 
@@ -60,12 +60,12 @@ This Docker setup is configured to closely match DreamHost's shared hosting:
 
 This project includes GitHub Actions workflow for automatic deployment:
 
-1. Initialize git in the `web/` folder: `cd web && git init`
-2. Push to GitHub (see `web/DEPLOY.md` for details)
+1. Initialize git in the `public/` folder: `cd public && git init`
+2. Push to GitHub (see `public/DEPLOY.md` for details)
 3. Configure GitHub Secrets with your DreamHost credentials
 4. Push to `main` branch → automatic deployment!
 
-See `web/DEPLOY.md` for complete setup instructions.
+See `public/DEPLOY.md` for complete setup instructions.
 
 ## Database Connection
 
@@ -108,7 +108,7 @@ Or use the regular user:
 
 ## Tips
 
-- Edit files in the `web/` directory and refresh your browser - changes are live!
+- Edit files in the `public/` directory and refresh your browser - changes are live!
 - Stop the container: `docker compose down`
 - View logs: `docker compose logs -f`
 - View MySQL logs: `docker compose logs mysql`

@@ -35,7 +35,7 @@ jobs:
             --exclude='.dh-diag/' \
             --exclude='*.log' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes" \
-            web/ \
+            public/ \
             ${{ secrets.DH_DEV_USER }}@${{ secrets.DH_DEV_HOST }}:${{ secrets.DH_DEV_REMOTE_PATH }}
 
       - name: Cleanup
@@ -70,7 +70,7 @@ jobs:
             --exclude='.dh-diag/' \
             --exclude='*.log' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes" \
-            web/ \
+            public/ \
             ${{ secrets.DH_PROD_USER }}@${{ secrets.DH_PROD_HOST }}:${{ secrets.DH_PROD_REMOTE_PATH }}
 
       - name: Cleanup

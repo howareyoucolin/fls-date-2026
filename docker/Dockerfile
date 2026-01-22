@@ -25,7 +25,7 @@ RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/Allo
 WORKDIR /var/www/html
 
 # Copy application files
-COPY web/ /var/www/html/
+COPY public/ /var/www/html/
 
 # Set ServerName to suppress Apache warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf

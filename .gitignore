@@ -1,9 +1,9 @@
 # Database configuration with sensitive credentials
 config.php
-web/config.php
+public/config.php
 
 # Cache directory
-web/cache/
+public/cache/
 
 # Uploads directory
 uploads/
