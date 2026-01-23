@@ -89,6 +89,20 @@
 		.date-selectors select:focus { outline: none; border-color: #D72171; }
 		.form-hint { font-size: 12px; color: #777; margin-bottom: 8px; line-height: 1.5; }
 		.char-count { font-size: 12px; color: #D72171; margin-top: 5px; }
+		.captcha-wrapper { display: flex; align-items: center; margin-top: 8px; }
+		.captcha-question { font-size: 16px; font-weight: bold; color: #333; }
+		
+		/* Human Verify Checkbox */
+		.human-verify-label { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; border: 2px solid #ddd; border-radius: 8px; background: #f9f9f9; transition: all 0.3s; }
+		.human-verify-label:hover { border-color: #D72171; background: #fff5f8; }
+		.human-verify-checkbox { display: none; }
+		.human-verify-custom { width: 24px; height: 24px; border: 2px solid #999; border-radius: 6px; background: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.3s; flex-shrink: 0; position: relative; }
+		.human-verify-checkmark { color: #fff; font-size: 16px; font-weight: bold; opacity: 0; transform: scale(0); transition: all 0.2s; }
+		.human-verify-checkbox:checked + .human-verify-custom { background: #D72171; border-color: #D72171; }
+		.human-verify-checkbox:checked + .human-verify-custom .human-verify-checkmark { opacity: 1; transform: scale(1); }
+		.human-verify-text { font-size: 16px; font-weight: 500; color: #333; }
+		.human-verify-label:hover .human-verify-custom { border-color: #D72171; }
+		
 		.submit-btn { background: #D72171; color: #fff; padding: 12px 40px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.3s; }
 		.submit-btn:hover { background: #b81a5a; }
 		.error-message { background: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; margin-bottom: 20px; border-left: 4px solid #c62828; }

@@ -1,6 +1,14 @@
 <?php
 // Signup page
 
+// Turnstile site key (hardcoded - get from https://dash.cloudflare.com/?to=/:account/turnstile)
+$turnstile_site_key = '0x4AAAAAACOW5GKIH-hAtF2X'; // Put your Turnstile site key here
+
+// Skip Turnstile on localhost
+$is_localhost = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1', 'localhost:9090', '127.0.0.1:9090']) || 
+                (isset($_SERVER['SERVER_NAME']) && in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1']));
+$use_turnstile = !$is_localhost && !empty($turnstile_site_key);
+
 $meta_title = '免费注册会员 - 纽约同城交友';
 $meta_description = '免费注册成为会员，找到你的另一半';
 $meta_keywords = '纽约婚介交友, 注册会员, 免费注册';
@@ -66,9 +74,31 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) ){
 	$email = trim($_POST['email'] ?? '');
 	$description = trim($_POST['description'] ?? '');
 	$profile_image = $uploaded_image ?: trim($_POST['profile_image'] ?? '');
+	$turnstile_response = $_POST['cf-turnstile-response'] ?? '';
+	$form_start_time = isset($_POST['form_start_time']) ? (int)$_POST['form_start_time'] : 0;
 	
 	// Validation
 	$errors = [];
+	
+	// Skip human verification on localhost, otherwise verify Turnstile
+	if( $is_localhost ){
+		// Skip verification on localhost for development
+	} elseif( $use_turnstile ){
+		if( empty($turnstile_response) ){
+			$errors[] = '请完成人机验证!';
+		}
+	} else {
+		// Fallback: simple time-based verification (at least 20 seconds)
+		$human_verify = isset($_POST['human_verify']) && $_POST['human_verify'] === 'yes';
+		if( !$human_verify ){
+			$errors[] = '请完成人机验证!';
+		} elseif( $form_start_time > 0 ){
+			$time_spent = time() - $form_start_time;
+			if( $time_spent < 20 ){
+				$errors[] = '请花更多时间填写表单（至少需要20秒）!';
+			}
+		}
+	}
 	
 	if( empty($name) ){
 		$errors[] = '必须填写你的名字!';
@@ -164,6 +194,7 @@ include ROOT_PATH . '/templates/header.php';
 		<?php endif; ?>
 		
 		<form id="form-signup" method="post" action="" enctype="multipart/form-data">
+			<input type="hidden" name="form_start_time" id="form_start_time" value="<?php echo time(); ?>" />
 			<div class="form-group">
 				<label>名字: <span class="required">*</span></label>
 				<input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>" required />
@@ -241,6 +272,34 @@ include ROOT_PATH . '/templates/header.php';
 				<p class="char-count">至少需要40个字</p>
 			</div>
 			
+			
+			<?php if( $is_localhost ): ?>
+				<div class="form-group">
+					<div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; padding: 12px; margin-bottom: 20px;">
+						<p style="margin: 0; color: #856404; font-size: 14px;">
+							<strong>开发模式:</strong> 在 localhost 上已跳过人机验证，生产环境将启用 Turnstile 验证。
+						</p>
+					</div>
+				</div>
+			<?php else: ?>
+				<div class="form-group">
+					<label>人机验证: <span class="required">*</span></label>
+					<?php if( $use_turnstile ): ?>
+						<div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars($turnstile_site_key); ?>"></div>
+						<p class="form-hint">请完成上面的验证以确认您是真人</p>
+					<?php else: ?>
+						<label class="human-verify-label">
+							<input type="checkbox" name="human_verify" value="yes" required class="human-verify-checkbox" />
+							<span class="human-verify-custom">
+								<span class="human-verify-checkmark">✓</span>
+							</span>
+							<span class="human-verify-text">我不是机器人</span>
+							<span class="required">*</span>
+						</label>
+						<p class="form-hint">请勾选此选项以验证您是真人</p>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 			
 			<div class="form-group">
 				<input type="submit" name="submit" value="提交" class="submit-btn" />
@@ -534,5 +593,13 @@ if( imagePreview && fileInput ){
 	}
 }
 </script>
+
+
+<?php 
+// Load Turnstile script only if not on localhost
+if( $use_turnstile ):
+?>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 
 <?php include ROOT_PATH . '/templates/footer.php'; ?>
