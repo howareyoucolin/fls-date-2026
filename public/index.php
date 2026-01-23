@@ -1,6 +1,8 @@
 <?php
- 
-define( 'VERSION', '1.0.1' );
+/**
+ * Simple router - maps clean URLs to page files
+ */
+
 define( 'ROOT_PATH', dirname(__FILE__) );
 
 // Start session
@@ -9,45 +11,57 @@ if( session_status() == PHP_SESSION_NONE ){
 }
 
 // Load configuration
-require_once( ROOT_PATH . '/config.php' );
-require_once( ROOT_PATH . '/constants.php' );
-
-// Set error reporting based on ERROR_REPORTING constant (or DEBUG as fallback)
-$error_reporting = defined('ERROR_REPORTING') ? ERROR_REPORTING : DEBUG;
-if( $error_reporting ){
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-} else {
-	ini_set('display_errors', 0);
-	ini_set('display_startup_errors', 0);
-	error_reporting(0);
+if( !file_exists( ROOT_PATH . '/config.php' ) ){
+	die( 'Please create config.php from config.php.sample' );
 }
-
-// Load core classes
-require_once( ROOT_PATH . '/includes/router.php' );
+require_once( ROOT_PATH . '/config.php' );
 require_once( ROOT_PATH . '/includes/db.php' );
-require_once( ROOT_PATH . '/includes/members_factory.php' );
-require_once( ROOT_PATH . '/includes/member.php' );
-require_once( ROOT_PATH . '/includes/post.php' );
-require_once( ROOT_PATH . '/includes/images.php' );
+require_once( ROOT_PATH . '/includes/functions.php' );
 
-// Initialize database connection
+// Initialize database
 try {
 	$db = new DB( DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD );
+	$GLOBALS['db'] = $db;
 } catch( Exception $e ) {
-	if( DEBUG ){
-		die( 'Database connection error: ' . $e->getMessage() );
-	} else {
-		die( 'Database connection failed. Please contact the administrator.' );
+	if( defined('DEBUG') && DEBUG ){
+		die( 'Database error: ' . $e->getMessage() );
+	}
+	die( 'Database connection failed.' );
+}
+
+// Get the requested URI
+$uri = trim( $_GET['uri'] ?? '', '/' );
+
+// Map URIs to page files
+$pages = [
+	'' => 'home',
+	'home' => 'home',
+	'members' => 'members',
+	'member' => 'member',
+];
+
+// Determine which page to load
+$page = '404';
+if( empty($uri) ){
+	$page = 'home';
+} elseif( isset($pages[$uri]) ){
+	$page = $pages[$uri];
+} elseif( preg_match('/^member\/(\d+)$/', $uri, $matches) ){
+	$page = 'member';
+	$_GET['id'] = $matches[1];
+} else {
+	// Try to find a page file directly
+	$page_file = ROOT_PATH . '/pages/' . str_replace('/', '-', $uri) . '.php';
+	if( file_exists($page_file) ){
+		$page = str_replace('/', '-', $uri);
 	}
 }
 
-// Make $db available globally for backward compatibility
-// TODO: Refactor to remove global dependency
-$GLOBALS['db'] = $db;
-
-// Load routes
-require_once( ROOT_PATH . '/routes.php' );
-
-exit(0);
+// Load the page
+$page_file = ROOT_PATH . '/pages/' . $page . '.php';
+if( file_exists($page_file) ){
+	require_once( $page_file );
+} else {
+	http_response_code(404);
+	require_once( ROOT_PATH . '/pages/404.php' );
+}

@@ -1,20 +1,17 @@
-<?php
-/**
- * Configuration file
- * Copy this to config.php and update with your settings
- */
+<?php if( ! defined('ROOT_PATH') ) die( 'Curiosity kills cat!' );
 
-// Debug mode
+//Debug mode.
 define( 'DEBUG', true );
 
-// Error reporting (only enable in development!)
+//Error reporting - set to true to display PHP errors on screen
+//Warning: Only enable in development/staging, never in production!
 define( 'ERROR_REPORTING', true );
 
-// Database settings
+//Define DB variables.
 define( 'DB_HOST', 'your-database-host' );
 define( 'DB_NAME', 'your-database-name' );
 define( 'DB_USERNAME', 'your-database-username' );
 define( 'DB_PASSWORD', 'your-database-password' );
 
-// Site URL
+//Site Url.
 define( 'SITE_URL', 'https://your-site-url.com' );
