@@ -8,7 +8,6 @@
         "statusBar.foreground": "#ffffff",
         "editor.background": "#1a0f1a",
         "editorGutter.background": "#241424",
-        "editorCursor.foreground": "#651353",
         "editorCursor.width": "2",
         "editor.selectionBackground": "#D72171",
         "editor.selectionHighlightBackground": "#D7217180",
@@ -35,6 +34,11 @@
         "tab.activeBackground": "#651353",
         "tab.activeForeground": "#ffffff",
         "scrollbarSlider.background": "#65135340",
-        "scrollbarSlider.hoverBackground": "#65135360"
+        "scrollbarSlider.hoverBackground": "#65135360",
+        "editor.cursorStyle": "line-thick",
+        "editor.cursorForeground": "#00FFFF",
+        "editor.cursorBlinking": "solid",
+        "editor.cursorWidth": 2,
+        "editorCursor.foreground": "#FFFFFF"
     }
 }
