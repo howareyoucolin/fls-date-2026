@@ -24,7 +24,7 @@
 		.header h1 { padding: 0; margin: 0; font-size: 18px; font-weight: bold; }
 		.header h1 a { float: left; font-weight: normal; }
 		.header .normal { float: right; line-height: 60px; color: #FFF; padding: 0 10px; margin-right: 10px; }
-		.header .signup { float: right; line-height: 60px; color: #FFF; padding: 0 10px; }
+		.header .signup { float: right; line-height: 60px;background:#1a1a1a; color: #FFF; padding: 0 10px; }
 		.header .last { margin-right: -5px; }
 		.mobile-only { display: none; }
 		
@@ -51,9 +51,8 @@
 			padding: 14px 24px;
 			border-radius: 8px;
 			margin-bottom: 20px;
-			text-align: center;
-			font-weight: 600;
-			font-size: 16px;
+			text-align: left;
+			font-size: 14px;
 			letter-spacing: 0.2px;
 
 			border: 1px solid rgba(0, 0, 0, 0.08);
@@ -62,8 +61,8 @@
 				0 2px 6px rgba(0, 0, 0, 0.12),
 				inset 0 1px 0 rgba(255, 255, 255, 0.4);
 			}
-		.promo-icon { font-size: 20px; margin-right: 8px; }
 		.promo-text { display: inline-block; }
+		.featured-member-promo a { color: #D72171; text-decoration: none; }
 		.featured-member-name { font-size: 24px; font-weight: bold; color: #D72171; margin: 0 0 10px 0; }
 		.featured-member-info { margin-bottom: 15px; }
 		.featured-age, .featured-gender { display: inline-block; background: #f5f5f5; padding: 5px 12px; border-radius: 4px; font-size: 14px; color: #666; margin-right: 10px; }
@@ -193,6 +192,129 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* Tablet + below */
+@media (max-width: 992px) {
+  .hero-content-wrapper {
+    gap: 20px;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px 0;
+  }
+
+  .hero-content-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 14px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    display: block;
+  }
+
+  /* Featured member becomes stacked */
+  .featured-member {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .featured-member-image {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* Make the image look like a banner */
+  .featured-member-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .featured-member-content {
+    padding: 16px;
+  }
+
+  .featured-member-promo {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .featured-member-name {
+    font-size: 20px;
+  }
+
+  .featured-age,
+  .featured-gender {
+    font-size: 13px;
+    padding: 4px 10px;
+    margin-right: 8px;
+  }
+
+  .featured-member-description,
+  .featured-member-contact p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* Signup card spacing on phone */
+  .signup-card {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+
+  .signup-title {
+    font-size: 20px;
+  }
+
+  .signup-subtitle {
+    font-size: 14px;
+  }
+
+  .feature-text {
+    font-size: 14px;
+  }
+
+  .hero-btn-large {
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .btn-text-main {
+    font-size: 18px;
+  }
+
+  .btn-text-sub {
+    font-size: 13px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .featured-member-image img {
+    height: 180px;
+  }
+
+  .featured-member-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .btn-text-main {
+    font-size: 16px;
   }
 }
 

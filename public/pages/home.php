@@ -21,8 +21,8 @@ include ROOT_PATH . '/templates/header.php';
 				</div>
 				<div class="featured-member-content">
 					<div class="featured-member-promo">
-						<span class="promo-icon">⭐</span>
-						<span class="promo-text">只需50美元即可置顶一个月，让更多人看到你！</span>
+						<span class="promo-text">只需50美元即可置顶一个月，让更多人看到你！
+						<a href="<?php echo SITE_URL; ?>/contact">联系我们</a>了解更多详情.</span>
 					</div>
 					<h2 class="featured-member-name">张美丽</h2>
 					<div class="featured-member-info">
