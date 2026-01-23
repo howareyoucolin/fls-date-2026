@@ -69,6 +69,49 @@
 		
 		.empty-state { text-align: center; padding: 4rem 2rem; color: #999; }
 		
+		/* Signup Page */
+		.signup-page { max-width: 600px; margin: 40px auto; background: #fff; padding: 40px; border: 1px solid #e0e0e0; border-radius: 8px; }
+		.signup-title { font-size: 24px; font-weight: bold; margin-bottom: 30px; color: #333; text-align: center; }
+		.form-group { margin-bottom: 25px; }
+		.form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; }
+		.form-group .required { color: #D72171; }
+		.form-group input[type="text"], 
+		.form-group input[type="email"],
+		.form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; font-family: inherit; box-sizing: border-box; }
+		.form-group input[type="text"]:focus, 
+		.form-group input[type="email"]:focus,
+		.form-group textarea:focus { outline: none; border-color: #D72171; }
+		.form-group textarea { resize: vertical; min-height: 120px; }
+		.radio-group { display: flex; gap: 20px; }
+		.radio-group label { display: flex; align-items: center; gap: 5px; font-weight: normal; cursor: pointer; }
+		.date-selectors { display: flex; gap: 10px; }
+		.date-selectors select { padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; cursor: pointer; }
+		.date-selectors select:focus { outline: none; border-color: #D72171; }
+		.form-hint { font-size: 12px; color: #777; margin-bottom: 8px; line-height: 1.5; }
+		.char-count { font-size: 12px; color: #D72171; margin-top: 5px; }
+		.submit-btn { background: #D72171; color: #fff; padding: 12px 40px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.3s; }
+		.submit-btn:hover { background: #b81a5a; }
+		.error-message { background: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; margin-bottom: 20px; border-left: 4px solid #c62828; }
+		.success-message { background: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 4px; margin-bottom: 20px; border-left: 4px solid #2e7d32; }
+		
+		/* Image Upload */
+		.image-upload-wrapper { margin-top: 10px; }
+		.image-preview { position: relative; width: 185px; height: 185px; border: 2px dashed #ddd; border-radius: 4px; overflow: hidden; margin-bottom: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; background: #f9f9f9; }
+		.image-preview:hover { border-color: #D72171; background: #f5f5f5; }
+		.image-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.upload-text { color: #999; font-size: 14px; text-align: center; pointer-events: none; }
+		.image-preview.has-image .upload-text { display: none; }
+		.upload-close { position: absolute; top: 5px; right: 5px; width: 24px; height: 24px; line-height: 24px; text-align: center; background: #D72171; color: #fff; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; }
+		.upload-close:hover { background: #b81a5a; }
+		.upload-message { margin-top: 10px; font-size: 12px; }
+		.upload-message.error { color: #D72171; }
+		.upload-message.success { color: #4CAF50; }
+		
+		/* See More Section */
+		.see-more-section { padding: 20px 0; }
+		.see-more-btn { display: inline-block; background: #D72171; color: #fff; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-size: 16px; font-weight: bold; transition: background 0.3s; }
+		.see-more-btn:hover { background: #b81a5a; }
+		
 		/* Pagination */
 		.pagination { text-align: center; margin: 40px 0; padding: 20px 0; }
 		.pagination-link { display: inline-block; padding: 8px 12px; margin: 0 4px; color: #333; text-decoration: none; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s; }
