@@ -69,9 +69,22 @@
 		
 		.empty-state { text-align: center; padding: 4rem 2rem; color: #999; }
 		
+		/* Pagination */
+		.pagination { text-align: center; margin: 40px 0; padding: 20px 0; }
+		.pagination-link { display: inline-block; padding: 8px 12px; margin: 0 4px; color: #333; text-decoration: none; border: 1px solid #ddd; border-radius: 4px; transition: all 0.3s; }
+		.pagination-link:hover { background: #D72171; color: #fff; border-color: #D72171; }
+		.pagination-link.current { background: #D72171; color: #fff; border-color: #D72171; cursor: default; }
+		.pagination-link.prev, .pagination-link.next { font-weight: bold; }
+		.pagination-ellipsis { display: inline-block; padding: 8px 4px; color: #999; }
+		.member-count { float: right; color: #666; font-size: 14px; line-height: 24px; }
+		
 		/* Member Detail Page */
-		.breadcrum { margin-bottom: 25px; font-size: 14px; }
-		.breadcrum a { text-decoration: none; color: #474747; }
+		/* Breadcrumb */
+		.breadcrumb { margin-bottom: 5px; padding: 25px 0 0 0; font-size: 14px; }
+		.breadcrumb-item { color: #666; text-decoration: none; transition: color 0.2s; }
+		.breadcrumb-item:hover { color: #D72171; text-decoration: underline; }
+		.breadcrumb-separator { color: #999; margin: 0 8px; }
+		.breadcrumb-current { color: #333; font-weight: 500; }
 		.highlight { margin: 15px 0 25px; background: #FFF; padding: 20px; border: 1px solid #e0e0e0; }
 		.highlight .profile { width: 300px; float: left; margin: 0 25px 0 0; }
 		.highlight .contacts p { border-bottom: 1px dashed #DDD; line-height: 37px; margin: 0; }

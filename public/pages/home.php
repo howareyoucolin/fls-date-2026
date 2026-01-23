@@ -65,7 +65,7 @@ include ROOT_PATH . '/templates/header.php';
 								<?php 
 								$age = calculate_age($member->birthday);
 								if( $age ) echo '<span class="age">' . $age . '岁</span>';
-								if( $member->gender ) echo '<span class="gender">' . htmlspecialchars($member->gender) . '</span>';
+								if( $member->gender ) echo '<span class="gender">' . get_gender_display($member->gender) . '</span>';
 								?>
 							</div>
 							<?php if( !empty($member->description) ): ?>
@@ -75,9 +75,20 @@ include ROOT_PATH . '/templates/header.php';
 							<?php endif; ?>
 							<?php 
 							$wechat = isset($member->wechat) && !empty($member->wechat) ? $member->wechat : '';
-							if( $wechat ): ?>
+							$email = isset($member->email) && !empty($member->email) ? $member->email : '';
+							$phone = isset($member->phone) && !empty($member->phone) ? $member->phone : '';
+							
+							if( $wechat || $email || $phone ): ?>
 								<div class="member-contact">
-									微信: <strong><?php echo htmlspecialchars($wechat); ?></strong>
+									<?php if( $wechat ): ?>
+										微信: <strong><?php echo htmlspecialchars($wechat); ?></strong><br/>
+									<?php endif; ?>
+									<?php if( $email ): ?>
+										电邮: <?php echo htmlspecialchars($email); ?><br/>
+									<?php endif; ?>
+									<?php if( $phone ): ?>
+										手机: <?php echo htmlspecialchars($phone); ?>
+									<?php endif; ?>
 								</div>
 							<?php endif; ?>
 							<div class="clear"></div>

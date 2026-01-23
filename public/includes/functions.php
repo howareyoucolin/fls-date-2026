@@ -57,3 +57,19 @@ function truncate_text($text, $length = 100){
 	}
 	return mb_substr($text, 0, $length) . '...';
 }
+
+function get_gender_display($gender){
+	if( $gender == 'm' ){
+		return '男生';
+	} elseif( $gender == 'f' ){
+		return '女生';
+	} elseif( !empty($gender) ){
+		return htmlspecialchars($gender);
+	}
+	return '';
+}
+
+function get_members_count(){
+	global $db;
+	return (int)$db->get_var("SELECT COUNT(*) FROM cz_members");
+}

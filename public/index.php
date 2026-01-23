@@ -49,6 +49,9 @@ if( empty($uri) ){
 } elseif( preg_match('/^member\/(\d+)$/', $uri, $matches) ){
 	$page = 'member';
 	$_GET['id'] = $matches[1];
+} elseif( preg_match('/^members\/page\/(\d+)$/', $uri, $matches) ){
+	$page = 'members';
+	$_GET['page'] = $matches[1];
 } else {
 	// Try to find a page file directly
 	$page_file = ROOT_PATH . '/pages/' . str_replace('/', '-', $uri) . '.php';
