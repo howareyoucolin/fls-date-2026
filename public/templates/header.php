@@ -13,12 +13,13 @@
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
+		html, body { width: 100%; margin: 0; padding: 0; }
 		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
 		.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 		
 		/* Header */
-		.header { height: 60px; line-height: 60px; background: #e91e63; color: #FFF; }
-		.header .container { width: 860px; max-width: 100%; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
+		.header { height: 60px; line-height: 60px; background: #e91e63; color: #FFF; width: 100%; }
+		.header-content-wrapper { max-width: 1400px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 		.header a { color: #FFF; text-decoration: none; }
 		.header h1 { padding: 0; margin: 0; font-size: 18px; font-weight: bold; }
 		.header h1 a { float: left; font-weight: normal; }
@@ -31,13 +32,45 @@
 		.main { min-height: 60vh; }
 		
 		/* Hero Section */
-		.hero { background: #474747; color: #fff; padding: 30px 0; }
-		.hero .container { width: 860px; max-width: 100%; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
-		.hero-left { float: left; width: 65%; padding-right: 20px; box-sizing: border-box; }
-		.hero-right { float: right; width: 35%; text-align: center; }
+		.hero { background: #474747; color: #fff; padding: 30px 0; width: 100%; }
+		.hero-content-wrapper { max-width: 1400px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; display: flex; align-items: stretch; gap: 30px; }
+		.hero-left { flex: 1; box-sizing: border-box; display: flex; }
+		.hero-right { width: 300px; flex-shrink: 0; text-align: center; display: flex; }
 		.hero-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #fff; }
 		.hero-content { font-size: 14px; line-height: 1.8; }
 		.hero-content p { margin: 0 0 8px; }
+		
+		/* Featured Member */
+		.featured-member { background: transparent; border-radius: 8px; overflow: hidden; position: relative; display: flex; align-items: stretch; height: 100%; gap: 0; }
+		.featured-member-image { width: 400px; flex-shrink: 0; margin-right: 0; overflow: hidden; }
+		.featured-member-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.featured-member-content { overflow: hidden; padding: 25px; flex: 1; display: flex; flex-direction: column; background: rgba(255, 255, 255, 0.8); }
+		.featured-member-promo { background: linear-gradient(135deg, #D72171, #e91e63); color: #fff; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(215, 33, 113, 0.3); }
+		.promo-icon { font-size: 20px; margin-right: 8px; }
+		.promo-text { display: inline-block; }
+		.featured-member-name { font-size: 24px; font-weight: bold; color: #D72171; margin: 0 0 10px 0; }
+		.featured-member-info { margin-bottom: 15px; }
+		.featured-age, .featured-gender { display: inline-block; background: #f5f5f5; padding: 5px 12px; border-radius: 4px; font-size: 14px; color: #666; margin-right: 10px; }
+		.featured-member-description { color: #555; line-height: 1.8; font-size: 14px; margin-bottom: 15px; }
+		.featured-member-description p { margin: 0; }
+		.featured-member-contact { border-top: 1px dashed #ddd; padding-top: 15px; }
+		.featured-member-contact p { margin: 5px 0; font-size: 14px; color: #666; }
+		.featured-member-contact strong { color: #D72171; font-weight: bold; }
+		
+		/* Signup Card */
+		.signup-card { background: #fff; border-radius: 12px; padding: 30px 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+		.signup-card-header { margin-bottom: 20px; }
+		.signup-title { font-size: 24px; font-weight: bold; color: #D72171; margin: 0 0 8px 0; }
+		.signup-subtitle { font-size: 16px; color: #666; margin: 0; }
+		.signup-features { margin: 20px 0; text-align: left; }
+		.feature-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+		.feature-icon { width: 24px; height: 24px; background: #D72171; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; flex-shrink: 0; }
+		.feature-text { font-size: 15px; color: #333; }
+		.hero-btn-large { display: block; background: linear-gradient(135deg, #D72171 0%, #b81a5a 100%); color: #fff; padding: 18px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 25px; transition: all 0.3s; box-shadow: 0 4px 12px rgba(215, 33, 113, 0.3); }
+		.hero-btn-large:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(215, 33, 113, 0.4); background: linear-gradient(135deg, #b81a5a 0%, #D72171 100%); }
+		.btn-text-main { display: block; font-size: 20px; margin-bottom: 4px; }
+		.btn-text-sub { display: block; font-size: 14px; opacity: 0.9; }
+		
 		.hero-btn { display: inline-block; background: #4CAF50; color: #fff; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
 		.hero-btn:hover { background: #45a049; }
 		.hero-btn-text { font-size: 14px; color: #fff; margin: 5px 0; }
@@ -174,6 +207,11 @@
 			.hero-left, .hero-right { width: 100%; float: none; padding: 0; }
 			.hero-title { font-size: 18px; }
 			.hero-content { font-size: 13px; }
+			.signup-card { padding: 25px 20px; margin-top: 20px; }
+			.signup-title { font-size: 20px; }
+			.signup-subtitle { font-size: 14px; }
+			.hero-btn-large { padding: 16px 25px; }
+			.btn-text-main { font-size: 18px; }
 			.section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
 			.section-title { font-size: 1.75rem; }
 			.member-card { width: 100%; margin-right: 0; }
@@ -194,7 +232,7 @@
 </head>
 <body>
 	<div class="header">
-		<div class="container">
+		<div class="header-content-wrapper">
 			<h1><a href="<?php echo SITE_URL; ?>">纽约同城交友</a></h1>
 			<a class="normal last" href="<?php echo SITE_URL; ?>/members"><span>所有</span><br class="mobile-only" />会员</a>
 			<a class="signup" href="<?php echo SITE_URL; ?>/signup"><span>免费</span><br class="mobile-only" />注册</a>

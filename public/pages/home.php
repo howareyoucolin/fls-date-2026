@@ -13,24 +13,57 @@ include ROOT_PATH . '/templates/header.php';
 
 <!-- Hero Section -->
 <section class="hero">
-	<div class="container">
+	<div class="hero-content-wrapper">
 		<div class="hero-left">
-			<h1 class="hero-title">纽约交友找男女朋友</h1>
-			<div class="hero-content">
-				<p>■ 单身朋友欢迎参加世界单身感恩节活動2/14单身遇见爱情,会员单身派对活动 Single party</p>
-				<p>2/14周六下午 Party 2:00-4:00内容:国标舞学习</p>
-				<p>聚晚餐,速配交友,才艺表演,兴趣联络,卡拉ok,跳舞交友.</p>
-				<p>报名参加人士包括商界白领精英,公司主管,艺术 音乐界人士等等,</p>
-				<p>活动详细报名见公司网站:世界单身联谊会。详细信息请上公司网站</p>
-				<p>注册: www.gsg365.com.</p>
-				<p>地點: NY.7326662066/7323316189/.</p>
-				<p>歡迎报名参加等等,活动详细报名见公司网站:世界单身联</p>
+			<div class="featured-member">
+				<div class="featured-member-image">
+					<img src="<?php echo SITE_URL; ?>/assets/paid-members/image-1.png" alt="Featured Member" />
+				</div>
+				<div class="featured-member-content">
+					<div class="featured-member-promo">
+						<span class="promo-icon">⭐</span>
+						<span class="promo-text">只需50美元即可置顶一个月，让更多人看到你！</span>
+					</div>
+					<h2 class="featured-member-name">张美丽</h2>
+					<div class="featured-member-info">
+						<span class="featured-age">28岁</span>
+						<span class="featured-gender">女生</span>
+					</div>
+					<div class="featured-member-description">
+						<p>来自上海，在纽约工作已有5年。喜欢旅行、阅读和美食。性格开朗，喜欢交朋友。希望找到一个有共同兴趣爱好的另一半，一起探索纽约的美好生活。</p>
+					</div>
+					<div class="featured-member-contact">
+						<p>微信: <strong>zhangmeili2024</strong></p>
+						<p>电邮: zhangmeili@example.com</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="hero-right">
-			<a href="<?php echo SITE_URL; ?>/signup" class="hero-btn">马上免费注册</a>
-			<p class="hero-btn-text">注册十分简单</p>
-			<p class="hero-btn-text">只花半分钟</p>
+			<div class="signup-card">
+				<div class="signup-card-header">
+					<h3 class="signup-title">马上注册</h3>
+					<p class="signup-subtitle">你的幸福从这里开始</p>
+				</div>
+				<div class="signup-features">
+					<div class="feature-item">
+						<span class="feature-icon">✓</span>
+						<span class="feature-text">完全免费</span>
+					</div>
+					<div class="feature-item">
+						<span class="feature-icon">✓</span>
+						<span class="feature-text">注册简单</span>
+					</div>
+					<div class="feature-item">
+						<span class="feature-icon">✓</span>
+						<span class="feature-text">只需半分钟</span>
+					</div>
+				</div>
+				<a href="<?php echo SITE_URL; ?>/signup" class="hero-btn-large">
+					<span class="btn-text-main">马上免费注册</span>
+					<span class="btn-text-sub">立即开始 →</span>
+				</a>
+			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
