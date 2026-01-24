@@ -1,12 +1,6 @@
 <?php
 declare(strict_types=1);
 
-// ---- CLI-only guard ----
-if (php_sapi_name() !== 'cli') {
-    http_response_code(404);
-    exit('Not found');
-}
-
 $pdo = require __DIR__ . '/db.php';
 
 $sqlCreate = <<<SQL

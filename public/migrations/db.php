@@ -2,6 +2,17 @@
 // db.php
 declare(strict_types=1);
 
+// ---- CLI-only guard ----
+if (php_sapi_name() !== 'cli') {
+    http_response_code(404);
+    exit('Not found');
+}
+
+// Define ROOT_PATH so config.php won't die
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', realpath(__DIR__ . '/..'));
+}
+
 // Load config
 $configPath = __DIR__ . '/../config.php';
 if (file_exists($configPath)) {
