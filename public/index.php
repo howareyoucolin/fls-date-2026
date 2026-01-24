@@ -57,6 +57,15 @@ if( empty($uri) ){
 	$page = 'signup-thankyou';
 } elseif( preg_match('/^contacts\/thankyou$/', $uri) ){
 	$page = 'contacts-thankyou';
+} elseif( preg_match('/^blog\/(.+)$/', $uri, $matches) ){
+	// /blog/<post_name>
+	$page = 'single';
+
+	// IMPORTANT: <post_name> in prod is percent-encoded Chinese, decode it
+	$_GET['post_name'] = urldecode($matches[1]);
+
+	// optional: normalize trailing slash
+	$_GET['post_name'] = trim($_GET['post_name'], "/ \t\n\r\0\x0B");
 } else {
 	// Try to find a page file directly
 	$page_file = ROOT_PATH . '/pages/' . str_replace('/', '-', $uri) . '.php';

@@ -236,13 +236,19 @@ $latest_posts = get_latest_wp_posts(10);
 			<div class="posts-list">
 				<?php foreach ($latest_posts as $post): ?>
 					<?php
-						$post_id = (int)$post->ID;
-						$title   = $post->post_title ?: '（无标题）';
-						$date    = date('Y-m-d', strtotime($post->post_date));
-						$excerpt = wp_excerpt($post->post_content, 160);
+						$post_id   = (int)$post->ID;
+						$title     = $post->post_title ?: '（无标题）';
+						$date      = date('Y-m-d', strtotime($post->post_date));
+						$excerpt  = wp_excerpt($post->post_content, 160);
 
-						// universal WP link (works even without permalinks)
-						$url = SITE_URL . '/?p=' . $post_id;
+						// Pretty blog URL: /blog/<post_name>
+						$slug = isset($post->post_name) ? $post->post_name : '';
+						$slug = trim($slug);
+
+						// Encode for URL (handles Chinese safely)
+						$slug_encoded = rawurlencode($slug);
+
+						$url = SITE_URL . '/blog/' . $slug_encoded;
 					?>
 					<article class="post-card">
 						<div class="post-card-inner">
@@ -258,6 +264,13 @@ $latest_posts = get_latest_wp_posts(10);
 				<?php endforeach; ?>
 
 				<div class="clear"></div>
+			</div>
+			
+			<!-- See More Posts Button -->
+			<div style="text-align: center; padding: 100px 0 30px 0;">
+				<a href="<?php echo SITE_URL; ?>/blog" class="see-more-btn">
+					查看更多文章
+				</a>
 			</div>
 		<?php endif; ?>
 	</div>

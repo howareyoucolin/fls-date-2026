@@ -83,7 +83,7 @@ function get_latest_wp_posts($limit = 10){
 	if ($limit <= 0) $limit = 10;
 
 	$sql = "
-		SELECT ID, post_title, post_date, post_content
+		SELECT ID, post_title, post_date, post_content, post_name
 		FROM wp_posts
 		WHERE post_status = 'publish'
 			AND post_type = 'post'
