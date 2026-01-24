@@ -107,7 +107,7 @@ $meta_title = $post->post_title;
 $meta_description = '';
 include ROOT_PATH . '/templates/header.php';
 
-// Build current URL for WeChat QR
+// Current URL (for sharing)
 $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
 $current_url .= "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 ?>
@@ -122,19 +122,16 @@ $current_url .= "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 				发表于 <?php echo htmlspecialchars(date('Y-m-d', strtotime($post->post_date))); ?>
 			</div>
 
-			<!-- WeChat Share -->
-			<div class="wechat-share">
-				<button class="wechat-share-btn" onclick="toggleWeChatQR()">
-					分享到微信
-				</button>
-
-				<div id="wechat-qr-box" class="wechat-qr-box">
-					<div class="wechat-qr-title">用微信扫一扫分享</div>
-					<img
-						src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=<?php echo urlencode($current_url); ?>"
-						alt="WeChat Share QR"
-					/>
+			<!-- WeChat Share (AddToAny) -->
+			<div class="share-wechat-container">
+				<div class="a2a_kit a2a_default_style">
+					<a
+						class="a2a_button_wechat"
+						data-a2a-url="<?php echo htmlspecialchars($current_url); ?>"
+						data-a2a-title="<?php echo htmlspecialchars($post->post_title); ?>"
+					></a>
 				</div>
+				<div class="share-wechat-hint">点击按钮后，会显示二维码；用微信扫一扫即可发给朋友或分享到朋友圈</div>
 			</div>
 
 			<div style="line-height:1.8; font-size:15px; margin-top:20px;">
@@ -144,62 +141,69 @@ $current_url .= "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 				echo $post->post_content;
 				?>
 			</div>
-		</div>
 
-        <button class="wechat-share-btn" onclick="toggleWeChatQR()" style="margin:20px auto; display:block;">
-            分享到微信
-        </button>
+			<!-- Optional: bottom share button again -->
+			<div class="share-wechat-container" style="margin-top:24px;">
+				<div class="a2a_kit a2a_default_style">
+					<a
+						class="a2a_button_wechat"
+						data-a2a-url="<?php echo htmlspecialchars($current_url); ?>"
+						data-a2a-title="<?php echo htmlspecialchars($post->post_title); ?>"
+					></a>
+				</div>
+			</div>
+
+		</div>
 	</div>
 </div>
 
-<!-- WeChat Share Script -->
-<script>
-function toggleWeChatQR() {
-	const box = document.getElementById('wechat-qr-box');
-	if (!box) return;
-	box.style.display = (box.style.display === 'block') ? 'none' : 'block';
-}
-</script>
+<!-- AddToAny script -->
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 
-<!-- WeChat Share Styles -->
+<!-- Styles (keep it in this file) -->
 <style>
-.wechat-share {
-	margin: 10px 0 20px;
-	position: relative;
+/* WeChat share button wrapper */
+.share-wechat-container{
+	margin: 10px 0 18px;
 }
 
-.wechat-share-btn {
-	background: #07C160; /* WeChat green */
-	color: #fff;
-	border: none;
-	padding: 8px 16px;
+/* Make the WeChat icon feel like a real button */
+.share-wechat-container .a2a_button_wechat{
+	display: inline-block;
+	width: 44px;
+	height: 36px;
 	border-radius: 4px;
-	font-size: 14px;
-	cursor: pointer;
+	background: #07C160;
+	position: relative;
+	text-decoration: none;
 }
 
-.wechat-share-btn:hover {
+/* White WeChat icon (uses AddToAny SVG mask if available; otherwise just shows green button) */
+.share-wechat-container .a2a_button_wechat::after{
+	content: "微信";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.share-wechat-container .a2a_button_wechat:hover{
 	background: #06ad56;
 }
 
-.wechat-qr-box {
-	display: none;
-	position: absolute;
-	top: 40px;
-	left: 0;
-	background: #fff;
-	border: 1px solid #ddd;
-	padding: 12px;
-	border-radius: 6px;
-	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-	z-index: 10;
-	text-align: center;
-}
-
-.wechat-qr-title {
-	font-size: 13px;
-	color: #666;
-	margin-bottom: 8px;
+.share-wechat-hint{
+	margin-top: 8px;
+	font-size: 12px;
+	color: #777;
+	line-height: 1.5;
 }
 </style>
 
