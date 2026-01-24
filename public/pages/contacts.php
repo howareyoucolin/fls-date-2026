@@ -79,44 +79,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 		}
 
 		if (empty($errors)) {
-			$to = 'howareyoucolin@gmail.com';
-			$mail_subject = '【纽约同城交友】联系表单留言';
-
-			$body = implode("\n", [
-				"你收到一条新的联系表单留言：",
-				"",
-				"名字: " . ($name ? $name : '(未填写)'),
-				"微信: " . ($wechat ? $wechat : '(未填写)'),
-				"邮箱: " . ($email ? $email : '(未填写)'),
-				"时间: " . date('Y-m-d H:i:s'),
-				"IP: " . ($_SERVER['REMOTE_ADDR'] ?? ''),
-				"",
-				"留言内容：",
-				$message,
-				"",
-			]);
-
-			$headers = [];
-			$headers[] = 'MIME-Version: 1.0';
-			$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-			$headers[] = 'From: no-reply@' . ($_SERVER['HTTP_HOST'] ?? 'dev.flushingdating.com');
-
-			// If user provided email, set reply-to for convenience
-			if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$headers[] = 'Reply-To: ' . $email;
-			}
-
-			$ok = @mail($to, $mail_subject, $body, implode("\r\n", $headers));
-
-			if ($ok) {
-				$success_message = '✅ 已收到你的留言！我会尽快回复你。';
-				$_POST = []; // reset form
-			} else {
-				$error_message = '发送失败（服务器 mail() 可能不可用）。请稍后再试。';
-			}
-		} else {
-			$error_message = implode('<br>', $errors);
-		}
+            global $db;
+        
+            try {
+                $sql = "INSERT INTO cz_contacts (name, wechat, email, message, is_read, created_at)
+                        VALUES ('" . $db->escape($name) . "',
+                                '" . $db->escape($wechat) . "',
+                                '" . $db->escape($email) . "',
+                                '" . $db->escape($message) . "',
+                                0,
+                                NOW())";
+                $db->query($sql);
+        
+                header('Location: ' . SITE_URL . '/contacts/thankyou');
+                exit;
+        
+            } catch (Exception $e) {
+                $error_message = '提交失败，请稍后再试。';
+                if (defined('DEBUG') && DEBUG) {
+                    $error_message .= ' ' . $e->getMessage();
+                }
+            }
+        } else {
+            $error_message = implode('<br>', $errors);
+        }
+        
 	}
 }
 
@@ -230,13 +217,29 @@ include ROOT_PATH . '/templates/header.php';
 
   function trim(v) { return (v || '').replace(/^\s+|\s+$/g, ''); }
 
+  function showErrors(messages) {
+    // Remove existing client error box
+    var old = document.getElementById('client-error-box');
+    if (old) old.remove();
+
+    var box = document.createElement('div');
+    box.id = 'client-error-box';
+    box.className = 'error-message';
+    box.innerHTML = messages.join('<br>');
+
+    // Insert above the form
+    form.parentNode.insertBefore(box, form);
+
+    // Scroll into view (mobile-friendly)
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   form.addEventListener('submit', function (e) {
     var name = trim(document.getElementById('contact_name').value);
     var wechat = trim(document.getElementById('contact_wechat').value);
     var email = trim(document.getElementById('contact_email').value);
     var message = trim(document.getElementById('contact_message').value);
 
-    // Basic checks
     var errs = [];
 
     if (!name) errs.push('必须填写你的名字!');
@@ -247,7 +250,6 @@ include ROOT_PATH . '/templates/header.php';
       errs.push('请至少填写一种联系方式（微信 / 邮箱）方便我回复你。');
     }
 
-    // Lightweight format checks
     if (wechat && wechat.length < 4) {
       errs.push('微信号码格式不正确。');
     }
@@ -281,7 +283,7 @@ include ROOT_PATH . '/templates/header.php';
 
     if (errs.length) {
       e.preventDefault();
-      alert(errs.join("\n"));
+      showErrors(errs);
       return false;
     }
   });
