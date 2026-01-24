@@ -73,3 +73,31 @@ function get_members_count(){
 	global $db;
 	return (int)$db->get_var("SELECT COUNT(*) FROM cz_members");
 }
+
+// --- Latest Posts (from wp_posts) ---
+
+function get_latest_wp_posts($limit = 10){
+	global $db;
+
+	$limit = (int)$limit;
+	if ($limit <= 0) $limit = 10;
+
+	$sql = "
+		SELECT ID, post_title, post_date, post_content
+		FROM wp_posts
+		WHERE post_status = 'publish'
+			AND post_type = 'post'
+		ORDER BY post_date DESC
+		LIMIT {$limit}
+	";
+
+	return $db->get_results($sql);
+}
+
+function wp_excerpt($html, $maxLen = 160){
+	$text = trim(html_entity_decode(strip_tags($html), ENT_QUOTES, 'UTF-8'));
+	$text = preg_replace('/\s+/u', ' ', $text);
+
+	if (mb_strlen($text, 'UTF-8') <= $maxLen) return $text;
+	return mb_substr($text, 0, $maxLen, 'UTF-8') . '...';
+}

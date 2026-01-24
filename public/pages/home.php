@@ -216,4 +216,51 @@ include ROOT_PATH . '/templates/header.php';
 	</div>
 </section>
 
+<!-- Latest Posts Section -->
+<?php
+$latest_posts = get_latest_wp_posts(10);
+?>
+
+<section class="posts-section">
+	<div class="container">
+		<div class="section-header">
+			<h2 class="section-title">最新文章</h2>
+			<a href="<?php echo SITE_URL; ?>/blog" class="view-all-link">查看所有文章 <span>→</span></a>
+		</div>
+
+		<?php if (empty($latest_posts)): ?>
+			<div class="empty-state">
+				<p>暂无文章</p>
+			</div>
+		<?php else: ?>
+			<div class="posts-list">
+				<?php foreach ($latest_posts as $post): ?>
+					<?php
+						$post_id = (int)$post->ID;
+						$title   = $post->post_title ?: '（无标题）';
+						$date    = date('Y-m-d', strtotime($post->post_date));
+						$excerpt = wp_excerpt($post->post_content, 160);
+
+						// universal WP link (works even without permalinks)
+						$url = SITE_URL . '/?p=' . $post_id;
+					?>
+					<article class="post-card">
+						<div class="post-card-inner">
+							<h3 class="post-title">
+								<a href="<?php echo htmlspecialchars($url); ?>">
+									<?php echo htmlspecialchars($title); ?>
+								</a>
+							</h3>
+							<div class="post-meta"><?php echo htmlspecialchars($date); ?></div>
+							<p class="post-excerpt"><?php echo htmlspecialchars($excerpt); ?></p>
+						</div>
+					</article>
+				<?php endforeach; ?>
+
+				<div class="clear"></div>
+			</div>
+		<?php endif; ?>
+	</div>
+</section>
+
 <?php include ROOT_PATH . '/templates/footer.php'; ?>
