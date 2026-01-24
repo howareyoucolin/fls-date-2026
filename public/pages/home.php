@@ -11,34 +11,107 @@ $members = get_members(20);
 include ROOT_PATH . '/templates/header.php';
 ?>
 
+<style>
+/* Paid member corner ribbon */
+.paid-ribbon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-top: 80px solid #ffca28;
+	border-right: 80px solid transparent;
+	z-index: 5;
+}
+
+/* Gradient overlay to match promo */
+.paid-ribbon::before {
+	content: "";
+	position: absolute;
+	top: -80px;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	background: linear-gradient(135deg, #ffe082 0%, #ffca28 100%);
+	clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Text inside triangle */
+.paid-ribbon span {
+	position: absolute;
+	top: -40px;
+	left: 2px;
+	transform: rotate(-45deg);
+	transform-origin: left top;
+	color: #212529;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+}
+@media (max-width: 768px) {
+	.paid-ribbon {
+		border-top: 60px solid #ffca28;
+		border-right: 60px solid transparent;
+	}
+
+	.paid-ribbon::before {
+		top: -60px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.paid-ribbon span {
+		top: -28px;
+		font-size: 11px;
+	}
+}
+</style>
+
 <!-- Hero Section -->
 <section class="hero">
 	<div class="hero-content-wrapper">
-		<div class="hero-left">
-			<div class="featured-member">
-				<div class="featured-member-image">
-					<img src="<?php echo SITE_URL; ?>/assets/paid-members/image-1.png" alt="Featured Member" />
+
+	<div class="hero-left">
+	<div class="featured-member">
+			<div class="paid-ribbon">
+				<span>付费会员</span>
+			</div>
+
+			<div class="featured-member-image">
+				<img src="<?php echo SITE_URL; ?>/assets/paid-members/image-2.png" alt="Featured Member" />
+			</div>
+
+			<div class="featured-member-content">
+				<div class="featured-member-promo">
+					<span class="promo-text">
+						只需50美元即可置顶一个月，让更多人看到你！
+						<a href="<?php echo SITE_URL; ?>/contacts">联系我们</a>了解更多详情。
+					</span>
 				</div>
-				<div class="featured-member-content">
-					<div class="featured-member-promo">
-						<span class="promo-text">只需50美元即可置顶一个月，让更多人看到你！
-						<a href="<?php echo SITE_URL; ?>/contact">联系我们</a>了解更多详情.</span>
-					</div>
-					<h2 class="featured-member-name">张美丽</h2>
-					<div class="featured-member-info">
-						<span class="featured-age">28岁</span>
-						<span class="featured-gender">女生</span>
-					</div>
-					<div class="featured-member-description">
-						<p>来自上海，在纽约工作已有5年。喜欢旅行、阅读和美食。性格开朗，喜欢交朋友。希望找到一个有共同兴趣爱好的另一半，一起探索纽约的美好生活。</p>
-					</div>
-					<div class="featured-member-contact">
-						<p>微信: <strong>zhangmeili2024</strong></p>
-						<p>电邮: zhangmeili@example.com</p>
-					</div>
+
+				<h2 class="featured-member-name">Leo先生</h2>
+				<div class="featured-member-info">
+					<span class="featured-age">36岁</span>
+					<span class="featured-gender">男生</span>
+				</div>
+
+				<div class="featured-member-description">
+					<p>
+						在纽约法拉盛生活将近20年，已稳定扎根本地，有自己的房子和车。白领办公室工作，生活规律，做事认真踏实。性格温和、有责任感，待人真诚，重视沟通和尊重。平时喜欢科技和AI相关的新事物，也会健身、看电影、尝试不同的美食。希望遇到一个三观相近、愿意一起规划未来、互相支持的另一半，一起把生活过得简单而有温度。
+					</p>
+				</div>
+
+				<div class="featured-member-contact">
+					<p>微信: <strong>goodboy2ny</strong></p>
+					<p>电邮: <span class="sub">未公开</span></p>
+					<p>电话: <span class="sub">未公开</span></p>
 				</div>
 			</div>
 		</div>
+	</div>
+
+
 		<div class="hero-right">
 			<div class="signup-card">
 				<div class="signup-card-header">
