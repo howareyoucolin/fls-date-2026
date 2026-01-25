@@ -39,6 +39,8 @@ $pages = [
 	'members' => 'members',
 	'member' => 'member',
 	'signup' => 'signup',
+	'blog' => 'blog',
+	'sitemap' => 'sitemap',
 ];
 
 // Determine which page to load
@@ -60,6 +62,8 @@ if( empty($uri) ){
 } elseif( preg_match('/^blog\/page\/(\d+)$/', $uri, $matches) ){
 	$page = 'blog';
 	$_GET['page'] = $matches[1];
+} elseif( preg_match('/^sitemap\.xml$/', $uri) ){
+	$page = 'sitemap';
 } elseif( preg_match('/^blog\/(.+)$/', $uri, $matches) ){
 	// /blog/<post_name>
 	$page = 'single';
