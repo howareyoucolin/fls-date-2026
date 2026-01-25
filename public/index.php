@@ -57,6 +57,9 @@ if( empty($uri) ){
 	$page = 'signup-thankyou';
 } elseif( preg_match('/^contacts\/thankyou$/', $uri) ){
 	$page = 'contacts-thankyou';
+} elseif( preg_match('/^blog\/page\/(\d+)$/', $uri, $matches) ){
+	$page = 'blog';
+	$_GET['page'] = $matches[1];
 } elseif( preg_match('/^blog\/(.+)$/', $uri, $matches) ){
 	// /blog/<post_name>
 	$page = 'single';
