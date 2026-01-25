@@ -11,7 +11,7 @@
 	<meta name="keywords" content="<?php echo htmlspecialchars($meta_keywords); ?>">
 	<?php endif; ?>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css?v=6">
+	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css?v=8">
 </head>
 <body>
 	<div class="header">

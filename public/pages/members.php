@@ -60,19 +60,33 @@ include ROOT_PATH . '/templates/header.php';
 							$email = isset($member->email) && !empty($member->email) ? $member->email : '';
 							$phone = isset($member->phone) && !empty($member->phone) ? $member->phone : '';
 							
-							if( $wechat || $email || $phone ): ?>
+							?>
+
+							<?php if( $wechat || $email || $phone ): ?>
 								<div class="member-contact">
 									<?php if( $wechat ): ?>
-										微信: <strong><?php echo htmlspecialchars($wechat); ?></strong><br/>
+										微信:
+										<strong class="copy-text" onclick="copy('<?php echo htmlspecialchars($wechat, ENT_QUOTES); ?>')">
+											<?php echo htmlspecialchars($wechat); ?>
+										</strong><br/>
 									<?php endif; ?>
+							
 									<?php if( $email ): ?>
-										电邮: <?php echo htmlspecialchars($email); ?><br/>
+										电邮:
+										<span class="copy-text" onclick="copy('<?php echo htmlspecialchars($email, ENT_QUOTES); ?>')">
+											<?php echo htmlspecialchars($email); ?>
+										</span><br/>
 									<?php endif; ?>
+							
 									<?php if( $phone ): ?>
-										手机: <?php echo htmlspecialchars($phone); ?>
+										手机:
+										<span class="copy-text" onclick="copy('<?php echo htmlspecialchars($phone, ENT_QUOTES); ?>')">
+											<?php echo htmlspecialchars($phone); ?>
+										</span>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
+							
 						</div>
 					</article>
 				<?php endforeach; ?>

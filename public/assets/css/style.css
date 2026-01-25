@@ -1396,3 +1396,31 @@ body {
 		margin-right: 0;
 	}
 }
+
+/* Featured member contact: cleaner + more designed */
+.featured-member-contact{
+	border-top: 1px dashed #ddd;
+	padding-top: 14px;
+	margin-top: 16px;
+}
+
+.featured-member-contact p{
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 16px;
+	color: #555;
+}
+
+/* Sub text (未公开) */
+.featured-member-contact .sub{
+	font-size: 15px;
+	color: #aaa;
+}
+
+/* Click-to-copy text (WeChat) */
+.copy-text{
+    cursor: pointer;
+    user-select: none;
+}

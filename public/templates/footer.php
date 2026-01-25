@@ -19,5 +19,8 @@
 			<p style="font-size: 12px; margin-top: 10px;">网站由 <a href="https://369usa.com" target="_blank" style="color: #fff; text-decoration: underline;">369usa.com</a> 建设管理</p>
 		</div>
 	</footer>
+
+	<!-- 4) Include the script (once). Put this near </body> (footer.php) -->
+	<script src="<?php echo SITE_URL; ?>/assets/js/copy.js?v=6"></script>
 </body>
 </html>

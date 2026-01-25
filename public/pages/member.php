@@ -51,7 +51,7 @@ include ROOT_PATH . '/templates/header.php';
 			<p>
 				微信:
 				<?php if( $wechat ): ?>
-					<b class="focus"><?php echo htmlspecialchars($wechat); ?></b>
+					<b class="focus copy-text" onclick="copy('<?php echo htmlspecialchars($wechat, ENT_QUOTES); ?>')"><?php echo htmlspecialchars($wechat); ?></b>
 				<?php else: ?>
 					<span class="sub">未公开</span>
 				<?php endif; ?>
@@ -59,7 +59,7 @@ include ROOT_PATH . '/templates/header.php';
 			<p>
 				电邮:
 				<?php if( $email ): ?>
-					<?php echo htmlspecialchars($email); ?>
+					<span class="focus copy-text" onclick="copy('<?php echo htmlspecialchars($email, ENT_QUOTES); ?>')"><?php echo htmlspecialchars($email); ?></span>
 				<?php else: ?>
 					<span class="sub">未公开</span>
 				<?php endif; ?>
@@ -67,7 +67,7 @@ include ROOT_PATH . '/templates/header.php';
 			<p>
 				手机:
 				<?php if( $phone ): ?>
-					<?php echo htmlspecialchars($phone); ?>
+					<span class="focus copy-text" onclick="copy('<?php echo htmlspecialchars($phone, ENT_QUOTES); ?>')"><?php echo htmlspecialchars($phone); ?></span>
 				<?php else: ?>
 					<span class="sub">未公开</span>
 				<?php endif; ?>
