@@ -5,8 +5,8 @@ export default defineConfig({
   plugins: [react()],
   base: "/admin/",
   build: {
-    outDir: "../admin",
+    outDir: "../../public/admin",
     emptyOutDir: true,
-    assetsDir: "assets", // make it explicit
+    assetsDir: "assets",
   },
 })
