@@ -6,10 +6,34 @@ type ApiResp =
     | { success: true; message: string; data: { unread: number } }
     | { success: false; error: { code: string; message: string; details?: unknown } }
 
+function useMedia(query: string) {
+    const [matches, setMatches] = useState<boolean>(() =>
+        typeof window !== 'undefined' ? window.matchMedia(query).matches : false
+    )
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return
+        const mql = window.matchMedia(query)
+        const onChange = (e: MediaQueryListEvent) => setMatches(e.matches)
+        mql.addEventListener('change', onChange)
+        return () => mql.removeEventListener('change', onChange)
+    }, [query])
+
+    return matches
+}
+
+const DESKTOP_BREAKPOINT = 860
+const DESKTOP_SIDEBAR_W = 280
+const CONTENT_MAX_W = 680
+
 export default function Home() {
     const { getToken } = useAuth()
     const [unread, setUnread] = useState<number | null>(null)
     const [loading, setLoading] = useState(true)
+
+    const isDesktop = useMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`)
+    const isNarrow = useMedia('(max-width: 640px)')
+    const isTiny = useMedia('(max-width: 380px)')
 
     useEffect(() => {
         let cancelled = false
@@ -57,15 +81,23 @@ export default function Home() {
                     'linear-gradient(180deg, #0b0b10 0%, #0f172a 100%)',
             } as React.CSSProperties,
 
+            // Wrap all content under TopNav so it aligns + avoids desktop sidebar
+            contentWrap: {
+                paddingLeft: isDesktop ? DESKTOP_SIDEBAR_W : 0,
+            } as React.CSSProperties,
+
             main: {
                 minHeight: 'calc(100vh - 56px)',
-                display: 'grid',
-                placeItems: 'center',
                 padding: 'clamp(14px, 3vw, 24px)',
             } as React.CSSProperties,
 
+            container: {
+                maxWidth: CONTENT_MAX_W,
+                margin: '0 auto',
+            } as React.CSSProperties,
+
             card: {
-                width: 'min(560px, 100%)',
+                width: '100%',
                 padding: 'clamp(18px, 3.5vw, 26px)',
                 borderRadius: 18,
                 background: 'rgba(255,255,255,0.06)',
@@ -103,7 +135,7 @@ export default function Home() {
 
             statsGrid: {
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+                gridTemplateColumns: isTiny ? '1fr' : isNarrow ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
                 gap: 12,
                 marginTop: 14,
             } as React.CSSProperties,
@@ -161,16 +193,8 @@ export default function Home() {
                 fontSize: 12,
                 color: 'rgba(255,255,255,0.55)',
             } as React.CSSProperties,
-
-            // Mobile tweaks without external CSS:
-            mobileStats: {
-                gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-            } as React.CSSProperties,
-            tinyStats: {
-                gridTemplateColumns: '1fr',
-            } as React.CSSProperties,
         }),
-        []
+        [isDesktop, isNarrow, isTiny]
     )
 
     const unreadText = loading ? 'Loading…' : unread === null ? '—' : String(unread)
@@ -179,43 +203,37 @@ export default function Home() {
         <div style={styles.page}>
             <TopNav />
 
-            <div style={styles.main}>
-                <div style={styles.card}>
-                    <div style={styles.headerRow}>
-                        <h1 style={styles.h1}>Dashboard</h1>
-                        <span style={styles.sub}>Admin overview</span>
-                    </div>
+            {/* everything below TopNav gets offset on desktop */}
+            <div style={styles.contentWrap}>
+                <div style={styles.main}>
+                    <div style={styles.container}>
+                        <div style={styles.card}>
+                            <div style={styles.headerRow}>
+                                <h1 style={styles.h1}>Dashboard</h1>
+                                <span style={styles.sub}>Admin overview</span>
+                            </div>
 
-                    {/* Stats */}
-                    <div
-                        style={{
-                            ...styles.statsGrid,
-                            ...(window.innerWidth <= 380
-                                ? styles.tinyStats
-                                : window.innerWidth <= 640
-                                  ? styles.mobileStats
-                                  : null),
-                        }}
-                    >
-                        <Stat label="Unread messages" value={unreadText} styles={styles} />
-                        <Stat label="Total members" value="200" styles={styles} />
-                        <Stat label="Active / Inactive" value="170 / 30" styles={styles} />
-                    </div>
+                            <div style={styles.statsGrid}>
+                                <Stat label="Unread messages" value={unreadText} styles={styles} />
+                                <Stat label="Total members" value="200" styles={styles} />
+                                <Stat label="Active / Inactive" value="170 / 30" styles={styles} />
+                            </div>
 
-                    <div style={styles.divider} />
+                            <div style={styles.divider} />
 
-                    {/* Pages */}
-                    <h2 style={styles.sectionTitle}>Pages</h2>
-                    <div style={styles.links}>
-                        <a style={styles.link} href="/admin/messages">
-                            <span>💬 Messages</span>
-                            <span style={styles.linkHint}>/admin/messages →</span>
-                        </a>
+                            <h2 style={styles.sectionTitle}>Pages</h2>
+                            <div style={styles.links}>
+                                <a style={styles.link} href="/admin/messages">
+                                    <span>💬 Messages</span>
+                                    <span style={styles.linkHint}>/admin/messages →</span>
+                                </a>
 
-                        <a style={styles.link} href="/admin/members">
-                            <span>👥 Members</span>
-                            <span style={styles.linkHint}>/admin/members →</span>
-                        </a>
+                                <a style={styles.link} href="/admin/members">
+                                    <span>👥 Members</span>
+                                    <span style={styles.linkHint}>/admin/members →</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

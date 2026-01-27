@@ -6,34 +6,43 @@ export default function Login() {
     return (
         <div
             style={{
-                minHeight: '100vh',
+                height: '100dvh', // fixed viewport (better on mobile than 100vh)
+                overflow: 'hidden', // no scrolling
                 display: 'grid',
                 placeItems: 'center',
-                padding: 'var(--app-pad)',
+                padding: 'clamp(14px, 3vw, 28px)',
                 position: 'relative',
-                overflow: 'hidden',
                 background:
-                    'radial-gradient(800px circle at 30% 20%, rgba(124,58,237,0.20), transparent 55%),' +
-                    'radial-gradient(700px circle at 70% 70%, rgba(79,70,229,0.18), transparent 60%),' +
+                    'radial-gradient(1000px circle at 30% 20%, rgba(124,58,237,0.22), transparent 58%),' +
+                    'radial-gradient(900px circle at 70% 70%, rgba(79,70,229,0.18), transparent 62%),' +
                     'linear-gradient(180deg, #0b0b10 0%, #0f172a 100%)',
             }}
         >
-            {/* Component-scoped CSS */}
             <style>{`
         @keyframes floatUp {
-          0% {
-            transform: translateY(0) rotate(45deg) scale(0.8);
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-120vh) rotate(45deg) scale(1.2);
-            opacity: 0;
-          }
+          0% { transform: translateY(0) rotate(45deg) scale(0.85); opacity: 0; }
+          15% { opacity: 0.9; }
+          100% { transform: translateY(-130vh) rotate(45deg) scale(1.25); opacity: 0; }
+        }
+        @keyframes glowPulse {
+          0%,100% { opacity: 0.55; transform: scale(1); }
+          50% { opacity: 0.85; transform: scale(1.03); }
         }
       `}</style>
+
+            {/* Soft glow layer */}
+            <div
+                style={{
+                    position: 'absolute',
+                    inset: -200,
+                    background:
+                        'radial-gradient(500px circle at 22% 18%, rgba(124,58,237,0.18), transparent 62%),' +
+                        'radial-gradient(520px circle at 78% 78%, rgba(79,70,229,0.16), transparent 65%)',
+                    filter: 'blur(10px)',
+                    animation: 'glowPulse 7s ease-in-out infinite',
+                    pointerEvents: 'none',
+                }}
+            />
 
             {/* Floating hearts */}
             <div
@@ -42,15 +51,15 @@ export default function Login() {
                     inset: 0,
                     pointerEvents: 'none',
                     overflow: 'hidden',
+                    opacity: 0.55,
                 }}
             >
-                {[...Array(8)].map((_, i) => {
-                    const size = 14 + i * 1.5
-                    const left = 10 + i * 10
-                    const duration = 6 + i * 0.8
-                    const delay = i * 1.2
-
-                    const color = `rgba(255, ${100 + i * 10}, 180, 0.8)`
+                {[...Array(10)].map((_, i) => {
+                    const size = 12 + i * 1.8
+                    const left = 6 + i * 9.2
+                    const duration = 6.5 + i * 0.75
+                    const delay = i * 0.9
+                    const color = `rgba(255, ${110 + i * 8}, 190, 0.55)`
 
                     return (
                         <div
@@ -58,12 +67,13 @@ export default function Login() {
                             style={{
                                 position: 'absolute',
                                 left: `${left}%`,
-                                bottom: '-40px',
+                                bottom: '-60px',
                                 width: size,
                                 height: size,
                                 background: color,
                                 transform: 'rotate(45deg)',
                                 animation: `floatUp ${duration}s ease-in-out ${delay}s infinite`,
+                                filter: 'blur(0.2px)',
                             }}
                         >
                             <span
@@ -96,61 +106,125 @@ export default function Login() {
             {/* Login card */}
             <div
                 style={{
-                    width: 'min(520px, 100%)',
-                    padding: 24,
-                    borderRadius: 18,
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.10)',
-                    boxShadow: '0 22px 70px rgba(0,0,0,0.55)',
-                    backdropFilter: 'blur(10px)',
+                    width: 'min(720px, 100%)',
+                    padding: 'clamp(22px, 3.2vw, 34px)',
+                    borderRadius: 20,
+                    background: 'rgba(255,255,255,0.07)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    boxShadow: '0 30px 90px rgba(0,0,0,0.62)',
+                    backdropFilter: 'blur(12px)',
                     zIndex: 1,
                 }}
             >
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 10,
-                    }}
-                >
-                    <h1
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                    <div style={{ minWidth: 0 }}>
+                        <div
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: 8,
+                                padding: '6px 10px',
+                                borderRadius: 999,
+                                border: '1px solid rgba(255,255,255,0.12)',
+                                background: 'rgba(255,255,255,0.04)',
+                                color: 'rgba(255,255,255,0.78)',
+                                fontSize: 12,
+                                fontWeight: 800,
+                                letterSpacing: 0.2,
+                                marginBottom: 12,
+                            }}
+                        >
+                            🔒 Admin Only
+                        </div>
+
+                        <h1
+                            style={{
+                                fontSize: 'clamp(28px, 4.6vw, 38px)',
+                                color: '#fff',
+                                margin: 0,
+                                letterSpacing: '-0.02em',
+                                lineHeight: 1.08,
+                            }}
+                        >
+                            Flushing Dating
+                            <span style={{ color: 'rgba(255,255,255,0.82)' }}> Admin Portal</span>
+                        </h1>
+
+                        <p
+                            style={{
+                                marginTop: 10,
+                                marginBottom: 0,
+                                color: 'rgba(255,255,255,0.72)',
+                                fontSize: 'clamp(14px, 2.6vw, 16px)',
+                                lineHeight: 1.5,
+                            }}
+                        >
+                            Sign in to manage members and review new messages.
+                        </p>
+                    </div>
+
+                    {/* icon badge */}
+                    <div
                         style={{
-                            fontSize: 'clamp(24px, 4.6vw, 30px)',
-                            color: '#fff',
-                            margin: 0,
+                            width: 56,
+                            height: 56,
+                            borderRadius: 16,
+                            background: 'rgba(255,255,255,0.06)',
+                            border: '1px solid rgba(255,255,255,0.14)',
+                            display: 'grid',
+                            placeItems: 'center',
+                            boxShadow: '0 12px 40px rgba(124,58,237,0.25)',
+                            flex: '0 0 auto',
                         }}
                     >
-                        Flushing Dating Admin Portal
-                    </h1>
+                        <span
+                            style={{
+                                fontSize: 28,
+                                lineHeight: 1,
+                                filter: 'drop-shadow(0 6px 16px rgba(124,58,237,0.5))',
+                            }}
+                        >
+                            💃🏼
+                        </span>
+                    </div>
                 </div>
 
-                <p
+                <div
                     style={{
-                        marginTop: 10,
-                        marginBottom: 18,
-                        color: 'rgba(255,255,255,0.72)',
-                        fontSize: 'clamp(14px, 3.4vw, 16px)',
+                        height: 1,
+                        background: 'rgba(255,255,255,0.10)',
+                        margin: '18px 0',
                     }}
-                >
-                    Please sign in to continue.
-                </p>
+                />
 
                 <button
                     onClick={() => navigate('/login/clerk')}
                     style={{
                         width: '100%',
-                        height: 48,
-                        borderRadius: 12,
-                        border: '1px solid rgba(255,255,255,0.12)',
+                        height: 54,
+                        borderRadius: 14,
+                        border: '1px solid rgba(255,255,255,0.14)',
                         background: 'linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)',
                         color: 'white',
                         fontSize: 16,
-                        fontWeight: 800,
+                        fontWeight: 900,
                         cursor: 'pointer',
+                        boxShadow: '0 18px 60px rgba(79,70,229,0.22)',
                     }}
                 >
-                    Log In
+                    Click to Login
                 </button>
+
+                <div
+                    style={{
+                        marginTop: 12,
+                        color: 'rgba(255,255,255,0.55)',
+                        fontSize: 12,
+                        textAlign: 'center',
+                    }}
+                >
+                    You’ll be redirected to Google sign-in.
+                </div>
             </div>
         </div>
     )
