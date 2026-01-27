@@ -41,6 +41,7 @@ $pages = [
 	'signup' => 'signup',
 	'blog' => 'blog',
 	'sitemap' => 'sitemap',
+	'api' => 'api',
 ];
 
 // Determine which page to load
@@ -73,6 +74,9 @@ if( empty($uri) ){
 
 	// optional: normalize trailing slash
 	$_GET['post_name'] = trim($_GET['post_name'], "/ \t\n\r\0\x0B");
+} elseif (preg_match('/^api\/(.+)$/', $uri, $matches)) {
+	$page = 'api';
+	$_GET['api_path'] = trim($matches[1], "/ \t\n\r\0\x0B");  
 } else {
 	// Try to find a page file directly
 	$page_file = ROOT_PATH . '/pages/' . str_replace('/', '-', $uri) . '.php';
