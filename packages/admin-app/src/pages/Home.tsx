@@ -2,8 +2,12 @@ import { useAuth } from '@clerk/clerk-react'
 import { useEffect, useMemo, useState } from 'react'
 import TopNav from '../components/TopNav'
 
-type ApiResp =
-    | { success: true; message: string; data: { unread: number } }
+type MessageCountsResp =
+    | { success: true; message: string; data: { unread: number; total: number } }
+    | { success: false; error: { code: string; message: string; details?: unknown } }
+
+type MemberCountsResp =
+    | { success: true; message: string; data: { total: number; active: number; inactive: number } }
     | { success: false; error: { code: string; message: string; details?: unknown } }
 
 function useMedia(query: string) {
@@ -28,7 +32,14 @@ const CONTENT_MAX_W = 680
 
 export default function Home() {
     const { getToken } = useAuth()
-    const [unread, setUnread] = useState<number | null>(null)
+
+    const [unreadMessages, setUnreadMessages] = useState<number | null>(null)
+    const [totalMessages, setTotalMessages] = useState<number | null>(null)
+
+    const [totalMembers, setTotalMembers] = useState<number | null>(null)
+    const [activeMembers, setActiveMembers] = useState<number | null>(null)
+    const [inactiveMembers, setInactiveMembers] = useState<number | null>(null)
+
     const [loading, setLoading] = useState(true)
 
     const isDesktop = useMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`)
@@ -45,22 +56,47 @@ export default function Home() {
                 const token = await getToken()
                 if (!token) throw new Error('No token returned (not signed in?)')
 
-                const res = await fetch('/api/contacts/unread-count', {
-                    method: 'GET',
-                    headers: { Authorization: `Bearer ${token}` },
-                })
+                const headers: HeadersInit = { Authorization: `Bearer ${token}` }
 
-                const json = (await res.json()) as ApiResp
+                const [msgRes, memRes] = await Promise.all([
+                    fetch('/api/message_counts', { method: 'GET', headers }),
+                    fetch('/api/member_counts', { method: 'GET', headers }),
+                ])
+
+                const [msgJson, memJson] = await Promise.all([
+                    msgRes.json() as Promise<MessageCountsResp>,
+                    memRes.json() as Promise<MemberCountsResp>,
+                ])
+
                 if (cancelled) return
 
-                if (!res.ok || json.success === false) {
-                    setUnread(null)
-                    return
+                // Messages
+                if (!msgRes.ok || msgJson.success === false) {
+                    setUnreadMessages(null)
+                    setTotalMessages(null)
+                } else {
+                    setUnreadMessages(msgJson.data.unread)
+                    setTotalMessages(msgJson.data.total)
                 }
 
-                setUnread(json.data.unread)
+                // Members
+                if (!memRes.ok || memJson.success === false) {
+                    setTotalMembers(null)
+                    setActiveMembers(null)
+                    setInactiveMembers(null)
+                } else {
+                    setTotalMembers(memJson.data.total)
+                    setActiveMembers(memJson.data.active)
+                    setInactiveMembers(memJson.data.inactive)
+                }
             } catch {
-                if (!cancelled) setUnread(null)
+                if (!cancelled) {
+                    setUnreadMessages(null)
+                    setTotalMessages(null)
+                    setTotalMembers(null)
+                    setActiveMembers(null)
+                    setInactiveMembers(null)
+                }
             } finally {
                 if (!cancelled) setLoading(false)
             }
@@ -81,7 +117,6 @@ export default function Home() {
                     'linear-gradient(180deg, #0b0b10 0%, #0f172a 100%)',
             } as React.CSSProperties,
 
-            // Wrap all content under TopNav so it aligns + avoids desktop sidebar
             contentWrap: {
                 paddingLeft: isDesktop ? DESKTOP_SIDEBAR_W : 0,
             } as React.CSSProperties,
@@ -197,13 +232,17 @@ export default function Home() {
         [isDesktop, isNarrow, isTiny]
     )
 
-    const unreadText = loading ? 'Loading…' : unread === null ? '—' : String(unread)
+    const unreadText = loading ? 'Loading…' : unreadMessages === null ? '—' : String(unreadMessages)
+    const totalMsgText = loading ? 'Loading…' : totalMessages === null ? '—' : String(totalMessages)
+
+    const totalMemberText = loading ? 'Loading…' : totalMembers === null ? '—' : String(totalMembers)
+    const activeMemberText = loading ? 'Loading…' : activeMembers === null ? '—' : String(activeMembers)
+    const inactiveMemberText = loading ? 'Loading…' : inactiveMembers === null ? '—' : String(inactiveMembers)
 
     return (
         <div style={styles.page}>
             <TopNav />
 
-            {/* everything below TopNav gets offset on desktop */}
             <div style={styles.contentWrap}>
                 <div style={styles.main}>
                     <div style={styles.container}>
@@ -214,9 +253,13 @@ export default function Home() {
                             </div>
 
                             <div style={styles.statsGrid}>
-                                <Stat label="Unread messages" value={unreadText} styles={styles} />
-                                <Stat label="Total members" value="200" styles={styles} />
-                                <Stat label="Active / Inactive" value="170 / 30" styles={styles} />
+                                <Stat label="Unread messages" value={`${unreadText} / ${totalMsgText}`} styles={styles} />
+                                <Stat label="Total members" value={totalMemberText} styles={styles} />
+                                <Stat
+                                    label="Active / Inactive"
+                                    value={`${activeMemberText} / ${inactiveMemberText}`}
+                                    styles={styles}
+                                />
                             </div>
 
                             <div style={styles.divider} />

@@ -60,7 +60,8 @@ try {
 
     // Route map
     $routes = [
-        'contacts/unread-count' => 'contacts_unread_count.php',
+        'message_counts' => 'message_counts.php',
+        'member_counts' => 'member_counts.php',
     ];
 
     if (!isset($routes[$path])) {

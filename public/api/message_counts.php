@@ -14,13 +14,18 @@ try {
         api_error('method_not_allowed', 'Only GET is allowed', 405);
     }
 
-    $unread = (int) $db->get_var("
-        SELECT COUNT(*)
+    $row = $db->get_row("
+        SELECT
+            COUNT(*) AS total,
+            SUM(CASE WHEN is_read = 0 THEN 1 ELSE 0 END) AS unread
         FROM cz_contacts
-        WHERE is_read = 0
     ");
 
-    api_ok(['unread' => $unread], 'Unread count fetched');
+    api_ok([
+        'total'  => (int) ($row->total ?? 0),
+        'unread' => (int) ($row->unread ?? 0),
+    ], 'Message counts fetched');
+
 } catch (Throwable $e) {
     api_error('server_error', $e->getMessage(), 500);
 }
