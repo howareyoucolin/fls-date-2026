@@ -1,5 +1,12 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
+
+# ------------------------------------------------------------
+# Pass Authorization header through to PHP (fixes 401 in staging)
+# ------------------------------------------------------------
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 RewriteRule ^sitemap.xml$ /index.php?uri=sitemap [L]
 RewriteBase /
 
