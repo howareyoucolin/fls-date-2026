@@ -1,6 +1,7 @@
 import { useAuth } from '@clerk/clerk-react'
 import { useEffect, useMemo, useState } from 'react'
 import TopNav from '../components/TopNav'
+import Shimmer from '../components/Shimmer'
 
 type MessageCountsResp =
     | { success: true; message: string; data: { unread: number; total: number } }
@@ -232,12 +233,12 @@ export default function Home() {
         [isDesktop, isNarrow, isTiny]
     )
 
-    const unreadText = loading ? 'Loading…' : unreadMessages === null ? '—' : String(unreadMessages)
-    const totalMsgText = loading ? 'Loading…' : totalMessages === null ? '—' : String(totalMessages)
+    const unreadText = loading ? <Shimmer width="42px" /> : unreadMessages === null ? '—' : String(unreadMessages)
+    const totalMsgText = loading ? <Shimmer width="42px" /> : totalMessages === null ? '—' : String(totalMessages)
 
-    const totalMemberText = loading ? 'Loading…' : totalMembers === null ? '—' : String(totalMembers)
-    const activeMemberText = loading ? 'Loading…' : activeMembers === null ? '—' : String(activeMembers)
-    const inactiveMemberText = loading ? 'Loading…' : inactiveMembers === null ? '—' : String(inactiveMembers)
+    const totalMemberText = loading ? <Shimmer width="42px" /> : totalMembers === null ? '—' : String(totalMembers)
+    const activeMemberText = loading ? <Shimmer width="36px" /> : activeMembers === null ? '—' : String(activeMembers)
+    const inactiveMemberText = loading ? <Shimmer width="36px" /> : inactiveMembers === null ? '—' : String(inactiveMembers)
 
     return (
         <div style={styles.page}>
@@ -253,11 +254,23 @@ export default function Home() {
                             </div>
 
                             <div style={styles.statsGrid}>
-                                <Stat label="Unread messages" value={`${unreadText} / ${totalMsgText}`} styles={styles} />
+                                <Stat
+                                    label="Unread messages"
+                                    value={
+                                        <>
+                                            {unreadText} / {totalMsgText}
+                                        </>
+                                    }
+                                    styles={styles}
+                                />
                                 <Stat label="Total members" value={totalMemberText} styles={styles} />
                                 <Stat
                                     label="Active / Inactive"
-                                    value={`${activeMemberText} / ${inactiveMemberText}`}
+                                    value={
+                                        <>
+                                            {activeMemberText} / {inactiveMemberText}
+                                        </>
+                                    }
                                     styles={styles}
                                 />
                             </div>
@@ -283,8 +296,7 @@ export default function Home() {
         </div>
     )
 }
-
-function Stat({ label, value, styles }: { label: string; value: string; styles: Record<string, React.CSSProperties> }) {
+function Stat({ label, value, styles }: { label: string; value: React.ReactNode; styles: Record<string, React.CSSProperties> }) {
     return (
         <div style={styles.statCard}>
             <span style={styles.statLabel}>{label}</span>
