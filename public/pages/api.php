@@ -106,6 +106,10 @@ try {
 
         'members_list' => 'members_list.php',
         'member_set_approved' => 'member_set_approved.php',
+
+        // messages page
+        'messages_list' => 'messages_list.php',
+        'message_mark_read' => 'message_mark_read.php',
     ];
 
     if (!isset($routes[$path])) {
