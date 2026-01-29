@@ -103,6 +103,9 @@ try {
     $routes = [
         'message_counts' => 'message_counts.php',
         'member_counts'  => 'member_counts.php',
+
+        'members_list' => 'members_list.php',
+        'member_set_approved' => 'member_set_approved.php',
     ];
 
     if (!isset($routes[$path])) {

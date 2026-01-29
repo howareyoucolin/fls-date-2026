@@ -3,6 +3,7 @@ import { SignedIn, SignedOut } from '@clerk/clerk-react'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import ClerkLogin from './pages/ClerkLogin'
+import MembersPage from './pages/Members'
 
 export default function App() {
     return (
@@ -50,6 +51,8 @@ export default function App() {
                     </>
                 }
             />
+
+            <Route path="/members" element={<MembersPage />} />
         </Routes>
     )
 }

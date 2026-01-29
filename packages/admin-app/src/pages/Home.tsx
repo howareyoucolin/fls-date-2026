@@ -2,6 +2,7 @@ import { useAuth } from '@clerk/clerk-react'
 import { useEffect, useMemo, useState } from 'react'
 import TopNav from '../components/TopNav'
 import Shimmer from '../components/Shimmer'
+import { Link } from 'react-router-dom'
 
 type MessageCountsResp =
     | { success: true; message: string; data: { unread: number; total: number } }
@@ -279,15 +280,15 @@ export default function Home() {
 
                             <h2 style={styles.sectionTitle}>Pages</h2>
                             <div style={styles.links}>
-                                <a style={styles.link} href="/admin/messages">
+                                <Link style={styles.link} to="/messages">
                                     <span>💬 Messages</span>
-                                    <span style={styles.linkHint}>/admin/messages →</span>
-                                </a>
+                                    <span style={styles.linkHint}>/messages →</span>
+                                </Link>
 
-                                <a style={styles.link} href="/admin/members">
+                                <Link style={styles.link} to="/members">
                                     <span>👥 Members</span>
-                                    <span style={styles.linkHint}>/admin/members →</span>
-                                </a>
+                                    <span style={styles.linkHint}>/members →</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
