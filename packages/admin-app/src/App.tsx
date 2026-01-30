@@ -11,7 +11,26 @@ import Forbidden from './pages/Forbidden'
 export default function App() {
     return (
         <Routes>
-            {/* Public routes */}
+            {/* Root */}
+            <Route
+                path="/"
+                element={
+                    <>
+                        <SignedOut>
+                            <Navigate to="/login" replace />
+                        </SignedOut>
+                        <SignedIn>
+                            <WhitelistGuard />
+                        </SignedIn>
+                    </>
+                }
+            >
+                <Route index element={<Home />} />
+                <Route path="members" element={<MembersPage />} />
+                <Route path="messages" element={<MessagesPage />} />
+            </Route>
+
+            {/* Public auth routes */}
             <Route
                 path="/login"
                 element={
@@ -40,21 +59,11 @@ export default function App() {
                 }
             />
 
-            {/* Protected routes */}
-            <Route
-                element={
-                    <SignedIn>
-                        <WhitelistGuard />
-                    </SignedIn>
-                }
-            >
-                <Route path="/" element={<Home />} />
-                <Route path="/members" element={<MembersPage />} />
-                <Route path="/messages" element={<MessagesPage />} />
-            </Route>
-
-            {/* Error routes */}
+            {/* Error */}
             <Route path="/403" element={<Forbidden />} />
+
+            {/* Catch-all */}
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     )
 }

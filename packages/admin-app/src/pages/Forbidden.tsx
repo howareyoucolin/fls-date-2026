@@ -213,7 +213,7 @@ export default function Forbidden() {
                 />
 
                 <button
-                    onClick={() => signOut({ redirectUrl: '/login' })}
+                    onClick={() => signOut({ redirectUrl: '/admin/' })}
                     style={{
                         width: '100%',
                         height: 54,
