@@ -16,9 +16,10 @@ try {
 
     // Read x-user-email header case-insensitively
     $email = null;
+
+    // In PHP, custom headers usually come in as HTTP_X_USER_EMAIL
     foreach ($_SERVER as $k => $v) {
-        // In PHP, custom headers usually come in as HTTP_X_USER_EMAIL
-        if (strtoupper($k) === 'HTTP_X_USER_EMAIL') {
+        if (strtoupper((string)$k) === 'HTTP_X_USER_EMAIL') {
             $email = (string)$v;
             break;
         }
@@ -65,7 +66,7 @@ try {
 
     if (!$role) {
         api_error('not_whitelisted', 'Email not whitelisted', 403, [
-            'email' => $emailNorm,
+            'email' => $emailNorm, // helpful for debugging; remove later if you want
         ]);
     }
 

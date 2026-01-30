@@ -110,6 +110,8 @@ try {
         // messages page
         'messages_list' => 'messages_list.php',
         'message_mark_read' => 'message_mark_read.php',
+
+        'whitelist' => 'auth_whitelist.php',
     ];
 
     if (!isset($routes[$path])) {

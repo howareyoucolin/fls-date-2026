@@ -5,25 +5,13 @@ import Login from './pages/Login'
 import ClerkLogin from './pages/ClerkLogin'
 import MembersPage from './pages/Members'
 import MessagesPage from './pages/Messages'
+import WhitelistGuard from './components/WhitelistGuard'
+import Forbidden from './pages/Forbidden'
 
 export default function App() {
     return (
         <Routes>
-            <Route
-                path="/"
-                element={
-                    <>
-                        <SignedIn>
-                            <Home />
-                        </SignedIn>
-                        <SignedOut>
-                            <Navigate to="/login" replace />
-                        </SignedOut>
-                    </>
-                }
-            />
-
-            {/* Landing */}
+            {/* Public routes */}
             <Route
                 path="/login"
                 element={
@@ -38,7 +26,6 @@ export default function App() {
                 }
             />
 
-            {/* Actual Clerk sign-in */}
             <Route
                 path="/login/clerk"
                 element={
@@ -53,8 +40,21 @@ export default function App() {
                 }
             />
 
-            <Route path="/members" element={<MembersPage />} />
-            <Route path="/messages" element={<MessagesPage />} />
+            {/* Protected routes */}
+            <Route
+                element={
+                    <SignedIn>
+                        <WhitelistGuard />
+                    </SignedIn>
+                }
+            >
+                <Route path="/" element={<Home />} />
+                <Route path="/members" element={<MembersPage />} />
+                <Route path="/messages" element={<MessagesPage />} />
+            </Route>
+
+            {/* Error routes */}
+            <Route path="/403" element={<Forbidden />} />
         </Routes>
     )
 }
