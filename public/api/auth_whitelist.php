@@ -14,66 +14,45 @@ try {
         api_error('method_not_allowed', 'Only GET is allowed', 405);
     }
 
-    // Read x-user-email header case-insensitively
-    $email = null;
-
-    // In PHP, custom headers usually come in as HTTP_X_USER_EMAIL
-    foreach ($_SERVER as $k => $v) {
-        if (strtoupper((string)$k) === 'HTTP_X_USER_EMAIL') {
-            $email = (string)$v;
-            break;
-        }
+    // Get verified JWT claims (set by router before including this file)
+    $claims = $GLOBALS['api_claims'] ?? [];
+    if (!is_array($claims)) {
+        api_error('unauthenticated', 'Missing JWT claims', 401);
     }
 
-    // Fallback to getallheaders() (some environments)
-    if (!$email && function_exists('getallheaders')) {
-        $headers = getallheaders();
-        foreach ($headers as $k => $v) {
-            if (strtolower((string)$k) === 'x-user-email') {
-                $email = (string)$v;
-                break;
-            }
-        }
+    // Extract Clerk User ID (JWT `sub`)
+    $userId = trim((string)($claims['sub'] ?? ''));
+    if ($userId === '') {
+        api_error('unauthenticated', 'Missing user id (sub) in token', 401);
     }
 
-    $email = $email ? trim($email) : '';
-
-    if ($email === '') {
-        api_error('missing_email_header', 'Missing x-user-email header', 401);
-    }
-
-    // Normalize for matching
-    $emailNorm = strtolower($email);
-
-    // Escape safely (since wrapper has no prepare())
-    // Prefer esc_sql if available; otherwise fallback to addslashes
+    // Escape safely (DB wrapper has no prepare())
     if (function_exists('esc_sql')) {
-        $emailSql = esc_sql($emailNorm);
+        $userIdSql = esc_sql($userId);
     } else {
-        $emailSql = addslashes($emailNorm);
+        $userIdSql = addslashes($userId);
     }
 
-    // Case-insensitive match even if DB contains weird casing/spaces
-    // (TRIM/LOWER handled on both sides)
+    // Lookup whitelist by clerk_user_id
     $sql = "
         SELECT role
         FROM cz_whitelist
-        WHERE LOWER(TRIM(email)) = '{$emailSql}'
+        WHERE clerk_user_id = '{$userIdSql}'
         LIMIT 1
     ";
 
     $role = $db->get_var($sql);
 
     if (!$role) {
-        api_error('not_whitelisted', 'Email not whitelisted', 403, [
-            'email' => $emailNorm, // helpful for debugging; remove later if you want
+        api_error('not_whitelisted', 'User not whitelisted', 403, [
+            'user_id' => $userId, // helpful for debugging; remove later if you want
         ]);
     }
 
     api_ok([
         'allowed' => true,
         'role' => (string)$role,
-        'email' => $emailNorm,
+        'user_id' => $userId,
     ], 'Whitelisted');
 } catch (Throwable $e) {
     api_error('server_error', $e->getMessage(), 500);

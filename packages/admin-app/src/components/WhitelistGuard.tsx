@@ -10,7 +10,7 @@ export default function WhitelistGuard() {
     useEffect(() => {
         if (!isLoaded) return
 
-        // If not signed in, treat as not allowed (or redirect to login if you want)
+        // Not signed in → not allowed
         if (!user) {
             setAllowed(false)
             return
@@ -26,13 +26,9 @@ export default function WhitelistGuard() {
                 const token = await getToken()
                 if (!token) throw new Error('No token returned (not signed in?)')
 
-                const email = user.primaryEmailAddress?.emailAddress || ''
-                if (!email) throw new Error('No primary email on user')
-
                 const res = await fetch('/api/whitelist', {
                     method: 'GET',
                     headers: {
-                        'x-user-email': email,
                         Authorization: `Bearer ${token}`,
                     },
                     signal: controller.signal,
@@ -43,11 +39,10 @@ export default function WhitelistGuard() {
                     return
                 }
 
-                // If your API uses api_ok/api_error, it should still be JSON,
-                // but keep this safe:
                 const data = await res.json().catch(() => null)
 
                 if (!cancelled) {
+                    // api_ok wraps payload under data
                     setAllowed(Boolean(data?.data?.allowed))
                 }
             } catch {

@@ -7,6 +7,53 @@ require_once __DIR__ . '/../api/_clerk_jwt.php';
 $path = trim($_GET['api_path'] ?? '', "/ \t\n\r\0\x0B");
 
 /**
+ * Enforce whitelist using Clerk user ID (JWT `sub`).
+ * Throws API errors and exits on failure.
+ */
+function api_require_whitelisted(string $path): void {
+    global $db;
+    if (!$db) {
+        api_error('db_not_initialized', 'DB not initialized', 500);
+    }
+
+    // Get verified JWT claims
+    $claims = $GLOBALS['api_claims'] ?? [];
+    if (!is_array($claims)) {
+        api_error('unauthenticated', 'Missing JWT claims', 401);
+    }
+
+    // Extract Clerk User ID from token
+    $userId = trim((string)($claims['sub'] ?? ''));
+    if ($userId === '') {
+        api_error('unauthenticated', 'Missing user id (sub) in token', 401);
+    }
+
+    // Escape safely (DB wrapper has no prepare())
+    if (function_exists('esc_sql')) {
+        $userIdSql = esc_sql($userId);
+    } else {
+        $userIdSql = addslashes($userId);
+    }
+
+    // Check whitelist by clerk_user_id
+    $sql = "
+        SELECT role
+        FROM cz_whitelist
+        WHERE clerk_user_id = '{$userIdSql}'
+        LIMIT 1
+    ";
+
+    $role = $db->get_var($sql);
+
+    if (!$role) {
+        api_error('not_whitelisted', 'User not whitelisted', 403, [
+            'user_id' => $userId,
+        ]);
+    }
+}
+
+
+/**
  * Extract Bearer token from Authorization header.
  */
 function api_get_bearer_token(): ?string {
@@ -97,6 +144,15 @@ try {
         $GLOBALS['api_claims'] = $claims; // handlers can use this if needed
     } catch (Throwable $e) {
         api_error('unauthenticated', 'Invalid token: ' . $e->getMessage(), 401);
+    }
+
+    // Enforce whitelist for all API routes except /whitelist
+    // We intentionally SKIP the whitelist check for the `/whitelist` endpoint so the frontend
+    // can determine access and route the user to `/403` if needed.
+    // All other routes MUST pass the whitelist check to prevent direct API access
+    // by non-whitelisted users (even if they are authenticated).
+    if ($path !== 'whitelist') {
+        api_require_whitelisted($path);
     }
 
     // Route map
