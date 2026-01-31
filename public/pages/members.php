@@ -10,9 +10,10 @@ $total_members = get_members_count();
 $total_pages = ceil($total_members / $per_page);
 $members = get_members($per_page, $offset);
 
-$meta_title = '所有会员 - 纽约同城交友';
-$meta_description = '浏览所有会员，找到你的另一半';
-$meta_keywords = '纽约婚介交友, 法拉盛婚介找友, 纽约找男朋友, 所有会员';
+$meta_title = '所有会员｜纽约华人交友｜法拉盛相亲名单浏览';
+$meta_description = '浏览纽约华人交友平台所有会员，覆盖法拉盛与纽约市，查看真实用户资料，免费找男朋友、找女朋友，快速匹配合适对象，开启你的脱单之旅。';
+$meta_keywords = '纽约华人交友, 法拉盛相亲, 纽约找男朋友, 纽约找女朋友, 所有会员, 纽约婚介平台, 免费交友, NYC dating';
+
 
 include ROOT_PATH . '/templates/header.php';
 ?>

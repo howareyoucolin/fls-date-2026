@@ -121,7 +121,7 @@ if (!$post) {
 // --------------------
 // SEO
 // --------------------
-$meta_title = $post->post_title;
+$meta_title = '纽约同城交友 - ' . $post->post_title;
 
 // Dynamic meta description from content
 $desc_text = trim(html_entity_decode(strip_tags($post->post_content), ENT_QUOTES, 'UTF-8'));
@@ -129,7 +129,7 @@ $desc_text = preg_replace('/\s+/u', ' ', $desc_text);
 if (mb_strlen($desc_text, 'UTF-8') > 155) {
 	$desc_text = mb_substr($desc_text, 0, 155, 'UTF-8') . '...';
 }
-$meta_description = $desc_text;
+$meta_description = '纽约同城交友 - ' . $desc_text;
 
 include ROOT_PATH . '/templates/header.php';
 

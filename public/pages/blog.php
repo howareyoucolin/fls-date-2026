@@ -52,9 +52,10 @@ $total_posts = get_posts_count();
 $total_pages = (int)ceil($total_posts / $per_page);
 $posts = get_posts($per_page, $offset);
 
-$meta_title = '博客 - 纽约同城交友';
-$meta_description = '浏览最新文章，分享纽约相亲交友经验与技巧。';
-$meta_keywords = '纽约相亲, 法拉盛相亲, 纽约交友, 博客, 约会技巧';
+$meta_title = '纽约交友博客｜法拉盛相亲经验｜纽约华人约会与脱单指南';
+$meta_description = '专注纽约华人交友与相亲实战经验，分享法拉盛、纽约市真实约会故事、脱单技巧、高质量对象筛选与恋爱攻略，助你在纽约成功找到合适伴侣。';
+$meta_keywords = '纽约交友, 纽约相亲, 法拉盛相亲, 纽约华人交友, 纽约约会, NYC dating, 华人脱单, 相亲技巧, 纽约恋爱攻略, 高质量对象';
+
 
 include ROOT_PATH . '/templates/header.php';
 ?>

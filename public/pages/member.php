@@ -23,8 +23,8 @@ $email = isset($member->email) && !empty($member->email) ? $member->email : null
 $phone = isset($member->phone) && !empty($member->phone) ? $member->phone : null;
 
 $meta_title = '纽约同城婚介交友 - ' . htmlspecialchars($member->title) . ',' . get_gender_display($member->gender) . '交友' . ($age ? ',' . $age : '');
-$meta_description = !empty($member->description) ? htmlspecialchars(truncate_text($member->description, 150)) : '';
-$meta_keywords = '纽约婚介交友, 法拉盛婚介找友, 纽约找男朋友';
+$meta_description = !empty($member->description) ? '纽约同城交友 - ' . htmlspecialchars(truncate_text($member->description, 150)) : '';
+$meta_keywords = '纽约同城婚介交友, 法拉盛婚介找友, 纽约找男朋友';
 
 include ROOT_PATH . '/templates/header.php';
 ?>

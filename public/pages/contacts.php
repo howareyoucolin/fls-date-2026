@@ -9,9 +9,10 @@ $is_localhost = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1',
                 (isset($_SERVER['SERVER_NAME']) && in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1']));
 $use_turnstile = !$is_localhost && !empty($turnstile_site_key);
 
-$meta_title = '联系我们 - 纽约同城交友';
-$meta_description = '联系网站管理员，提交问题或合作咨询。';
-$meta_keywords = '联系我们, 广告, 置顶, 纽约同城交友';
+$meta_title = '联系我们｜纽约华人交友平台｜合作广告与客服支持';
+$meta_description = '联系纽约华人交友平台客服与网站管理员，咨询合作推广、广告投放、会员置顶、技术支持或商务合作。覆盖法拉盛与纽约市，快速响应，安全可靠。';
+$meta_keywords = '联系我们, 纽约华人交友, 法拉盛交友平台, 广告合作, 会员置顶, 商务合作, 客服支持, NYC dating';
+
 
 $error_message = '';
 $success_message = '';
