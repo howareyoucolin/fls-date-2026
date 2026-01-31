@@ -152,6 +152,8 @@ include ROOT_PATH . '/templates/header.php';
 			<a href="<?php echo SITE_URL; ?>/members" class="view-all-link">查看所有会员 <span>→</span></a>
 		</div>
 
+		<?php include __DIR__ . '/../templates/search-filters.php'; ?>
+
 		<?php if( empty($members) ): ?>
 			<div class="empty-state">
 				<p>暂无会员信息</p>

@@ -27,6 +27,8 @@ include ROOT_PATH . '/templates/header.php';
 			<?php endif; ?>
 		</div>
 
+		<?php include __DIR__ . '/../templates/search-filters.php'; ?>
+
 		<?php if( empty($members) ): ?>
 			<div class="empty-state">
 				<p>暂无会员信息</p>

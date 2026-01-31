@@ -14,3 +14,7 @@ uploads/
 
 # DreamHost diagnostic files
 .dh-diag/
+
+# Vite cache
+.vite/
+**/.vite/
