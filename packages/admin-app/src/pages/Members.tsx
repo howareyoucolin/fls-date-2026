@@ -450,6 +450,17 @@ export default function Members() {
                 color: 'rgba(255,255,255,0.35)',
             } as React.CSSProperties,
 
+            trashBtn: {
+                background: 'transparent',
+                border: 'none',
+                color: '#ef4444', // red
+                cursor: 'pointer',
+                padding: 6,
+                borderRadius: 8,
+                display: 'grid',
+                placeItems: 'center',
+            } as React.CSSProperties,
+
             approveBtn: {
                 padding: '9px 12px',
                 borderRadius: 999,
@@ -633,21 +644,47 @@ export default function Members() {
                                                         </div>
                                                     </div>
 
-                                                    <button
-                                                        type="button"
-                                                        title="Toggle approval"
-                                                        disabled={saving}
-                                                        onClick={() => toggleApproved(m.id, m.is_approved)}
-                                                        style={{
-                                                            ...styles.approveBtn,
-                                                            ...(approved ? styles.approveOn : styles.approveOff),
-                                                            opacity: saving ? 0.6 : 1,
-                                                            cursor: saving ? 'not-allowed' : 'pointer',
-                                                        }}
-                                                    >
-                                                        {approved ? '✅ Approved' : '⏳ Pending'}
-                                                        {saving ? '…' : ''}
-                                                    </button>
+                                                    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                                                        <button
+                                                            type="button"
+                                                            title="Delete member"
+                                                            onClick={() => alert('hello world')}
+                                                            style={styles.trashBtn}
+                                                        >
+                                                            <svg
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                strokeWidth="2"
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            >
+                                                                <polyline points="3 6 5 6 21 6" />
+                                                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                                                                <path d="M10 11v6" />
+                                                                <path d="M14 11v6" />
+                                                                <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                                                            </svg>
+                                                        </button>
+
+                                                        <button
+                                                            type="button"
+                                                            title="Toggle approval"
+                                                            disabled={saving}
+                                                            onClick={() => toggleApproved(m.id, m.is_approved)}
+                                                            style={{
+                                                                ...styles.approveBtn,
+                                                                ...(approved ? styles.approveOn : styles.approveOff),
+                                                                opacity: saving ? 0.6 : 1,
+                                                                cursor: saving ? 'not-allowed' : 'pointer',
+                                                            }}
+                                                        >
+                                                            {approved ? '✅ Approved' : '⏳ Pending'}
+                                                            {saving ? '…' : ''}
+                                                        </button>
+                                                    </div>
                                                 </div>
 
                                                 {m.description ? (
