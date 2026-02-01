@@ -20,6 +20,10 @@ type SetApprovedResp =
     | { success: true; message: string; data: { id: number; is_approved: number } }
     | { success: false; error: { code: string; message: string; details?: unknown } }
 
+type ArchiveResp =
+    | { success: true; message: string; data: { id: number; is_archived: number } }
+    | { success: false; error: { code: string; message: string; details?: unknown } }
+
 type StatusFilter = 'all' | 'active' | 'inactive'
 
 const PAGE_SIZE = 10
@@ -138,9 +142,11 @@ export default function Members() {
 
             if (status === 'active' && nextApproved === 0) {
                 setItems((prev) => prev.filter((x) => x.id !== id))
+                setTotal((t) => Math.max(0, t - 1))
             }
             if (status === 'inactive' && nextApproved === 1) {
                 setItems((prev) => prev.filter((x) => x.id !== id))
+                setTotal((t) => Math.max(0, t - 1))
             }
         } finally {
             setSavingIds((m) => {
@@ -148,6 +154,43 @@ export default function Members() {
                 delete copy[id]
                 return copy
             })
+        }
+    }
+
+    // ✅ ARCHIVE HANDLER
+    async function archiveMember(id: number) {
+        try {
+            const token = await getToken()
+            if (!token) throw new Error('No token')
+
+            const res = await fetch('/api/member_archive', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            })
+
+            const json = (await res.json()) as ArchiveResp
+            if (!res.ok || json.success === false) return
+
+            // Remove from UI
+            setItems((prev) => prev.filter((x) => x.id !== id))
+
+            // Update totals + pages
+            setTotal((t) => {
+                const next = Math.max(0, t - 1)
+                const nextPages = Math.max(1, Math.ceil(next / PAGE_SIZE))
+                setTotalPages(nextPages)
+
+                // If we deleted the last item on the last page, go back a page
+                setPage((p) => (p > nextPages ? nextPages : p))
+
+                return next
+            })
+        } finally {
+            setDeleteId(null)
         }
     }
 
@@ -243,8 +286,9 @@ export default function Members() {
                 danger
                 onCancel={() => setDeleteId(null)}
                 onConfirm={() => {
-                    alert('hello world')
-                    setDeleteId(null)
+                    if (deleteId !== null) {
+                        archiveMember(deleteId)
+                    }
                 }}
             />
         </div>

@@ -11,6 +11,7 @@ function get_members($limit = 20, $offset = 0){
 	$results = $db->get_results("
 		SELECT * 
 		FROM cz_members
+		WHERE is_archived = 0
 		ORDER BY id DESC
 		LIMIT $limit OFFSET $offset
 	");
@@ -71,7 +72,7 @@ function get_gender_display($gender){
 
 function get_members_count(){
 	global $db;
-	return (int)$db->get_var("SELECT COUNT(*) FROM cz_members");
+	return (int)$db->get_var("SELECT COUNT(*) FROM cz_members WHERE is_archived = 0");
 }
 
 // --- Latest Posts (from wp_posts) ---

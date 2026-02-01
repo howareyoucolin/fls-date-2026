@@ -27,9 +27,17 @@ try {
         $status = 'all';
     }
 
-    $where = '';
-    if ($status === 'active') $where = 'WHERE is_approved = 1';
-    if ($status === 'inactive') $where = 'WHERE is_approved = 0';
+    // --- WHERE builder ---
+    // Always exclude archived
+    $whereParts = ['is_archived = 0'];
+
+    if ($status === 'active') {
+        $whereParts[] = 'is_approved = 1';
+    } elseif ($status === 'inactive') {
+        $whereParts[] = 'is_approved = 0';
+    }
+
+    $where = 'WHERE ' . implode(' AND ', $whereParts);
 
     $offset = ($page - 1) * $pageSize;
 

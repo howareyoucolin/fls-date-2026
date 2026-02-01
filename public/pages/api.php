@@ -162,6 +162,7 @@ try {
 
         'members_list' => 'members_list.php',
         'member_set_approved' => 'member_set_approved.php',
+        'member_archive' => 'member_archive.php',
 
         // messages page
         'messages_list' => 'messages_list.php',

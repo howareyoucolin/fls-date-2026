@@ -20,6 +20,7 @@ try {
             SUM(CASE WHEN is_approved = 1 THEN 1 ELSE 0 END) AS active,
             SUM(CASE WHEN is_approved = 0 THEN 1 ELSE 0 END) AS inactive
         FROM cz_members
+        WHERE is_archived = 0
     ");
 
     api_ok([
