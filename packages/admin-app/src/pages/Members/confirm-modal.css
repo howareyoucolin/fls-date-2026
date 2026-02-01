@@ -1,0 +1,70 @@
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 9999;
+}
+
+.cm-modal {
+  width: min(520px, 100%);
+  background: #ffffff; /* white modal */
+  color: #0b1220;
+  border-radius: 16px;
+  box-shadow: 0 28px 100px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.cm-header {
+  padding: 16px 18px 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cm-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.cm-body {
+  padding: 12px 18px 16px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(11,18,32,0.78);
+}
+
+.cm-footer {
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.02);
+}
+
+.cm-btn {
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+  color: #0b1220;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cm-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.cm-danger {
+  border: 1px solid rgba(239,68,68,0.30);
+  color: #ef4444;
+}
+
+.cm-danger.is-danger {
+  background: rgba(239,68,68,0.12);
+}
