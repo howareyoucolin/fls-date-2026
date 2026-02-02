@@ -12,6 +12,13 @@
 	<?php endif; ?>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css?v=8">
+	<?php
+	$host = $_SERVER['HTTP_HOST'] ?? '';
+
+	if ($host === 'flushingdating.com' || $host === 'www.flushingdating.com') {
+		echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6301361047314396" crossorigin="anonymous"></script>';
+	}
+	?>
 </head>
 <body>
 	<div class="header">
