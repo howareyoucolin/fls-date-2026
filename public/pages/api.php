@@ -163,9 +163,11 @@ try {
         'members_list' => 'members_list.php',
         'member_set_approved' => 'member_set_approved.php',
         'member_archive' => 'member_archive.php',
+        'member_unarchive' => 'member_unarchive.php',
 
         // messages page
         'messages_list' => 'messages_list.php',
+        'archived_members_list' => 'archived_members_list.php',
         'message_mark_read' => 'message_mark_read.php',
 
         'whitelist' => 'auth_whitelist.php',

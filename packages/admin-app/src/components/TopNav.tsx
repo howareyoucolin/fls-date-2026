@@ -141,6 +141,9 @@ export default function TopNav() {
                 <Link to="/members" onClick={() => isMobile && setOpen(false)} style={navItemStyle(isActive('/members'))}>
                     Members
                 </Link>
+                <Link to="/archive" onClick={() => isMobile && setOpen(false)} style={navItemStyle(isActive('/archive'))}>
+                    Archived Members
+                </Link>
 
                 <div style={{ height: 6 }} />
 

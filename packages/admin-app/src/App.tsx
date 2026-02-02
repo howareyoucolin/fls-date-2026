@@ -7,6 +7,7 @@ import MembersPage from './pages/Members'
 import MessagesPage from './pages/Messages'
 import WhitelistGuard from './components/WhitelistGuard'
 import Forbidden from './pages/Forbidden'
+import ArchivePage from './pages/Archive'
 
 export default function App() {
     return (
@@ -28,6 +29,7 @@ export default function App() {
                 <Route index element={<Home />} />
                 <Route path="members" element={<MembersPage />} />
                 <Route path="messages" element={<MessagesPage />} />
+                <Route path="archive" element={<ArchivePage />} />
             </Route>
 
             {/* Public auth routes */}
