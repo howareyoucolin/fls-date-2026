@@ -148,7 +148,7 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) ){
 		
 		// Insert into database
 		try {
-			$sql = "INSERT INTO cz_members (title, gender, birthday, profile_image, wechat, phone, email, description, created_at) 
+			$sql = "INSERT INTO cz_members (title, gender, birthday, profile_image, wechat, phone, email, description, is_approved, created_at) 
 					VALUES ('" . $db->escape($name) . "', 
 							'" . $db->escape($gender) . "', 
 							'" . $db->escape($birthday) . "', 
@@ -157,6 +157,7 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) ){
 							'" . $db->escape($phone) . "', 
 							'" . $db->escape($email) . "', 
 							'" . $db->escape($description) . "', 
+							1, 
 							NOW())";
 			$db->query($sql);
 			
