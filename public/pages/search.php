@@ -47,7 +47,7 @@ if ($photo === 'with') {
 $where[] = "m.birthday IS NOT NULL";
 $where[] = "m.birthday <= DATE_SUB(CURDATE(), INTERVAL {$minAge} YEAR)";
 $where[] = "m.birthday >= DATE_SUB(CURDATE(), INTERVAL {$maxAge} YEAR)";
-
+$where[] = "m.is_archived = 0";
 $whereSql = count($where) ? ("WHERE " . implode(" AND ", $where)) : "";
 
 // Count
@@ -69,6 +69,7 @@ $members = $db->get_results("
       m.wechat,
       m.phone,
       m.email,
+      m.is_archived,
       m.description,
       m.profile_image,
       m.profile_thumbnail
