@@ -16,7 +16,7 @@
 	<footer class="footer">
 		<div class="container">
 			<p>&copy; <?php echo date('Y'); ?> 纽约同城交友. 让华人在纽约不再孤单.</p>
-			<p style="font-size: 12px; margin-top: 10px;">网站由 <a href="https://369usa.com" target="_blank" style="color: #fff; text-decoration: underline;">369usa.com</a> 建设管理</p>
+			<p style="font-size: 12px; margin-top: 10px;">网站由 纽约同城交友网 建设管理</p>
 		</div>
 	</footer>
 
