@@ -94,7 +94,7 @@ include ROOT_PATH . '/templates/header.php';
 
 				<h2 class="featured-member-name">Leo先生</h2>
 				<div class="featured-member-info">
-					<span class="featured-age">36岁</span>
+					<span class="featured-age">32岁</span>
 					<span class="featured-gender">男生</span>
 				</div>
 
