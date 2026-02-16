@@ -62,6 +62,10 @@ jobs:
 
           //Site Url.
           define( 'SITE_URL', '${{ secrets.DH_DEV_SITE_URL }}' );
+
+          //Upstash Redis (tracking pixel).
+          define( 'UPSTASH_REDIS_REST_URL', '${{ secrets.DH_UPSTASH_REDIS_REST_URL }}' );
+          define( 'UPSTASH_REDIS_REST_TOKEN', '${{ secrets.DH_UPSTASH_REDIS_REST_TOKEN }}' );
           EOF
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php
@@ -136,6 +140,10 @@ jobs:
 
           //Site Url.
           define( 'SITE_URL', '${{ secrets.DH_PROD_SITE_URL }}' );
+
+          //Upstash Redis (tracking pixel).
+          define( 'UPSTASH_REDIS_REST_URL', '${{ secrets.DH_UPSTASH_REDIS_REST_URL }}' );
+          define( 'UPSTASH_REDIS_REST_TOKEN', '${{ secrets.DH_UPSTASH_REDIS_REST_TOKEN }}' );
           EOF
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php
