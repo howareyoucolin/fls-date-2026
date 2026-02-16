@@ -22,5 +22,14 @@
 
 	<!-- 4) Include the script (once). Put this near </body> (footer.php) -->
 	<script src="<?php echo SITE_URL; ?>/assets/js/copy.js?v=6"></script>
+
+	<!-- Page Impression Pixel -->
+	<img
+		src="<?php echo SITE_URL; ?>/p.gif?path=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>"
+		width="1"
+		height="1"
+		alt=""
+		style="display:none"
+	>
 </body>
 </html>

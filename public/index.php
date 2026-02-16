@@ -32,6 +32,18 @@ try {
 // Get the requested URI
 $uri = trim( $_GET['uri'] ?? '', '/' );
 
+// ---- PIXEL TRACKING ROUTE ----
+if ($uri === 'p.gif') {
+    require_once(ROOT_PATH . '/track/pixel.php');
+    exit;
+}
+
+// ---- CLI ENTRYPOINT ----
+if (PHP_SAPI === 'cli') {
+	require_once(ROOT_PATH . '/includes/cli.php');
+	exit;
+}
+
 // Map URIs to page files
 $pages = [
 	'' => 'home',

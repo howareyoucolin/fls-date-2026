@@ -18,3 +18,7 @@ define( 'DB_PASSWORD', 'your-database-password' );
 
 // Site URL
 define( 'SITE_URL', 'https://your-site-url.com' );
+
+// Upstash Redis (for tracking pixel)
+define( 'UPSTASH_REDIS_REST_URL', 'https://your-instance.upstash.io' );
+define( 'UPSTASH_REDIS_REST_TOKEN', 'your-bearer-token' );
