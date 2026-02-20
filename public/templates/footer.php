@@ -16,7 +16,7 @@
 	<footer class="footer">
 		<div class="container">
 			<p>&copy; <?php echo date('Y'); ?> 纽约同城交友. 让华人在纽约不再孤单.</p>
-			<p style="font-size: 12px; margin-top: 10px;">网站由 纽约同城交友网 建设管理</p>
+			<p style="font-size: 12px; margin-top: 10px;">网站由 纽约同城交友网 建设管理 | <a href="<?php echo SITE_URL; ?>/stat" style="color: white; text-decoration: none;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">页面浏览统计</a></p>
 		</div>
 	</footer>
 

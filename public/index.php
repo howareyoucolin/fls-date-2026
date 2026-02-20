@@ -53,6 +53,7 @@ $pages = [
 	'signup' => 'signup',
 	'blog' => 'blog',
 	'sitemap' => 'sitemap',
+	'stat' => 'stat',
 	'api' => 'api',
 ];
 
