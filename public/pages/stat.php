@@ -141,6 +141,12 @@ include ROOT_PATH . '/templates/header.php';
 	color: #666;
 }
 
+.table-responsive {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
 .stats-table {
 	width: 100%;
 	border-collapse: collapse;
@@ -148,6 +154,7 @@ include ROOT_PATH . '/templates/header.php';
 	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 	border-radius: 4px;
 	overflow: hidden;
+	min-width: 600px;
 }
 
 .stats-table thead {
@@ -229,6 +236,59 @@ include ROOT_PATH . '/templates/header.php';
 	color: #666;
 	font-size: 14px;
 }
+
+/* Mobile stacked table: hide header and show label in each cell */
+@media (max-width: 720px) {
+	.stats-table {
+		min-width: 100%;
+		border-radius: 0;
+	}
+
+	.stats-table thead {
+		display: none;
+	}
+
+	.stats-table tbody tr {
+		display: block;
+		margin-bottom: 12px;
+		border: 1px solid #eee;
+		border-radius: 6px;
+		padding: 8px 10px;
+		background: #fff;
+	}
+
+	.stats-table tbody tr:hover {
+		background-color: #fff;
+	}
+
+	.stats-table td {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px 10px;
+		border: none;
+		font-size: 14px;
+	}
+
+	.stats-table td::before {
+		content: attr(data-label);
+		font-weight: 600;
+		color: #555;
+		margin-right: 12px;
+		flex: 0 0 auto;
+	}
+
+	/* hide the URL label to save space on mobile */
+	.stats-table td[data-label="网址"]::before {
+		display: none;
+	}
+
+	.stats-table td span.value {
+		color: #333;
+		font-weight: 500;
+		text-align: right;
+	}
+}
 </style>
 
 <div class="container">
@@ -245,6 +305,7 @@ include ROOT_PATH . '/templates/header.php';
 				<p>暂无页面浏览数据</p>
 			</div>
 		<?php else: ?>
+			<div class="table-responsive">
 			<table class="stats-table">
 				<thead>
 					<tr>
@@ -257,24 +318,25 @@ include ROOT_PATH . '/templates/header.php';
 				<tbody>
 					<?php foreach( $page_views as $row ): ?>
 						<tr>
-							<td>
+							<td data-label="网址">
 								<a href="<?php echo htmlspecialchars($row->uri); ?>" target="_blank" title="<?php echo htmlspecialchars($row->uri); ?>">
-									<?php echo htmlspecialchars(get_readable_uri_name($row->uri)); ?>
+									<span class="value"><?php echo htmlspecialchars(get_readable_uri_name($row->uri)); ?></span>
 								</a>
 							</td>
-							<td style="text-align: center;">
-								<?php echo (int)$row->visits; ?>
+							<td data-label="访问次数" style="text-align: center;">
+								<span class="value"><?php echo (int)$row->visits; ?></span>
 							</td>
-							<td style="text-align: center;">
-								<?php echo (int)$row->impressions; ?>
+							<td data-label="展示次数" style="text-align: center;">
+								<span class="value"><?php echo (int)$row->impressions; ?></span>
 							</td>
-							<td>
-								<?php echo htmlspecialchars($row->updated_at); ?>
+							<td data-label="更新时间">
+								<span class="value"><?php echo htmlspecialchars($row->updated_at); ?></span>
 							</td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
+			</div>
 
 			<!-- Pagination -->
 			<?php if( $total_pages > 1 ): ?>
