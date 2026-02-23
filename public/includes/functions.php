@@ -102,3 +102,50 @@ function wp_excerpt($html, $maxLen = 160){
 	if (mb_strlen($text, 'UTF-8') <= $maxLen) return $text;
 	return mb_substr($text, 0, $maxLen, 'UTF-8') . '...';
 }
+
+function send_telegram_message($text, $chat_id = null){
+	$bot_token = defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : getenv('TELEGRAM_BOT_TOKEN');
+	if( !$bot_token ){
+		return false;
+	}
+
+	$default_chat_id = defined('TELEGRAM_CHAT_ID') ? TELEGRAM_CHAT_ID : getenv('TELEGRAM_CHAT_ID');
+	$target_chat_id = $chat_id ?: $default_chat_id;
+	if( !$target_chat_id ){
+		return false;
+	}
+
+	$url = 'https://api.telegram.org/bot' . rawurlencode($bot_token) . '/sendMessage';
+	$post_fields = http_build_query([
+		'chat_id' => $target_chat_id,
+		'text' => $text,
+	], '', '&');
+
+	// Prefer cURL when available, fallback to streams.
+	if( function_exists('curl_init') ){
+		$ch = curl_init($url);
+		curl_setopt_array($ch, [
+			CURLOPT_POST => true,
+			CURLOPT_POSTFIELDS => $post_fields,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_TIMEOUT => 10,
+			CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
+		]);
+		$response = curl_exec($ch);
+		$http_code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_close($ch);
+
+		return $response !== false && $http_code >= 200 && $http_code < 300;
+	}
+
+	$context = stream_context_create([
+		'http' => [
+			'method' => 'POST',
+			'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+			'content' => $post_fields,
+			'timeout' => 10,
+		],
+	]);
+	$response = @file_get_contents($url, false, $context);
+	return $response !== false;
+}

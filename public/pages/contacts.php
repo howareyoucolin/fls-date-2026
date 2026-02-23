@@ -91,6 +91,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                                 0,
                                 NOW())";
                 $db->query($sql);
+
+				// Send Telegram notification
+                $contact = $wechat ?: ($email ?: 'N/A');
+                $message_notice = "New contact message\n"
+                    . "Name: {$name}\n"
+                    . "Contact: {$contact}\n"
+                    . "Message: {$message}\n"
+                    . "Time: " . date('Y-m-d H:i:s');
+                send_telegram_message($message_notice);
         
                 header('Location: ' . SITE_URL . '/contacts/thankyou');
                 exit;

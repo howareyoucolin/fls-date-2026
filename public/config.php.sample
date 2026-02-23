@@ -22,3 +22,7 @@ define( 'SITE_URL', 'https://your-site-url.com' );
 // Upstash Redis (for tracking pixel)
 define( 'UPSTASH_REDIS_REST_URL', 'https://your-instance.upstash.io' );
 define( 'UPSTASH_REDIS_REST_TOKEN', 'your-bearer-token' );
+
+// Telegram notifications (optional)
+define( 'TELEGRAM_BOT_TOKEN', 'your-telegram-bot-token' );
+define( 'TELEGRAM_CHAT_ID', 'your-telegram-chat-id' );

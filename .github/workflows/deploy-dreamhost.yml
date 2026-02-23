@@ -66,6 +66,10 @@ jobs:
           //Upstash Redis (tracking pixel).
           define( 'UPSTASH_REDIS_REST_URL', '${{ secrets.DH_UPSTASH_REDIS_REST_URL }}' );
           define( 'UPSTASH_REDIS_REST_TOKEN', '${{ secrets.DH_UPSTASH_REDIS_REST_TOKEN }}' );
+
+          //Telegram notifications.
+          define( 'TELEGRAM_BOT_TOKEN', '${{ secrets.DH_DEV_TELEGRAM_BOT_TOKEN }}' );
+          define( 'TELEGRAM_CHAT_ID', '${{ secrets.DH_DEV_TELEGRAM_CHAT_ID }}' );
           EOF
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php
@@ -144,6 +148,10 @@ jobs:
           //Upstash Redis (tracking pixel).
           define( 'UPSTASH_REDIS_REST_URL', '${{ secrets.DH_UPSTASH_REDIS_REST_URL }}' );
           define( 'UPSTASH_REDIS_REST_TOKEN', '${{ secrets.DH_UPSTASH_REDIS_REST_TOKEN }}' );
+
+          //Telegram notifications.
+          define( 'TELEGRAM_BOT_TOKEN', '${{ secrets.DH_PROD_TELEGRAM_BOT_TOKEN }}' );
+          define( 'TELEGRAM_CHAT_ID', '${{ secrets.DH_PROD_TELEGRAM_CHAT_ID }}' );
           EOF
           scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o IdentitiesOnly=yes /tmp/config.php ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}config.php
           rm -f /tmp/config.php

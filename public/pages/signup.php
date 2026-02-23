@@ -160,6 +160,16 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) ){
 							1, 
 							NOW())";
 			$db->query($sql);
+
+			// Send Telegram notification
+			$contact = $wechat ?: ($phone ?: ($email ?: 'N/A'));
+			$signup_notice = "New signup received\n"
+				. "Name: {$name}\n"
+				. "Gender: " . get_gender_display($gender) . "\n"
+				. "Birthday: {$birthday}\n"
+				. "Contact: {$contact}\n"
+				. "Time: " . date('Y-m-d H:i:s');
+			send_telegram_message($signup_notice);
 			
 			// Redirect to thank you page
 			header('Location: ' . SITE_URL . '/signup/thankyou');
